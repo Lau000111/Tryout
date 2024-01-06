@@ -1,0 +1,12 @@
+C:\Users\ilaza\source\repos\ProjectAlpha\ProjectAlpha.ServiceDefaults\bin\Debug\net8.0\ProjectAlpha.ServiceDefaults.deps.json
+C:\Users\ilaza\source\repos\ProjectAlpha\ProjectAlpha.ServiceDefaults\bin\Debug\net8.0\ProjectAlpha.ServiceDefaults.dll
+C:\Users\ilaza\source\repos\ProjectAlpha\ProjectAlpha.ServiceDefaults\bin\Debug\net8.0\ProjectAlpha.ServiceDefaults.pdb
+C:\Users\ilaza\source\repos\ProjectAlpha\ProjectAlpha.ServiceDefaults\obj\Debug\net8.0\ProjectAlpha.ServiceDefaults.csproj.AssemblyReference.cache
+C:\Users\ilaza\source\repos\ProjectAlpha\ProjectAlpha.ServiceDefaults\obj\Debug\net8.0\ProjectAlpha.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilaza\source\repos\ProjectAlpha\ProjectAlpha.ServiceDefaults\obj\Debug\net8.0\ProjectAlpha.ServiceDefaults.AssemblyInfoInputs.cache
+C:\Users\ilaza\source\repos\ProjectAlpha\ProjectAlpha.ServiceDefaults\obj\Debug\net8.0\ProjectAlpha.ServiceDefaults.AssemblyInfo.cs
+C:\Users\ilaza\source\repos\ProjectAlpha\ProjectAlpha.ServiceDefaults\obj\Debug\net8.0\ProjectAlpha.ServiceDefaults.csproj.CoreCompileInputs.cache
+C:\Users\ilaza\source\repos\ProjectAlpha\ProjectAlpha.ServiceDefaults\obj\Debug\net8.0\ProjectAlpha.ServiceDefaults.dll
+C:\Users\ilaza\source\repos\ProjectAlpha\ProjectAlpha.ServiceDefaults\obj\Debug\net8.0\refint\ProjectAlpha.ServiceDefaults.dll
+C:\Users\ilaza\source\repos\ProjectAlpha\ProjectAlpha.ServiceDefaults\obj\Debug\net8.0\ProjectAlpha.ServiceDefaults.pdb
+C:\Users\ilaza\source\repos\ProjectAlpha\ProjectAlpha.ServiceDefaults\obj\Debug\net8.0\ref\ProjectAlpha.ServiceDefaults.dll

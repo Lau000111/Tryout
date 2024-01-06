@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ProjectAlpha.Catalog.FunctionalTests.props" />
+</Project>

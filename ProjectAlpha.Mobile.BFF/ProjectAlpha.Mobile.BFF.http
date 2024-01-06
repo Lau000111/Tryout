@@ -1,0 +1,11 @@
+@ProjectAlpha.Mobile.BFF_HostAddress = http://localhost:5067
+
+GET {{ProjectAlpha.Mobile.BFF_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{ProjectAlpha.Mobile.BFF_HostAddress}}/todos/1
+Accept: application/json
+
+###

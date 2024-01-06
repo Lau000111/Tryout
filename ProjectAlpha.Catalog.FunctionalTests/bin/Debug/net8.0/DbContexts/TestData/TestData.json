@@ -1,0 +1,106 @@
+[
+  {
+    "id": "f2b86c70-6cde-4f0f-9f96-5206f4d8f1a9",
+    "dishes": [
+      {
+        "name": "Italian Pasta",
+        "items": [
+          {
+            "name": "Spaghetti Carbonara",
+            "description": "Classic Italian pasta dish with eggs, cheese, bacon, and black pepper",
+            "image": "carbonara.jpg",
+            "price": 12.99
+          },
+          {
+            "name": "Penne Arrabiata",
+            "description": "Spicy tomato sauce with garlic, tomatoes, and red chili peppers cooked in olive oil",
+            "image": "arrabiata.jpg",
+            "price": 10.50
+          }
+        ]
+      },
+      {
+        "name": "Chinese Cuisine",
+        "items": [
+          {
+            "name": "Kung Pao Chicken",
+            "description": "Spicy stir-fry dish with chicken, peanuts, vegetables, and chili peppers",
+            "image": "kungpao.jpg",
+            "price": 13.99
+          },
+          {
+            "name": "Fried Rice",
+            "description": "Traditional Chinese fried rice with eggs, vegetables, and a choice of meat",
+            "image": "friedrice.jpg",
+            "price": 11.50
+          }
+        ]
+      },
+      {
+        "name": "Japanese Sushi",
+        "items": [
+          {
+            "name": "Salmon Nigiri",
+            "description": "Sliced fresh salmon over pressed vinegared rice",
+            "image": "salmon_nigiri.jpg",
+            "price": 8.50
+          },
+          {
+            "name": "California Roll",
+            "description": "Roll made with crab meat, avocado, cucumber, and rice",
+            "image": "california_roll.jpg",
+            "price": 7.99
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "f7eedbf4-3c35-46a6-8cda-f7beb81baf82",
+    "dishes": [
+      {
+        "name": "American Grill",
+        "items": [
+          {
+            "name": "Grilled Ribeye Steak",
+            "description": "Juicy ribeye steak grilled to perfection with a side of seasoned vegetables",
+            "image": "ribeye_steak.jpg",
+            "price": 25.99
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "26a7bec2-c710-4151-bf0f-d2a221b8c702",
+    "dishes": [
+      {
+        "name": "French Cuisine",
+        "items": [
+          {
+            "name": "Bouillabaisse",
+            "description": "Traditional Provençal fish stew originating from the port city of Marseille",
+            "image": "bouillabaisse.jpg",
+            "price": 22.50
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "4cff0d5a-0e58-490c-9b48-950e0dd674fe",
+    "dishes": [
+      {
+        "name": "Pizza",
+        "items": [
+          {
+            "name": "Margarita",
+            "description": "Classic Pizza with tomato sauce and cheese",
+            "image": "margarita.jpg",
+            "price": 10.99
+          }
+        ]
+      }
+    ]
+  }
+]

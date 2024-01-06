@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting" Version="8.0.0-preview.1.23557.2" />
+    <PackageReference Include="Aspire.Hosting.Dapr" Version="8.0.0-preview.1.23557.2" />
+    <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectAlpha.Catalog\ProjectAlpha.Catalog.csproj" />
+    <ProjectReference Include="..\ProjectAlpha.Mobile.BFF\ProjectAlpha.Mobile.BFF.csproj" />
+    <ProjectReference Include="..\ProjectAlpha.Ordering\ProjectAlpha.Ordering.csproj" />
+    <ProjectReference Include="..\ProjectAlpha.Payment\ProjectAlpha.Payment.csproj" />
+  </ItemGroup>
+
+</Project>
