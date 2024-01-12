@@ -1,0 +1,110 @@
+{
+  "categories": {
+    "Appetizer": [
+      {
+        "id": 101,
+        "title": "Mancacasi Mami",
+        "description": "This English",
+        "price": 5.99
+      },
+      {
+        "id": 102,
+        "title": "Lol Imagone but in English",
+        "description": "Fried calamari in a fennel and oregano seasoned flour mixture, accompanied by a mild-spicy mayonnaise and harissa sauce. Served with a fresh salad with a delicious lemon-honey dressing.",
+        "price": 22.69
+      },
+      {
+        "id": 103,
+        "title": "CALAMARI GANG",
+        "description": "Fried fries in a fennel and oregano seasoned flour mixture, accompanied by nuts.",
+        "price": 9.59
+      }
+    ],
+    "MainCourse": [
+      {
+        "id": 201,
+        "title": "RISOTTO WITH PANCETTA & VEGETABLES",
+        "description": "Risotto, asparagus, zucchini, pancetta, mint.",
+        "price": 40.99
+      },
+      {
+        "id": 202,
+        "title": "RISOTTO WITH TRUFFLES",
+        "description": "Risotto, butter, truffle cream, parmesan, fresh truffle strips.",
+        "price": 55
+      },
+      {
+        "id": 203,
+        "title": "SPANISH TIGER PRAWNS",
+        "description": "Shrimps, garlic, chili, paprika, lemon, parsley.",
+        "price": 120
+      },
+      {
+        "id": 204,
+        "title": "TAPAS",
+        "description": "Homemade schiacciata gratinated with tomato sauce, shrimp in garlic oil, milk cream and prosciutto croquettes, pimento de padron.",
+        "price": 95.19
+      },
+      {
+        "id": 205,
+        "title": "TAPAS",
+        "description": "Homemade schiacciata gratinated with tomato sauce, shrimp in garlic oil, milk cream and prosciutto croquettes, pimento de padron.",
+        "price": 95
+      },
+      {
+        "id": 206,
+        "title": "TERIYAKI STIR FRY WITH BEEF TENDERLOIN",
+        "description": "Buckwheat soba noodles, tenderloin marinated in soy sauce with ginger, garlic, and chili; bell peppers, carrots, green onions, shimeji mushrooms, baby corn, asparagus.",
+        "price": 120
+      }
+    ],
+    "Dessert": [
+      {
+        "id": 301,
+        "title": "Laurentia Illioni",
+        "description": "Fried calamari in a fennel and oregano seasoned flour mixture, accompanied by a light spicy mayonnaise and harissa sauce. The dish is enhanced by a fresh salad mix with a delicious lemon and honey dressing.",
+        "price": 69.49
+      }
+    ],
+    "Beverage": [
+      {
+        "id": 401,
+        "title": "Doamne Ajuta Drink",
+        "description": "Homemade schiacciata gratinated with tomato sauce, shrimp in garlic oil, milk cream and prosciutto croquettes, pimento de padron.",
+        "price": 11.99
+      },
+      {
+        "id": 402,
+        "title": "Laurentius Water",
+        "description": "Fried calamari in a fennel and oregano seasoned flour mixture, accompanied, with a delicious lemon and honey dressing.",
+        "price": 6.69
+      },
+      {
+        "id": 403,
+        "title": "Paulis Quotes - Chinese",
+        "description": "Pauli is a famous wimp, and accordingly, his quote is also wimpy. He says: 'I am gay and that's okay!'",
+        "price": 24.99
+      }
+    ], 
+    "Drinks": [
+      {
+        "id": 401,
+        "title": "Doamne Ajuta Getränk",
+        "description": "Schiacciata făcută în casă gratinată cu sos de tomate, creveți în ulei cu usturoi, crochete din cremă de lapte și prosciutto, pimento de padron.",
+        "price": 11.99
+      },
+      {
+        "id": 402,
+        "title": "Laurentiuss Wasser",
+        "description": "Calamari prăjiți într-un mix de făină aromatizată cu fenicul și oregano, acompaniați, cu dressing delicios de lămâie și miere.",
+        "price": 6.69
+      },
+      {
+        "id": 403,
+        "title": "Paulis Zitate - Chinesisch",
+        "description": "Pauli ist ein berühmter schwuchtel und dementsprechend ist sein Zitat auch schwul. Er sagt: 'Ich bin schwul und das ist auch gut so!'",
+        "price": 24.99
+      }
+    ]
+  }
+}

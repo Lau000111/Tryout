@@ -1,0 +1,90 @@
+{
+  "categories": {
+    "Appetizer": [
+      {
+        "id": 101,
+        "title": "Mancacasi Mami",
+        "description": "Calamari mit einen sehr wundervollen Geschmack, welches auf der Zunge zergeht. Beilage sind Pommes und Salat. Sehr lecker und sehr zu empfehlen.",
+        "price": 5.99
+      },
+      {
+        "id": 102,
+        "title": "Lol Imagone",
+        "description": "Gebratene Calamari in einer mit Fenchel und Oregano gewürzten Mehlmischung, begleitet von einer mild-würzigen Mayonnaise und Harissa-Sauce. Dazu wird ein frischer Salat mit einem köstlichen Zitronen-Honig-Dressing gereicht.",
+        "price": 22.69
+      },
+      {
+        "id": 103,
+        "title": "CALAMARI GANG",
+        "description": "Gebratene Pommes in einer mit Fenchel und Oregano gewürzten Mehlmischung, begleitet von einer nuss.",
+        "price": 9.59
+      }
+    ],
+    "MainCourse": [
+      {
+        "id": 201,
+        "title": "RISOTTO CU PANCETTA & LEGUME",
+        "description": "Risotto, sparanghel, zucchini, pancetta, mentă.",
+        "price": 40.99
+      },
+      {
+        "id": 202,
+        "title": "RISOTTO CU TRUFE",
+        "description": "Risotto, unt, cremă de trufe, parmezan, fâșii de trufe proaspete.",
+        "price": 55
+      },
+      {
+        "id": 203,
+        "title": "SPANISH TIGER PRAWNS",
+        "description": "Creveti, usturoi, chilli, boia, lămâie, pătrunjel.",
+        "price": 120
+      },
+      {
+        "id": 204,
+        "title": "TAPAS",
+        "description": "Schiacciata făcută în casă gratinată cu sos de tomate, creveți în ulei cu usturoi, crochete din cremă de lapte și prosciutto, pimento de padron.",
+        "price": 95.19
+      },
+      {
+        "id": 205,
+        "title": "TAPAS",
+        "description": "Schiacciata făcută în casă gratinată cu sos de tomate, creveți în ulei cu usturoi, crochete din cremă de lapte și prosciutto, pimento de padron.",
+        "price": 95
+      },
+      {
+        "id": 206,
+        "title": "TERIYAKI STIR FRY CU MUSCHI DE VITĂ",
+        "description": "Soba noodles din hrișcă, muschi fille marinați în sos de soia cu ghimbir, usturoi și chilli; ardei, morcovi, ceapă verde, ciuperci șimeji, porumb baby, sparanghel.",
+        "price": 120
+      }
+    ],
+    "Beverage": [
+      {
+        "id": 301,
+        "title": "Laurentia Illioni",
+        "description": "Calamari prăjiți într-un mix de făină aromatizată cu fenicul și oregano, acompaniați de un sos ușor picant de maioneză și harissa. Totul este pus în valoare de un mix proaspăt de salată, cu dressing delicios de lămâie și miere.",
+        "price": 69.49
+      }
+    ],
+    "Drinks": [
+      {
+        "id": 401,
+        "title": "Doamne Ajuta Getränk",
+        "description": "Schiacciata făcută în casă gratinată cu sos de tomate, creveți în ulei cu usturoi, crochete din cremă de lapte și prosciutto, pimento de padron.",
+        "price": 11.99
+      },
+      {
+        "id": 402,
+        "title": "Laurentiuss Wasser",
+        "description": "Calamari prăjiți într-un mix de făină aromatizată cu fenicul și oregano, acompaniați, cu dressing delicios de lămâie și miere.",
+        "price": 6.69
+      },
+      {
+        "id": 403,
+        "title": "Paulis Zitate - Chinesisch",
+        "description": "Pauli ist ein berühmter schwuchtel und dementsprechend ist sein Zitat auch schwul. Er sagt: 'Ich bin schwul und das ist auch gut so!'",
+        "price": 24.99
+      }
+    ]
+  }
+}
