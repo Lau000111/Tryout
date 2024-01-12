@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2EA18FE2-9B16-44BC-A2C7-24F673BD6851}|ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj|c:\\users\\remsi\\downloads\\tryout-main\\tryout-main\\projectalpha.catalog\\controllers\\catalogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EA18FE2-9B16-44BC-A2C7-24F673BD6851}|ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj|solutionrelative:projectalpha.catalog\\controllers\\catalogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EA18FE2-9B16-44BC-A2C7-24F673BD6851}|ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj|c:\\users\\remsi\\downloads\\tryout-main\\tryout-main\\projectalpha.catalog\\repositories\\catalogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EA18FE2-9B16-44BC-A2C7-24F673BD6851}|ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj|solutionrelative:projectalpha.catalog\\repositories\\catalogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EA18FE2-9B16-44BC-A2C7-24F673BD6851}|ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj|c:\\users\\remsi\\downloads\\tryout-main\\tryout-main\\projectalpha.catalog\\entities\\catalogentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EA18FE2-9B16-44BC-A2C7-24F673BD6851}|ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj|solutionrelative:projectalpha.catalog\\entities\\catalogentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EA18FE2-9B16-44BC-A2C7-24F673BD6851}|ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj|c:\\users\\remsi\\downloads\\tryout-main\\tryout-main\\projectalpha.catalog\\repositories\\icatalogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EA18FE2-9B16-44BC-A2C7-24F673BD6851}|ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj|solutionrelative:projectalpha.catalog\\repositories\\icatalogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EA18FE2-9B16-44BC-A2C7-24F673BD6851}|ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj|c:\\users\\remsi\\downloads\\tryout-main\\tryout-main\\projectalpha.catalog\\projectalpha.catalog.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2EA18FE2-9B16-44BC-A2C7-24F673BD6851}|ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj|solutionrelative:projectalpha.catalog\\projectalpha.catalog.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EA18FE2-9B16-44BC-A2C7-24F673BD6851}|ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj|c:\\users\\remsi\\downloads\\tryout-main\\tryout-main\\projectalpha.catalog\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EA18FE2-9B16-44BC-A2C7-24F673BD6851}|ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj|solutionrelative:projectalpha.catalog\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ICatalogRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Catalog\\Repositories\\ICatalogRepository.cs",
+              "RelativeDocumentMoniker": "ProjectAlpha.Catalog\\Repositories\\ICatalogRepository.cs",
+              "ToolTip": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Catalog\\Repositories\\ICatalogRepository.cs",
+              "RelativeToolTip": "ProjectAlpha.Catalog\\Repositories\\ICatalogRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-08T18:27:25.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CatalogEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Catalog\\Entities\\CatalogEntity.cs",
+              "RelativeDocumentMoniker": "ProjectAlpha.Catalog\\Entities\\CatalogEntity.cs",
+              "ToolTip": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Catalog\\Entities\\CatalogEntity.cs",
+              "RelativeToolTip": "ProjectAlpha.Catalog\\Entities\\CatalogEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-08T18:14:08.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CatalogRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Catalog\\Repositories\\CatalogRepository.cs",
+              "RelativeDocumentMoniker": "ProjectAlpha.Catalog\\Repositories\\CatalogRepository.cs",
+              "ToolTip": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Catalog\\Repositories\\CatalogRepository.cs",
+              "RelativeToolTip": "ProjectAlpha.Catalog\\Repositories\\CatalogRepository.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAADwv0oAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-08T16:03:02.375Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CatalogController.cs",
+              "DocumentMoniker": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Catalog\\Controllers\\CatalogController.cs",
+              "RelativeDocumentMoniker": "ProjectAlpha.Catalog\\Controllers\\CatalogController.cs",
+              "ToolTip": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Catalog\\Controllers\\CatalogController.cs",
+              "RelativeToolTip": "ProjectAlpha.Catalog\\Controllers\\CatalogController.cs",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAQwFMAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-07T11:16:32.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Catalog\\Program.cs",
+              "RelativeDocumentMoniker": "ProjectAlpha.Catalog\\Program.cs",
+              "ToolTip": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Catalog\\Program.cs",
+              "RelativeToolTip": "ProjectAlpha.Catalog\\Program.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAABsAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-01-06T15:21:36.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProjectAlpha.Catalog.csproj",
+              "DocumentMoniker": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj",
+              "RelativeDocumentMoniker": "ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj",
+              "ToolTip": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj",
+              "RelativeToolTip": "ProjectAlpha.Catalog\\ProjectAlpha.Catalog.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-01-06T15:21:32.587Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

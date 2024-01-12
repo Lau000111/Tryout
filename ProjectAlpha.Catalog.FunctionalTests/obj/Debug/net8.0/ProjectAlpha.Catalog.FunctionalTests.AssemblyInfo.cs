@@ -17,12 +17,12 @@ using System.Reflection;
     "1.23557.2\\tools\\ext")]
 [assembly: System.Reflection.AssemblyMetadata("dcpbinpath", "C:\\Program Files\\dotnet\\packs\\Aspire.Hosting.Orchestration.win-x64\\8.0.0-preview." +
     "1.23557.2\\tools\\ext\\bin")]
-[assembly: System.Reflection.AssemblyCompanyAttribute("ProjectAlpha.CatalogEntity.FunctionalTests")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ProjectAlpha.Catalog.FunctionalTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("ProjectAlpha.CatalogEntity.FunctionalTests")]
-[assembly: System.Reflection.AssemblyTitleAttribute("ProjectAlpha.CatalogEntity.FunctionalTests")]
+[assembly: System.Reflection.AssemblyProductAttribute("ProjectAlpha.Catalog.FunctionalTests")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ProjectAlpha.Catalog.FunctionalTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Von der MSBuild WriteCodeFragment-Klasse generiert.

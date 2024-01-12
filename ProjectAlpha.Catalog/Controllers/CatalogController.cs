@@ -77,4 +77,82 @@ public class CatalogController(ICatalogRepository catalogRepository, ItemDbConte
             },
             None: () => Task.FromResult<IActionResult>(NotFound()));
     }
+
+    [HttpPost("{catalogId}/dishes/{dishName}/items")]
+    [ProducesResponseType(typeof(ItemDto), StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> AddItemToCatalog(Guid catalogId, string dishName, [FromBody] ItemDto itemDto)
+    {
+        Option<CatalogEntity> catalog = await catalogRepository.GetCatalogById(catalogId);
+
+        return await catalog.Match<Task<IActionResult>>(
+            Some: async c =>
+            {
+                var itemEntity = mapper.Map<ItemEntity>(itemDto);
+                var newItem = await catalogRepository.AddItemToCatalog(catalogId, dishName, itemEntity);
+                return Ok(mapper.Map<ItemDto>(newItem));
+            },
+            None: () => Task.FromResult<IActionResult>(NotFound()));
+    }
+
+    [HttpGet("{catalogId}/dishes")]
+    [ProducesResponseType(typeof(List<DishDto>), StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> GetDishesByCatalogId(Guid catalogId)
+    {
+        Option<CatalogEntity> catalogOption = await catalogRepository.GetCatalogById(catalogId);
+
+        return await catalogOption.Match<Task<IActionResult>>(
+            Some: c =>
+            {
+                var dishesDto = c.Dishes.Select(dish => mapper.Map<DishDto>(dish)).ToList();
+                return Task.FromResult<IActionResult>(Ok(dishesDto));
+            },
+            None: () => Task.FromResult<IActionResult>(NotFound("Katalog nicht gefunden")));
+    }
+
+    [HttpPost("{catalogId}/dishes")]
+    [ProducesResponseType(typeof(DishDto), StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> AddDishToCatalog(Guid catalogId, [FromBody] DishEntity dishDto)
+    {
+        Option<CatalogEntity> catalogOption = await catalogRepository.GetCatalogById(catalogId);
+
+        return await catalogOption.Match<Task<IActionResult>>(
+            Some: async catalog =>
+            {
+                DishEntity newDish = new DishEntity
+                {
+                    Name = dishDto.Name
+                };
+
+                var dishesList = catalog.Dishes as List<DishEntity> ?? catalog.Dishes.ToList();
+                dishesList.Add(newDish);
+
+                catalog.Dishes = dishesList;
+
+                await catalogRepository.UpdateCatalog(catalog);
+
+                return CreatedAtAction(nameof(GetDishesByCatalogId), new { catalogId = catalog.Id }, mapper.Map<DishDto>(newDish));
+            },
+            None: () => Task.FromResult<IActionResult>(NotFound("Katalog nicht gefunden")));
+    }
+
+    [HttpDelete("{catalogId}/items/{itemId}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> RemoveItemFromCatalog(Guid catalogId, Guid itemId)
+    {
+        try
+        {
+            await catalogRepository.RemoveItemFromCatalog(catalogId, itemId);
+            return NoContent();
+        }
+        catch (Exception ex)
+        {
+            return NotFound(ex.Message);
+        }
+    }
+
+
 }

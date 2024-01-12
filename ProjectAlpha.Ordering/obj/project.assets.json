@@ -3316,23 +3316,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ilaza\\.nuget\\packages\\": {},
+    "C:\\Users\\Remsi\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ilaza\\source\\repos\\ProjectAlpha\\ProjectAlpha.Ordering\\ProjectAlpha.Ordering.csproj",
+      "projectUniqueName": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Ordering\\ProjectAlpha.Ordering.csproj",
       "projectName": "ProjectAlpha.Ordering",
-      "projectPath": "C:\\Users\\ilaza\\source\\repos\\ProjectAlpha\\ProjectAlpha.Ordering\\ProjectAlpha.Ordering.csproj",
-      "packagesPath": "C:\\Users\\ilaza\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ilaza\\source\\repos\\ProjectAlpha\\ProjectAlpha.Ordering\\obj\\",
+      "projectPath": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Ordering\\ProjectAlpha.Ordering.csproj",
+      "packagesPath": "C:\\Users\\Remsi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Ordering\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ilaza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Remsi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3348,8 +3348,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ilaza\\source\\repos\\ProjectAlpha\\ProjectAlpha.ServiceDefaults\\ProjectAlpha.ServiceDefaults.csproj": {
-              "projectPath": "C:\\Users\\ilaza\\source\\repos\\ProjectAlpha\\ProjectAlpha.ServiceDefaults\\ProjectAlpha.ServiceDefaults.csproj"
+            "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.ServiceDefaults\\ProjectAlpha.ServiceDefaults.csproj": {
+              "projectPath": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.ServiceDefaults\\ProjectAlpha.ServiceDefaults.csproj"
             }
           }
         }

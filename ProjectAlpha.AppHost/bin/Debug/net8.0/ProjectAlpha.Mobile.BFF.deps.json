@@ -9,9 +9,7 @@
       "ProjectAlpha.Mobile.BFF/1.0.0": {
         "dependencies": {
           "AspNetCore.HealthChecks.Uris": "8.0.0",
-          "Microsoft.DotNet.ILCompiler": "8.0.0",
           "Microsoft.Extensions.ServiceDiscovery.Yarp": "8.0.0-preview.2.23619.3",
-          "Microsoft.NET.ILLink.Tasks": "8.0.0",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.6-Preview.2",
           "ProjectAlpha.ServiceDefaults": "1.0.0",
           "Yarp.ReverseProxy": "2.1.0"
@@ -132,7 +130,6 @@
         }
       },
       "Microsoft.CSharp/4.7.0": {},
-      "Microsoft.DotNet.ILCompiler/8.0.0": {},
       "Microsoft.Extensions.AmbientMetadata.Application/8.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "8.0.0",
@@ -433,7 +430,6 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/8.0.0": {},
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.6-Preview.2": {},
       "Newtonsoft.Json/13.0.3": {
         "runtime": {
@@ -714,13 +710,6 @@
       "path": "microsoft.csharp/4.7.0",
       "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
-    "Microsoft.DotNet.ILCompiler/8.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-zuTbpcWDCCvESnOAvpHuwum1C3jJIeDl+grYcRDqyoHsPAUutIB6wb7iJV3Y2Q96crKC6cObqf92eOVEiG7keQ==",
-      "path": "microsoft.dotnet.ilcompiler/8.0.0",
-      "hashPath": "microsoft.dotnet.ilcompiler.8.0.0.nupkg.sha512"
-    },
     "Microsoft.Extensions.AmbientMetadata.Application/8.0.0": {
       "type": "package",
       "serviceable": true,
@@ -958,13 +947,6 @@
       "sha512": "sha512-Oh1qXXFdJFcHozvb4H6XYLf2W0meZFuG0A+TfapFPj9z5fd4vxiARGEhAaLj/6XWQaMYIv4SH/9Q6H78Hw0E2Q==",
       "path": "microsoft.io.recyclablememorystream/2.3.2",
       "hashPath": "microsoft.io.recyclablememorystream.2.3.2.nupkg.sha512"
-    },
-    "Microsoft.NET.ILLink.Tasks/8.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-B3etT5XQ2nlWkZGO2m/ytDYrOmSsQG1XNBaM6ZYlX5Ch/tDrMFadr0/mK6gjZwaQc55g+5+WZMw4Cz3m8VEF7g==",
-      "path": "microsoft.net.illink.tasks/8.0.0",
-      "hashPath": "microsoft.net.illink.tasks.8.0.0.nupkg.sha512"
     },
     "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.6-Preview.2": {
       "type": "package",
