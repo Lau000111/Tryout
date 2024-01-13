@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ab1iQxMlQaq5fNTUp4A402OWG1EvA4NxA3J3T6/l0Sp5Wg1K60r7XhNwnHNkPH8xy/uIOBHxItV1P4tRslUKLg==",
+  "dgSpecHash": "NpC0AetQuJGxPit05nfwBJ9cb+UEn33eZj5DOBaELCJKpGDa8ozX4HJaJ7lJ/ZNuxcHsBKH9NRZTGItDMljiIA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Mobile.BFF\\ProjectAlpha.Mobile.BFF.csproj",
+  "projectFilePath": "C:\\Users\\Remsi\\Desktop\\Des\\Tryout\\ProjectAlpha.Mobile.BFF\\ProjectAlpha.Mobile.BFF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Remsi\\.nuget\\packages\\aspnetcore.healthchecks.uris\\8.0.0\\aspnetcore.healthchecks.uris.8.0.0.nupkg.sha512",
     "C:\\Users\\Remsi\\.nuget\\packages\\dapr.aspnetcore\\1.12.0\\dapr.aspnetcore.1.12.0.nupkg.sha512",

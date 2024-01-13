@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "ProjectAlpha.AppHost/1.0.0": {
         "dependencies": {
-          "Aspire.Hosting": "8.0.0-preview.1.23557.2",
+          "Aspire.Hosting": "8.0.0-preview.2.23619.3",
           "Aspire.Hosting.Dapr": "8.0.0-preview.1.23557.2",
           "Microsoft.AspNetCore.JsonPatch": "8.0.0",
           "ProjectAlpha.Catalog": "1.0.0",
@@ -20,30 +20,30 @@
           "ProjectAlpha.AppHost.dll": {}
         }
       },
-      "Aspire.Dashboard/8.0.0-preview.1.23557.2": {
+      "Aspire.Dashboard/8.0.0-preview.2.23619.3": {
         "dependencies": {
-          "Grpc.AspNetCore": "2.58.0-pre1",
+          "Grpc.AspNetCore": "2.59.0",
           "Humanizer.Core": "2.14.1",
-          "Microsoft.FluentUI.AspNetCore.Components": "4.0.0-preview.2",
-          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.0.0-preview.2"
+          "Microsoft.FluentUI.AspNetCore.Components": "4.1.1",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.1.0"
         },
         "runtime": {
           "lib/net8.0/Aspire.Dashboard.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.55702"
+            "fileVersion": "8.0.23.61903"
           }
         }
       },
-      "Aspire.Hosting/8.0.0-preview.1.23557.2": {
+      "Aspire.Hosting/8.0.0-preview.2.23619.3": {
         "dependencies": {
-          "Aspire.Dashboard": "8.0.0-preview.1.23557.2",
-          "KubernetesClient": "11.0.36",
+          "Aspire.Dashboard": "8.0.0-preview.2.23619.3",
+          "KubernetesClient": "12.1.1",
           "Microsoft.Extensions.Hosting": "8.0.0"
         },
         "runtime": {
           "lib/net8.0/Aspire.Hosting.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.55702"
+            "fileVersion": "8.0.23.61903"
           }
         },
         "resources": {
@@ -90,7 +90,7 @@
       },
       "Aspire.Hosting.Dapr/8.0.0-preview.1.23557.2": {
         "dependencies": {
-          "Aspire.Hosting": "8.0.0-preview.1.23557.2"
+          "Aspire.Hosting": "8.0.0-preview.2.23619.3"
         },
         "runtime": {
           "lib/net8.0/Aspire.Hosting.Dapr.dll": {
@@ -201,7 +201,7 @@
       "Dapr.AspNetCore/1.12.0": {
         "dependencies": {
           "Dapr.Client": "1.12.0",
-          "System.IO.Pipelines": "8.0.0-rc.2.23479.6"
+          "System.IO.Pipelines": "8.0.0"
         },
         "runtime": {
           "lib/net6.0/Dapr.AspNetCore.dll": {
@@ -214,7 +214,7 @@
         "dependencies": {
           "Google.Api.CommonProtos": "2.2.0",
           "Google.Protobuf": "3.23.1",
-          "Grpc.Net.Client": "2.58.0-pre1",
+          "Grpc.Net.Client": "2.59.0",
           "System.Net.Http.Json": "5.0.0"
         },
         "runtime": {
@@ -251,80 +251,80 @@
           }
         }
       },
-      "Grpc.AspNetCore/2.58.0-pre1": {
+      "Grpc.AspNetCore/2.59.0": {
         "dependencies": {
           "Google.Protobuf": "3.23.1",
-          "Grpc.AspNetCore.Server.ClientFactory": "2.58.0-pre1",
-          "Grpc.Tools": "2.58.0"
+          "Grpc.AspNetCore.Server.ClientFactory": "2.59.0",
+          "Grpc.Tools": "2.59.0"
         }
       },
-      "Grpc.AspNetCore.Server/2.58.0-pre1": {
+      "Grpc.AspNetCore.Server/2.59.0": {
         "dependencies": {
-          "Grpc.Net.Common": "2.58.0-pre1"
+          "Grpc.Net.Common": "2.59.0"
         },
         "runtime": {
           "lib/net8.0/Grpc.AspNetCore.Server.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.58.0.0"
+            "fileVersion": "2.59.0.0"
           }
         }
       },
-      "Grpc.AspNetCore.Server.ClientFactory/2.58.0-pre1": {
+      "Grpc.AspNetCore.Server.ClientFactory/2.59.0": {
         "dependencies": {
-          "Grpc.AspNetCore.Server": "2.58.0-pre1",
-          "Grpc.Net.ClientFactory": "2.58.0-pre1"
+          "Grpc.AspNetCore.Server": "2.59.0",
+          "Grpc.Net.ClientFactory": "2.59.0"
         },
         "runtime": {
           "lib/net8.0/Grpc.AspNetCore.Server.ClientFactory.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.58.0.0"
+            "fileVersion": "2.59.0.0"
           }
         }
       },
-      "Grpc.Core.Api/2.58.0-pre1": {
+      "Grpc.Core.Api/2.59.0": {
         "runtime": {
           "lib/netstandard2.1/Grpc.Core.Api.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.58.0.0"
+            "fileVersion": "2.59.0.0"
           }
         }
       },
-      "Grpc.Net.Client/2.58.0-pre1": {
+      "Grpc.Net.Client/2.59.0": {
         "dependencies": {
-          "Grpc.Net.Common": "2.58.0-pre1",
+          "Grpc.Net.Common": "2.59.0",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0"
         },
         "runtime": {
           "lib/net8.0/Grpc.Net.Client.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.58.0.0"
+            "fileVersion": "2.59.0.0"
           }
         }
       },
-      "Grpc.Net.ClientFactory/2.58.0-pre1": {
+      "Grpc.Net.ClientFactory/2.59.0": {
         "dependencies": {
-          "Grpc.Net.Client": "2.58.0-pre1",
+          "Grpc.Net.Client": "2.59.0",
           "Microsoft.Extensions.Http": "8.0.0"
         },
         "runtime": {
           "lib/net8.0/Grpc.Net.ClientFactory.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.58.0.0"
+            "fileVersion": "2.59.0.0"
           }
         }
       },
-      "Grpc.Net.Common/2.58.0-pre1": {
+      "Grpc.Net.Common/2.59.0": {
         "dependencies": {
-          "Grpc.Core.Api": "2.58.0-pre1"
+          "Grpc.Core.Api": "2.59.0"
         },
         "runtime": {
           "lib/net8.0/Grpc.Net.Common.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.58.0.0"
+            "fileVersion": "2.59.0.0"
           }
         }
       },
-      "Grpc.Tools/2.58.0": {},
+      "Grpc.Tools/2.59.0": {},
       "Humanizer.Core/2.14.1": {
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
@@ -353,42 +353,18 @@
           }
         }
       },
-      "KubernetesClient/11.0.36": {
+      "KubernetesClient/12.1.1": {
         "dependencies": {
+          "Fractions": "7.2.1",
           "IdentityModel.OidcClient": "5.2.1",
-          "KubernetesClient.Basic": "11.0.36",
-          "KubernetesClient.Models": "11.0.36",
           "System.IdentityModel.Tokens.Jwt": "7.0.3",
-          "prometheus-net": "8.0.0"
+          "YamlDotNet": "13.3.1",
+          "prometheus-net": "8.0.1"
         },
         "runtime": {
           "lib/net7.0/KubernetesClient.dll": {
-            "assemblyVersion": "11.0.0.0",
-            "fileVersion": "11.0.36.24825"
-          }
-        }
-      },
-      "KubernetesClient.Basic/11.0.36": {
-        "dependencies": {
-          "KubernetesClient.Models": "11.0.36"
-        },
-        "runtime": {
-          "lib/net7.0/KubernetesClient.Basic.dll": {
-            "assemblyVersion": "11.0.0.0",
-            "fileVersion": "11.0.36.24825"
-          }
-        }
-      },
-      "KubernetesClient.Models/11.0.36": {
-        "dependencies": {
-          "Fractions": "7.2.1",
-          "System.Text.Json": "8.0.0",
-          "YamlDotNet": "13.1.1"
-        },
-        "runtime": {
-          "lib/net7.0/KubernetesClient.Models.dll": {
-            "assemblyVersion": "11.0.0.0",
-            "fileVersion": "11.0.36.24825"
+            "assemblyVersion": "12.1.0.0",
+            "fileVersion": "12.1.1.319"
           }
         }
       },
@@ -434,33 +410,33 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Authorization/8.0.0-rc.2.23480.2": {
+      "Microsoft.AspNetCore.Authorization/8.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Metadata": "8.0.0-rc.2.23480.2",
+          "Microsoft.AspNetCore.Metadata": "8.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
           "Microsoft.Extensions.Options": "8.0.0"
         }
       },
-      "Microsoft.AspNetCore.Components/8.0.0-rc.2.23480.2": {
+      "Microsoft.AspNetCore.Components/8.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Authorization": "8.0.0-rc.2.23480.2",
-          "Microsoft.AspNetCore.Components.Analyzers": "8.0.0-rc.2.23480.2"
+          "Microsoft.AspNetCore.Authorization": "8.0.0",
+          "Microsoft.AspNetCore.Components.Analyzers": "8.0.0"
         }
       },
-      "Microsoft.AspNetCore.Components.Analyzers/8.0.0-rc.2.23480.2": {},
-      "Microsoft.AspNetCore.Components.Forms/8.0.0-rc.2.23480.2": {
+      "Microsoft.AspNetCore.Components.Analyzers/8.0.0": {},
+      "Microsoft.AspNetCore.Components.Forms/8.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "8.0.0-rc.2.23480.2"
+          "Microsoft.AspNetCore.Components": "8.0.0"
         }
       },
-      "Microsoft.AspNetCore.Components.Web/8.0.0-rc.2.23480.2": {
+      "Microsoft.AspNetCore.Components.Web/8.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "8.0.0-rc.2.23480.2",
-          "Microsoft.AspNetCore.Components.Forms": "8.0.0-rc.2.23480.2",
+          "Microsoft.AspNetCore.Components": "8.0.0",
+          "Microsoft.AspNetCore.Components.Forms": "8.0.0",
           "Microsoft.Extensions.DependencyInjection": "8.0.0",
           "Microsoft.Extensions.Primitives": "8.0.0",
-          "Microsoft.JSInterop": "8.0.0-rc.2.23480.2",
-          "System.IO.Pipelines": "8.0.0-rc.2.23479.6"
+          "Microsoft.JSInterop": "8.0.0",
+          "System.IO.Pipelines": "8.0.0"
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/8.0.0-rc.2.23480.2": {},
@@ -488,7 +464,7 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Metadata/8.0.0-rc.2.23480.2": {},
+      "Microsoft.AspNetCore.Metadata/8.0.0": {},
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson/8.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.JsonPatch": "8.0.0",
@@ -1049,28 +1025,28 @@
           }
         }
       },
-      "Microsoft.FluentUI.AspNetCore.Components/4.0.0-preview.2": {
+      "Microsoft.FluentUI.AspNetCore.Components/4.1.1": {
         "dependencies": {
-          "Microsoft.AspNetCore.Components.Web": "8.0.0-rc.2.23480.2",
+          "Microsoft.AspNetCore.Components.Web": "8.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "8.0.0",
           "Microsoft.Extensions.Http": "8.0.0"
         },
         "runtime": {
           "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
-            "assemblyVersion": "3.2.1.23298",
-            "fileVersion": "3.2.1.23298"
+            "assemblyVersion": "4.1.1.23334",
+            "fileVersion": "4.1.1.23334"
           }
         }
       },
-      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.0.0-preview.2": {
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.1.0": {
         "dependencies": {
-          "Microsoft.FluentUI.AspNetCore.Components": "4.0.0-preview.2"
+          "Microsoft.FluentUI.AspNetCore.Components": "4.1.1"
         },
         "runtime": {
           "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {
-            "assemblyVersion": "3.2.1.23298",
-            "fileVersion": "3.2.1.23298"
+            "assemblyVersion": "4.1.0.23332",
+            "fileVersion": "4.1.0.23332"
           }
         }
       },
@@ -1317,7 +1293,7 @@
           }
         }
       },
-      "Microsoft.JSInterop/8.0.0-rc.2.23480.2": {},
+      "Microsoft.JSInterop/8.0.0": {},
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
       "Microsoft.OpenApi/1.4.3": {
@@ -1403,7 +1379,7 @@
       "OpenTelemetry.Exporter.OpenTelemetryProtocol/1.7.0-alpha.1": {
         "dependencies": {
           "Google.Protobuf": "3.23.1",
-          "Grpc.Net.Client": "2.58.0-pre1",
+          "Grpc.Net.Client": "2.59.0",
           "OpenTelemetry": "1.7.0-alpha.1"
         },
         "runtime": {
@@ -1503,7 +1479,7 @@
           }
         }
       },
-      "prometheus-net/8.0.0": {
+      "prometheus-net/8.0.1": {
         "dependencies": {
           "Microsoft.Extensions.Http": "8.0.0",
           "Microsoft.Extensions.ObjectPool": "8.0.0"
@@ -1511,7 +1487,7 @@
         "runtime": {
           "lib/net7.0/Prometheus.NetStandard.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.0.0"
+            "fileVersion": "8.0.1.0"
           }
         }
       },
@@ -1650,7 +1626,7 @@
           }
         }
       },
-      "System.IO.Pipelines/8.0.0-rc.2.23479.6": {},
+      "System.IO.Pipelines/8.0.0": {},
       "System.Linq/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -1866,11 +1842,11 @@
           }
         }
       },
-      "YamlDotNet/13.1.1": {
+      "YamlDotNet/13.3.1": {
         "runtime": {
           "lib/net7.0/YamlDotNet.dll": {
             "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.1.1.0"
+            "fileVersion": "13.3.1.0"
           }
         }
       },
@@ -1968,19 +1944,19 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Aspire.Dashboard/8.0.0-preview.1.23557.2": {
+    "Aspire.Dashboard/8.0.0-preview.2.23619.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MItvnmkWswx27yJZ2CKGzp62uq/AhcuPjB0iZuTu1WSsFwaTLhsLhecskzXW4sDibt9zbNiUYTmPMbAnoxMLCA==",
-      "path": "aspire.dashboard/8.0.0-preview.1.23557.2",
-      "hashPath": "aspire.dashboard.8.0.0-preview.1.23557.2.nupkg.sha512"
+      "sha512": "sha512-OiCWaeUhMe+mNl3OWlruljXF5vRxPLsHqbRG/c87ovJOc89NlCRwZ9uj6CCQ8vf9DC70nkhXmO5TWRWIuEoyPQ==",
+      "path": "aspire.dashboard/8.0.0-preview.2.23619.3",
+      "hashPath": "aspire.dashboard.8.0.0-preview.2.23619.3.nupkg.sha512"
     },
-    "Aspire.Hosting/8.0.0-preview.1.23557.2": {
+    "Aspire.Hosting/8.0.0-preview.2.23619.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-w0QkT9BmYbbG9IWzkaIud1rj+P+HozT7J0hnnypfYwWY3B86FZ/R2pkhzlUqE9mLjwQ7cl6OQ9+TIh7Qp8VQGQ==",
-      "path": "aspire.hosting/8.0.0-preview.1.23557.2",
-      "hashPath": "aspire.hosting.8.0.0-preview.1.23557.2.nupkg.sha512"
+      "sha512": "sha512-VabTidi5gcapnvptBJrf+EqhTffvKEDZdd/xdRx06bZzATmzq0HqFtBzi54TxRnmaB7sFscjGaSLfn5cqC1qZA==",
+      "path": "aspire.hosting/8.0.0-preview.2.23619.3",
+      "hashPath": "aspire.hosting.8.0.0-preview.2.23619.3.nupkg.sha512"
     },
     "Aspire.Hosting.Dapr/8.0.0-preview.1.23557.2": {
       "type": "package",
@@ -2073,61 +2049,61 @@
       "path": "google.protobuf/3.23.1",
       "hashPath": "google.protobuf.3.23.1.nupkg.sha512"
     },
-    "Grpc.AspNetCore/2.58.0-pre1": {
+    "Grpc.AspNetCore/2.59.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-aJ3RM/vAdp/wX5L/C8CFazW+j7y6zwjavKqNSNQ5dRgJk2qUJB67yUpFzwk5XcFO+IlNhUA9Bt3e/FAH4ieV2Q==",
-      "path": "grpc.aspnetcore/2.58.0-pre1",
-      "hashPath": "grpc.aspnetcore.2.58.0-pre1.nupkg.sha512"
+      "sha512": "sha512-7QEAnzHGc+Tln4SX2kCp4zONH+59UdEgjveX0qs8aIRic3isqasTNjz+OTZCYK/bWk1I6769GlWTz7gxJ+nmDQ==",
+      "path": "grpc.aspnetcore/2.59.0",
+      "hashPath": "grpc.aspnetcore.2.59.0.nupkg.sha512"
     },
-    "Grpc.AspNetCore.Server/2.58.0-pre1": {
+    "Grpc.AspNetCore.Server/2.59.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-p1A+BNeKP2QRJrkBO2GMn6WnuAq1OGdWWMsilSN/lY6ce32j+Rna32uBA7VveaVQ/LXdtzTs+pUN2oy+14+mEw==",
-      "path": "grpc.aspnetcore.server/2.58.0-pre1",
-      "hashPath": "grpc.aspnetcore.server.2.58.0-pre1.nupkg.sha512"
+      "sha512": "sha512-Q4P1ZzygF67uJYdU4rbgxs2ISL+xCRT74WosFpCPpgj6OeMSLRwjLU1aOhIMmr9kHrFCMV9vNg6qx4RsXD+92g==",
+      "path": "grpc.aspnetcore.server/2.59.0",
+      "hashPath": "grpc.aspnetcore.server.2.59.0.nupkg.sha512"
     },
-    "Grpc.AspNetCore.Server.ClientFactory/2.58.0-pre1": {
+    "Grpc.AspNetCore.Server.ClientFactory/2.59.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hY2NU0Z5UabdKyJ+CXg2XNiK8Kv56MQm481vIVPnN4eMWfhMAgx5bEiTGNZdju052VTBMxy7nJ5gI5R5VhavGw==",
-      "path": "grpc.aspnetcore.server.clientfactory/2.58.0-pre1",
-      "hashPath": "grpc.aspnetcore.server.clientfactory.2.58.0-pre1.nupkg.sha512"
+      "sha512": "sha512-TbEeNpvSzcxxdxCEs2Y1ru8IuHwriBmDdvteUhVAkLv1tduccEjov8IrgcQ/NffJJwKXqDTVss6gFxZKMFPqww==",
+      "path": "grpc.aspnetcore.server.clientfactory/2.59.0",
+      "hashPath": "grpc.aspnetcore.server.clientfactory.2.59.0.nupkg.sha512"
     },
-    "Grpc.Core.Api/2.58.0-pre1": {
+    "Grpc.Core.Api/2.59.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-CLZAij2d1Tt71AWtpqihMIyxAvTm98m9vmf7w3m8agTA37EsNGsyFXMPpZKbEjcXbZ+jBpBfaL+iyVtXp6O6Ew==",
-      "path": "grpc.core.api/2.58.0-pre1",
-      "hashPath": "grpc.core.api.2.58.0-pre1.nupkg.sha512"
+      "sha512": "sha512-n0QpwXqri/Uu7pXWbE6PWVANEhKggC6QRX7qsSR4vyzZRDN2jBPoUNvrJP7RBw7g8Dgg8e2bWYuGKq4ph6VXeA==",
+      "path": "grpc.core.api/2.59.0",
+      "hashPath": "grpc.core.api.2.59.0.nupkg.sha512"
     },
-    "Grpc.Net.Client/2.58.0-pre1": {
+    "Grpc.Net.Client/2.59.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8CLnyB7hL457aYDMirAF5II3pXe6jGIc5GebRVLadEjvfAOmdp8BBtRba3tADXuNymGF8jBgpfCx6pIIfpE28g==",
-      "path": "grpc.net.client/2.58.0-pre1",
-      "hashPath": "grpc.net.client.2.58.0-pre1.nupkg.sha512"
+      "sha512": "sha512-I2CP5aLTek9mz7OwmM8T94pzvuV2Jib91KqzHh+vohazx/rL0ks1GCsUrwf+7866UsSsOznaWRKqFxWPEYstpg==",
+      "path": "grpc.net.client/2.59.0",
+      "hashPath": "grpc.net.client.2.59.0.nupkg.sha512"
     },
-    "Grpc.Net.ClientFactory/2.58.0-pre1": {
+    "Grpc.Net.ClientFactory/2.59.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6+eyb9DbAv6HShFDUhjshKng81EGZMkfad5aE03wUshqAS01M39Fp2xQeEoIR+uAKcwdpaH6Nz+ccqFUYqNlFw==",
-      "path": "grpc.net.clientfactory/2.58.0-pre1",
-      "hashPath": "grpc.net.clientfactory.2.58.0-pre1.nupkg.sha512"
+      "sha512": "sha512-6vGLuKWpDzHbjjXgLV7cWRw+GorjUxnizzOWqiHvyz0U9lV/kzStrUE3sBqYoGv0B1Z3Yq5WfaAy2mt9o5pAlA==",
+      "path": "grpc.net.clientfactory/2.59.0",
+      "hashPath": "grpc.net.clientfactory.2.59.0.nupkg.sha512"
     },
-    "Grpc.Net.Common/2.58.0-pre1": {
+    "Grpc.Net.Common/2.59.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2Fpk1VyUherTMF5wngRhAH9vCSNX0RwBJMgVnbypZCfPbdpDEJaYaChix6Z7q8p8ShpcaEj2aPR4HNakuO5HBw==",
-      "path": "grpc.net.common/2.58.0-pre1",
-      "hashPath": "grpc.net.common.2.58.0-pre1.nupkg.sha512"
+      "sha512": "sha512-9j1wKAeCzjnx/j8CC8chXRoLCuzJ9VhhlhwMkbW37mS1Ox4vv0i2pcefpDY5INIeE1BmPNIuPtqFLOUktkiKrQ==",
+      "path": "grpc.net.common/2.59.0",
+      "hashPath": "grpc.net.common.2.59.0.nupkg.sha512"
     },
-    "Grpc.Tools/2.58.0": {
+    "Grpc.Tools/2.59.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jWGgCVsBiBozXqKNyGXXumqDrJiu7PLShPul0UGq6II6DV1fvcCLXtQpL/N/7UJ8cyyZLqru1/DRPe/NCkw5NQ==",
-      "path": "grpc.tools/2.58.0",
-      "hashPath": "grpc.tools.2.58.0.nupkg.sha512"
+      "sha512": "sha512-LzL71SCmx62zh6YMBOAEYxzK7LlhHYsBADnawyn8u3n/HL6qntZtGN2ep69T734zBQKWPBQVbVdiIaqaqOfhXg==",
+      "path": "grpc.tools/2.59.0",
+      "hashPath": "grpc.tools.2.59.0.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",
@@ -2150,26 +2126,12 @@
       "path": "identitymodel.oidcclient/5.2.1",
       "hashPath": "identitymodel.oidcclient.5.2.1.nupkg.sha512"
     },
-    "KubernetesClient/11.0.36": {
+    "KubernetesClient/12.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-++JqZw2pLLp0EYDWOnwezuib6xa07pWTbrNWVN/b9FZeHCjJEvhJ5PvseAIODbA1hBNoJnbUTjVTHZ1IszTw+g==",
-      "path": "kubernetesclient/11.0.36",
-      "hashPath": "kubernetesclient.11.0.36.nupkg.sha512"
-    },
-    "KubernetesClient.Basic/11.0.36": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ne0jYGHmElJxpew/qOBy9IiVEb+MiTu4/gK97s+lcoAfsZpw6zLBEQa+Fdh8sYI9OvwZb4nhIfuIudA/H1F0hg==",
-      "path": "kubernetesclient.basic/11.0.36",
-      "hashPath": "kubernetesclient.basic.11.0.36.nupkg.sha512"
-    },
-    "KubernetesClient.Models/11.0.36": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-3SgjosRlGQebG2rAzeBZAl0XhSJ3db+7uWa/HA0SquEXeORkSAJbuRj959hSxwPjxCcIwkVmrdIpMp6Pap7CVg==",
-      "path": "kubernetesclient.models/11.0.36",
-      "hashPath": "kubernetesclient.models.11.0.36.nupkg.sha512"
+      "sha512": "sha512-Xvc6Kr/W5YUxlMDzy0R80zy+Vd66brS7fSA4COGXu8KZACKPW7+KKS7kxZBLaFYGrUcktXOHpqNNuoukSGcK6A==",
+      "path": "kubernetesclient/12.1.1",
+      "hashPath": "kubernetesclient.12.1.1.nupkg.sha512"
     },
     "LanguageExt.Core/4.4.7": {
       "type": "package",
@@ -2192,40 +2154,40 @@
       "path": "microsoft.aspnetcore.authentication.openidconnect/8.0.0",
       "hashPath": "microsoft.aspnetcore.authentication.openidconnect.8.0.0.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Authorization/8.0.0-rc.2.23480.2": {
+    "Microsoft.AspNetCore.Authorization/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-xAOAdtdIVpNzwI5kOyTPIQQ+ju3UyQQ6bcNmikE3829D0C/lz3sjLVg0hd8wkCMQlPJB2XMKtFDvbO95w9QaoQ==",
-      "path": "microsoft.aspnetcore.authorization/8.0.0-rc.2.23480.2",
-      "hashPath": "microsoft.aspnetcore.authorization.8.0.0-rc.2.23480.2.nupkg.sha512"
+      "sha512": "sha512-OGIGJMnlWvQgcweHcv1Mq/P24Zx/brUHeEdD05NzqkSXmQSnFomTvVyCuBtCXT4JPfv2m70y1RSocmd9bIbJRg==",
+      "path": "microsoft.aspnetcore.authorization/8.0.0",
+      "hashPath": "microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components/8.0.0-rc.2.23480.2": {
+    "Microsoft.AspNetCore.Components/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4jf+GHRs364/1uNYbf2l6CqV3oQZKlfLNj/H+6x8dOyb58Q7Ubu0Nskh5OCN9b3sf9A28IVZjpdiQQcjt/JQ7Q==",
-      "path": "microsoft.aspnetcore.components/8.0.0-rc.2.23480.2",
-      "hashPath": "microsoft.aspnetcore.components.8.0.0-rc.2.23480.2.nupkg.sha512"
+      "sha512": "sha512-kqspqWo3lT+rrSd39kvrV7SZYl0znYZQbQ8SJaHjDA8ffMPV6BkfVe0i6LvxRPwq/agwSWdIDq2j4x+78Frypg==",
+      "path": "microsoft.aspnetcore.components/8.0.0",
+      "hashPath": "microsoft.aspnetcore.components.8.0.0.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components.Analyzers/8.0.0-rc.2.23480.2": {
+    "Microsoft.AspNetCore.Components.Analyzers/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-PmiE8RAInFD9E58WgxJYvRxcGUnPWAdkUKfR+gMVV5a6Xa9v1qoSOrQcsXHOc8z8wHqFvkXNruN6pLfdAJWUOA==",
-      "path": "microsoft.aspnetcore.components.analyzers/8.0.0-rc.2.23480.2",
-      "hashPath": "microsoft.aspnetcore.components.analyzers.8.0.0-rc.2.23480.2.nupkg.sha512"
+      "sha512": "sha512-lJMa9kQDw3vkqcMMbuicIpyax7QH6imQFbLRzVqJzrGs5LN954IPaJVkDzRCEXFVAN24Cml6g4mEF3b0D7Oa+Q==",
+      "path": "microsoft.aspnetcore.components.analyzers/8.0.0",
+      "hashPath": "microsoft.aspnetcore.components.analyzers.8.0.0.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components.Forms/8.0.0-rc.2.23480.2": {
+    "Microsoft.AspNetCore.Components.Forms/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DnOJ+JfZHEKvriwOd8bydftp71C7W2yvZwkHnqh8O6b/RtBfVDimYZvCvriCdq1ol6odlIMzOq5CEaWi2mlkkQ==",
-      "path": "microsoft.aspnetcore.components.forms/8.0.0-rc.2.23480.2",
-      "hashPath": "microsoft.aspnetcore.components.forms.8.0.0-rc.2.23480.2.nupkg.sha512"
+      "sha512": "sha512-iiYB/7Sl/vTURO4EiTUCmfIXujlJOl+Gh7nknCFhvFQ+kKMFFXYcrszYwLN9aQSolpswc/A9a78KL59/UIezig==",
+      "path": "microsoft.aspnetcore.components.forms/8.0.0",
+      "hashPath": "microsoft.aspnetcore.components.forms.8.0.0.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components.Web/8.0.0-rc.2.23480.2": {
+    "Microsoft.AspNetCore.Components.Web/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mk1wFk0gHOWuXG6g5ToBGm5aoBs0T9eoa1IKshHrfRi3/LwUi9McGR9p/iIOqjOgzy/VPyxQ0SbUkOXTsdY6mA==",
-      "path": "microsoft.aspnetcore.components.web/8.0.0-rc.2.23480.2",
-      "hashPath": "microsoft.aspnetcore.components.web.8.0.0-rc.2.23480.2.nupkg.sha512"
+      "sha512": "sha512-aokUKvFoNqxR6bf0+iKrDfQ79OLHWYn5UGYp5MU65/il1vuRK7MAF18oGj7QgiZJUu3cMAZjCFkHbsWLhQxCsA==",
+      "path": "microsoft.aspnetcore.components.web/8.0.0",
+      "hashPath": "microsoft.aspnetcore.components.web.8.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/8.0.0-rc.2.23480.2": {
       "type": "package",
@@ -2255,12 +2217,12 @@
       "path": "microsoft.aspnetcore.jsonpatch/8.0.0",
       "hashPath": "microsoft.aspnetcore.jsonpatch.8.0.0.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Metadata/8.0.0-rc.2.23480.2": {
+    "Microsoft.AspNetCore.Metadata/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-CSiTQrFAevRGJ4R9FRVppDz9Ms4uFHMU9cVhmg7UByaMz5+qGOgr1aTw2deHOdXr1bkIdnn0zFHefoKbbXT8Fw==",
-      "path": "microsoft.aspnetcore.metadata/8.0.0-rc.2.23480.2",
-      "hashPath": "microsoft.aspnetcore.metadata.8.0.0-rc.2.23480.2.nupkg.sha512"
+      "sha512": "sha512-OmuSztiZMitRTYlbMNDkBk3BinSsVcOApSNBAsrw+KYNJh6ALarPhWLlKdtvMgrKzpyCY06xtLAjTmQLURHSlQ==",
+      "path": "microsoft.aspnetcore.metadata/8.0.0",
+      "hashPath": "microsoft.aspnetcore.metadata.8.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.NewtonsoftJson/8.0.0": {
       "type": "package",
@@ -2675,19 +2637,19 @@
       "path": "microsoft.extensions.telemetry.abstractions/8.0.0",
       "hashPath": "microsoft.extensions.telemetry.abstractions.8.0.0.nupkg.sha512"
     },
-    "Microsoft.FluentUI.AspNetCore.Components/4.0.0-preview.2": {
+    "Microsoft.FluentUI.AspNetCore.Components/4.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cCAw6Fj6biDKu8M2Tn1uWm3QtC4E2kgJkiRq6HVjKiyP2z3oSq/aQZ5uyWXT2gu/+S0vhZaa7voGJJtL9kN11Q==",
-      "path": "microsoft.fluentui.aspnetcore.components/4.0.0-preview.2",
-      "hashPath": "microsoft.fluentui.aspnetcore.components.4.0.0-preview.2.nupkg.sha512"
+      "sha512": "sha512-WwnAxrcGxw81hXqvIDOiZhL4cB6Ma//PTr/jgJYDyueFFz/7KsU5QTkrNQiPlfb/YoYGeou8MdCmjPdgGMUdZw==",
+      "path": "microsoft.fluentui.aspnetcore.components/4.1.1",
+      "hashPath": "microsoft.fluentui.aspnetcore.components.4.1.1.nupkg.sha512"
     },
-    "Microsoft.FluentUI.AspNetCore.Components.Icons/4.0.0-preview.2": {
+    "Microsoft.FluentUI.AspNetCore.Components.Icons/4.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7E6l12NKYLVnKx/Vja0Gou6rRw+AmDFk6hDfC+gu3Kh+naGmMrCES04C9Jsa/nZ4sBUwMnMfRI/AfrSrwJWOvw==",
-      "path": "microsoft.fluentui.aspnetcore.components.icons/4.0.0-preview.2",
-      "hashPath": "microsoft.fluentui.aspnetcore.components.icons.4.0.0-preview.2.nupkg.sha512"
+      "sha512": "sha512-oSR+yTERXlgz9+wlMQuCp1l3ReKe4hGqLyWN/ZpR+EbpTtNpFZZIex9mKM+G0kAebaRfhuBTokXRN5hKPVBqcg==",
+      "path": "microsoft.fluentui.aspnetcore.components.icons/4.1.0",
+      "hashPath": "microsoft.fluentui.aspnetcore.components.icons.4.1.0.nupkg.sha512"
     },
     "Microsoft.Identity.Abstractions/5.0.0": {
       "type": "package",
@@ -2822,12 +2784,12 @@
       "path": "microsoft.io.recyclablememorystream/2.3.2",
       "hashPath": "microsoft.io.recyclablememorystream.2.3.2.nupkg.sha512"
     },
-    "Microsoft.JSInterop/8.0.0-rc.2.23480.2": {
+    "Microsoft.JSInterop/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-M79UbenuwsdheBK/oH+muTZwfVlmTjRH0P8+a7BjYWqha3n6VUBslWfe1K72eOU7hrwFuLkFU/1pXtZ35UBbpA==",
-      "path": "microsoft.jsinterop/8.0.0-rc.2.23480.2",
-      "hashPath": "microsoft.jsinterop.8.0.0-rc.2.23480.2.nupkg.sha512"
+      "sha512": "sha512-qQqASbHxWIddssdEBKUQ/49j21SEstiho6VAepPQa9eISLCBCE6wq0m3YaB6cpdF5U+AWX5F3FvDfmssql3xtw==",
+      "path": "microsoft.jsinterop/8.0.0",
+      "hashPath": "microsoft.jsinterop.8.0.0.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
@@ -2962,12 +2924,12 @@
       "path": "polly.ratelimiting/8.0.0",
       "hashPath": "polly.ratelimiting.8.0.0.nupkg.sha512"
     },
-    "prometheus-net/8.0.0": {
+    "prometheus-net/8.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tUz6ScbA4J193hT1xUxTXQuEAZj8b5YUUrdUVIEXb6yYOZZEvPzs4zqFqI2iJW6aLmldMEiUqCFq93EOLvqITA==",
-      "path": "prometheus-net/8.0.0",
-      "hashPath": "prometheus-net.8.0.0.nupkg.sha512"
+      "sha512": "sha512-A9sOtQB2gEhujBxPKw+KcGScBiPvBmy4lYVM5OlETMj4xjVD5r/ixIg52HHg2P0lcImJTpfeWnD0/9tpQsRQTA==",
+      "path": "prometheus-net/8.0.1",
+      "hashPath": "prometheus-net.8.0.1.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.4.0": {
       "type": "package",
@@ -3095,12 +3057,12 @@
       "path": "system.io.hashing/7.0.0",
       "hashPath": "system.io.hashing.7.0.0.nupkg.sha512"
     },
-    "System.IO.Pipelines/8.0.0-rc.2.23479.6": {
+    "System.IO.Pipelines/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4bqn2Kj0keumJ0x3wdZtO1Ex/5Ppu01fP7Rtmn1uJBR08WWRKeKSX6U9a/BiEieE9JjhzapvhjPtFypE7ZIAyQ==",
-      "path": "system.io.pipelines/8.0.0-rc.2.23479.6",
-      "hashPath": "system.io.pipelines.8.0.0-rc.2.23479.6.nupkg.sha512"
+      "sha512": "sha512-FHNOatmUq0sqJOkTx+UF/9YK1f180cnW5FVqnQMvYUN0elp6wFzbtPSiqbo1/ru8ICp43JM1i7kKkk6GsNGHlA==",
+      "path": "system.io.pipelines/8.0.0",
+      "hashPath": "system.io.pipelines.8.0.0.nupkg.sha512"
     },
     "System.Linq/4.3.0": {
       "type": "package",
@@ -3333,12 +3295,12 @@
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
-    "YamlDotNet/13.1.1": {
+    "YamlDotNet/13.3.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3AS0fEwxOucP0h68JXMxfj3NyfgX9EOVE29NlKqKxWMHfKMAuZ7MWw5u362Bs6OALtnBTzi/JYIiMidQXoKVWw==",
-      "path": "yamldotnet/13.1.1",
-      "hashPath": "yamldotnet.13.1.1.nupkg.sha512"
+      "sha512": "sha512-Q2dqDsb0xAlr092grgHk8/vTXI2snIiYM5ND3IXkgJDFIdPnqDYwYnlk+gwzSeRByDLhiSzTog8uT7xFwH68Zg==",
+      "path": "yamldotnet/13.3.1",
+      "hashPath": "yamldotnet.13.3.1.nupkg.sha512"
     },
     "Yarp.ReverseProxy/2.1.0": {
       "type": "package",

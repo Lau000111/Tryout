@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S2oIAQ33yoLWDNK0+yK1OKkYllwrWeC8bW2FJWgajEOXVFNhDyPGmgo4nwdHKjGGXQnf0O/LoBZP+cOCIsPgog==",
+  "dgSpecHash": "TjRncdUwyS3nChMt8/SxCE1T2C+HOlfBXHtn65RIHwuVGi6pA9fe8H0ZOHqAvoERDhJ3ibepwbkpyKbbM8J9og==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Remsi\\Downloads\\Tryout-main\\Tryout-main\\ProjectAlpha.Catalog.FunctionalTests\\ProjectAlpha.Catalog.FunctionalTests.csproj",
+  "projectFilePath": "C:\\Users\\Remsi\\Desktop\\Des\\Tryout\\ProjectAlpha.Catalog.FunctionalTests\\ProjectAlpha.Catalog.FunctionalTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Remsi\\.nuget\\packages\\aspire.dashboard\\8.0.0-preview.1.23557.2\\aspire.dashboard.8.0.0-preview.1.23557.2.nupkg.sha512",
     "C:\\Users\\Remsi\\.nuget\\packages\\aspire.hosting\\8.0.0-preview.1.23557.2\\aspire.hosting.8.0.0-preview.1.23557.2.nupkg.sha512",
