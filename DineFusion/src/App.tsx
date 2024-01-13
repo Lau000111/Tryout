@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
@@ -32,54 +32,75 @@ import { ShoppingCartProvider } from './contexts/ShoppingCartContext';
 import PaymentPage from './pages/Payment';
 import MenuComponent from './components/MenuComponent';
 
+
 setupIonicReact();
 
-const App: React.FC = () => {
 
+const App: React.FC<{}> = () => {
+  // const weatherApi = process.env.REACT_APP_WEATHER_API;
+  // const [forecasts, setForecasts] = useState([]);
+  // console.log(weatherApi);
+
+  // const fetchData = async (weatherApi: string | undefined) => {
+  //   if (weatherApi) {
+  //     const weather = await fetch(weatherApi);
+  //     console.log(weather);
+
+  //     const weatherJson = await weather.json();
+  //     console.log(weatherJson);
+
+  //     setForecasts(weatherJson);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchData(weatherApi);
+  // }, [weatherApi]);
 
   return (
     <IonApp>
       <ShoppingCartProvider>
-      <IonReactRouter>
-      <MenuComponent />
-        <IonRouterOutlet>
-          <Router>
-            <Switch>
-            <RootLayout>
-              {/* public routes */}
-              <Route path="/sign-in">
-                <AuthLayout>
-                  <SignInForm />
-                </AuthLayout>
-              </Route>
-              
-              <Route path="/sign-up">
-                <AuthLayout>
-                  <SignUpForm />
-                </AuthLayout>
-              </Route>
+        <IonReactRouter>
+          <MenuComponent />
+          <IonRouterOutlet>
+            <Router>
+              <Switch>
+                <RootLayout>
+                  {/* public routes */}
+                  <Route path="/sign-in">
+                    <AuthLayout>
+                      <SignInForm />
+                    </AuthLayout>
+                  </Route>
 
-              {/* private routes */}
-              <Route path="/home">
-                  <Home />
-              </Route>
-              <Route path="/cart">
-                  <ShoppingCartPage />
-              </Route>
+                  <Route path="/sign-up">
+                    <AuthLayout>
+                      <SignUpForm />
+                    </AuthLayout>
+                  </Route>
 
-              <Route path="/payment" component={PaymentPage} exact />
-              {/* Redirect von der Root-Route */}
-              <Route exact path="/">
-                <Redirect to="/home" />
-              </Route>
-              </RootLayout>
-            </Switch>
-          </Router>
-        </IonRouterOutlet>
-      </IonReactRouter>
+                  {/* private routes */}
+                  <Route path="/home">
+                    <Home />
+                  </Route>
+                  <Route path="/cart">
+                    <ShoppingCartPage />
+                  </Route>
+
+                  <Route path="/payment" component={PaymentPage} exact />
+                  {/* Redirect von der Root-Route */}
+                  <Route exact path="/">
+                    <Redirect to="/home" />
+                  </Route>
+                </RootLayout>
+              </Switch>
+            </Router>
+          </IonRouterOutlet>
+        </IonReactRouter>
       </ShoppingCartProvider>
     </IonApp>
   );
 };
+
 
 export default App;

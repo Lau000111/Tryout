@@ -8,7 +8,7 @@ export default function SetupLayout({
 }: {
   children: React.ReactNode
 }) {
-  const [isChecking, setIsChecking] = useState(true);
+  const [isChecking, setIsChecking] = useState(false);
   // const { userId } = auth();
 
   // if (!userId) {

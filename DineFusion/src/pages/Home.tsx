@@ -10,6 +10,7 @@ import menuDataEn from '../menuData_en.json';
 import { useShoppingCart } from '../contexts/ShoppingCartContext';
 import { useHistory } from 'react-router-dom';
 import CategoryScroller from '../components/CategoryScroller';
+console.log(import.meta.env.REACT_APP_WEATHER_API); // Ausgabe: http://meineapi.de
 
 const Home: FC = () => {
   const [language, setLanguage] = useState(
