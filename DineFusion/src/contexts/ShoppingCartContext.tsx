@@ -9,13 +9,18 @@ type CartItem = {
   quantity: number;
 };
 
+type ExtendedItem = Item & {
+  quantity: number;
+};
+
+
 type ShoppingCartProviderProps = {
     children: React.ReactNode;
   };
 
 type ShoppingCartContextType = {
-  items: CartItem[];
-  setItems: React.Dispatch<React.SetStateAction<CartItem[]>>;
+  items: ExtendedItem[];
+  setItems: React.Dispatch<React.SetStateAction<ExtendedItem[]>>;
   totalAmount: number;
   setTotalAmount: React.Dispatch<React.SetStateAction<number>>;
 };
@@ -23,7 +28,7 @@ type ShoppingCartContextType = {
 const ShoppingCartContext = createContext<ShoppingCartContextType | undefined>(undefined);
 
 export const ShoppingCartProvider: React.FC<ShoppingCartProviderProps> = ({ children }) => {
-  const [items, setItems] = useState<CartItem[]>([]);
+  const [items, setItems] = useState<ExtendedItem[]>([]);
   const [totalAmount, setTotalAmount] = useState<number>(0);
 
   const calculateTotalAmount = () => {

@@ -4,9 +4,9 @@ import { IonButton, IonIcon, IonSegment, IonLabel, IonSegmentButton } from '@ion
 import { arrowBack, arrowForward } from 'ionicons/icons';
 
 interface CategoryScrollerProps {
-  categories: string[];
-  selectedCategory: string;
-  onCategoryChange: (newCategory: string) => void;
+  categories: Dish[];
+  selectedCategory: Dish;
+  onCategoryChange: (newCategory: Dish) => void;
 }
 
 const CategoryScroller: React.FC<CategoryScrollerProps> = ({ categories, selectedCategory, onCategoryChange }) => {
@@ -30,16 +30,16 @@ const CategoryScroller: React.FC<CategoryScrollerProps> = ({ categories, selecte
       </IonButton>
 
       <IonSegment
-        value={selectedCategory}
+        value={selectedCategory.name}
         onIonChange={e => {
           const newValue = String(e.detail.value);
-          onCategoryChange(newValue);
+          onCategoryChange(categories.find(category => category.name === newValue) || selectedCategory);
         }}
         scrollable
       >
         {categories.map((category, index) => (
-          <IonSegmentButton key={index} value={category} className={selectedCategory === category ? 'selected-category' : ''}>
-            <IonLabel style={{ fontSize: '1.0em', padding: '8px 16px' }}>{category}</IonLabel>
+          <IonSegmentButton key={index} value={category.name} className={selectedCategory === category ? 'selected-category' : ''}>
+            <IonLabel style={{ fontSize: '1.0em', padding: '8px 16px' }}>{category.name}</IonLabel>
           </IonSegmentButton>
         ))}
       </IonSegment>

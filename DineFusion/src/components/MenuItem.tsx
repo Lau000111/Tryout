@@ -4,7 +4,7 @@ import { add, addCircleOutline } from 'ionicons/icons';
 import { useShoppingCart } from '../contexts/ShoppingCartContext';
 
 interface MenuItemProps {
-  item: MenuItem;
+  item: Item;
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
@@ -13,7 +13,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
 
   const addToCart = () => {
     setItems((currentItems) => {
-      const existingItemIndex = currentItems.findIndex((cartItem) => cartItem.title === item.title);
+      const existingItemIndex = currentItems.findIndex((cartItem) => cartItem.name === item.name);
       if (existingItemIndex > -1) {
         const updatedItems = currentItems.slice();
         updatedItems[existingItemIndex] = {
@@ -40,7 +40,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
   return (
     <IonItem lines="none" style={glassEffectStyle} className="mb-2">
       <IonLabel className="ion-text-wrap">
-        <h2>{item.title}</h2>
+        <h2>{item.name}</h2>
         <p>{item.description}</p>
       </IonLabel>
       <div className="flex flex-col justify-center items-end">

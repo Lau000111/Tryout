@@ -36,10 +36,8 @@ import MenuComponent from './components/MenuComponent';
 setupIonicReact();
 
 
-const App: React.FC<{}> = () => {
-  // const weatherApi = process.env.REACT_APP_WEATHER_API;
-  // const [forecasts, setForecasts] = useState([]);
-  // console.log(weatherApi);
+const App: React.FC = () => {
+  // const weatherApi = `${import.meta.env.VITE_APP_PROJECTALPHA_CATALOG_API}/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d`;
 
   // const fetchData = async (weatherApi: string | undefined) => {
   //   if (weatherApi) {
@@ -49,7 +47,6 @@ const App: React.FC<{}> = () => {
   //     const weatherJson = await weather.json();
   //     console.log(weatherJson);
 
-  //     setForecasts(weatherJson);
   //   }
   // };
 
