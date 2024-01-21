@@ -3316,23 +3316,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Remsi\\.nuget\\packages\\": {},
+    "C:\\Users\\ilaza\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Remsi\\Desktop\\Des\\Tryout\\ProjectAlpha.Ordering\\ProjectAlpha.Ordering.csproj",
+      "projectUniqueName": "C:\\Users\\ilaza\\Documents\\GitHub\\Tryout\\ProjectAlpha.Ordering\\ProjectAlpha.Ordering.csproj",
       "projectName": "ProjectAlpha.Ordering",
-      "projectPath": "C:\\Users\\Remsi\\Desktop\\Des\\Tryout\\ProjectAlpha.Ordering\\ProjectAlpha.Ordering.csproj",
-      "packagesPath": "C:\\Users\\Remsi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Remsi\\Desktop\\Des\\Tryout\\ProjectAlpha.Ordering\\obj\\",
+      "projectPath": "C:\\Users\\ilaza\\Documents\\GitHub\\Tryout\\ProjectAlpha.Ordering\\ProjectAlpha.Ordering.csproj",
+      "packagesPath": "C:\\Users\\ilaza\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ilaza\\Documents\\GitHub\\Tryout\\ProjectAlpha.Ordering\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Remsi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ilaza\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3348,8 +3348,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Remsi\\Desktop\\Des\\Tryout\\ProjectAlpha.ServiceDefaults\\ProjectAlpha.ServiceDefaults.csproj": {
-              "projectPath": "C:\\Users\\Remsi\\Desktop\\Des\\Tryout\\ProjectAlpha.ServiceDefaults\\ProjectAlpha.ServiceDefaults.csproj"
+            "C:\\Users\\ilaza\\Documents\\GitHub\\Tryout\\ProjectAlpha.ServiceDefaults\\ProjectAlpha.ServiceDefaults.csproj": {
+              "projectPath": "C:\\Users\\ilaza\\Documents\\GitHub\\Tryout\\ProjectAlpha.ServiceDefaults\\ProjectAlpha.ServiceDefaults.csproj"
             }
           }
         }
@@ -3405,7 +3405,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

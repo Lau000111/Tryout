@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjectAlpha.Catalog.FunctionalTests
-build_property.ProjectDir = C:\Users\Remsi\Desktop\Des\Tryout\ProjectAlpha.Catalog.FunctionalTests\
+build_property.ProjectDir = C:\Users\ilaza\Documents\GitHub\Tryout\ProjectAlpha.Catalog.FunctionalTests\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
