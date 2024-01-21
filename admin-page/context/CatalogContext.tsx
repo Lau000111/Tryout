@@ -9,8 +9,8 @@ interface CatalogContextType {
   removeItem: (dishId: string) => void;
 }
 const initialCatalog: Catalog = {
-    Id: '', // oder einen passenden Anfangswert setzen
-    id: '', // oder einen passenden Anfangswert setzen
+    Id: '',
+    id: '',
     Dishes: [],
     _rid: '',
     _self: '',
@@ -25,6 +25,27 @@ export const CatalogContext = createContext<CatalogContextType | undefined>(unde
 export const CatalogProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [catalog, setCatalog] = useState<Catalog>(initialCatalog);
 
+      useEffect(() => {
+    const fetchDishes = async () => {
+      try {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_APP_PROJECTALPHA_CATALOG_API}/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d`);
+        const fetchedDishes = response.data.dishes.map((dish: Dish) => ({
+          ...dish,
+          Items: dish.Items.map(item => ({
+            ...item,
+            isFeatured: false, // hier kannst du Logik hinzufügen, um zu bestimmen, ob ein Item "featured" ist oder nicht
+          }))
+        }));
+
+        // Aktualisiere den Katalog im State
+        setCatalog({ ...initialCatalog, Dishes: fetchedDishes });
+      } catch (error) {
+        console.error('Fehler:', error);
+      }
+    };
+
+    fetchDishes(); // Rufe die Funktion beim Mounten des Komponenten auf
+  }, []);
   const addDishes = (newDishes: Dish[]) => {
     setCatalog({ ...catalog, Dishes: [...catalog.Dishes, ...newDishes] });
   };
@@ -46,23 +67,24 @@ export const CatalogProvider: React.FC<{ children: React.ReactNode }> = ({ child
   
 
 
-  useEffect(() => {
-    axios.get('http://localhost:5235/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d')
-      .then(response => {
-        const fetchedDishes = response.data.dishes.map((dish: { items: any[]; }) => ({
-            ...dish,
-            Items: dish.items.map(item => ({
-              ...item,
-              isFeatured: false, 
-            }))
-          }));
-          setCatalog({ ...initialCatalog, Dishes: fetchedDishes });
+  // useEffect(() => {
+  //   axios.get('${process.env.NEXT_PUBLIC_APP_PROJECTALPHA_CATALOG_API}/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d')
+  //     .then(response => {
+  //       const fetchedDishes = response.data.dishes.map((dish: { items: any[]; }) => ({
+  //           ...dish,
+  //           Items: dish.items.map(item => ({
+  //             ...item,
+  //             isFeatured: false, 
+  //           }))
+  //         }));
+  //         setCatalog({ ...initialCatalog, Dishes: fetchedDishes });
           
-      })
-      .catch(error => {
-        console.error('Fehler beim Abrufen des Katalogs:', error);
-      });
-  }, []);
+  //     })
+  //     .catch(error => {
+  //       console.error('Fehler beim Abrufen des Katalogs:', error);
+  //     });
+  // }, []);
+
   return (
     <CatalogContext.Provider value={{ catalog, addDishes, removeItem }}>
       {children}
