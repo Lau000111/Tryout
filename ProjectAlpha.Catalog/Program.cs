@@ -23,16 +23,7 @@ public partial class Program
                 connectionString: "AccountEndpoint=https://localhost:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==",
                 databaseName: "CatalogCosmosDb"));
 
-        builder.Services.AddCors(options =>
-        {
-            options.AddPolicy("MyAllowSpecificOrigins",
-            builder =>
-            {
-                builder.WithOrigins("http://localhost:3000") // Ersetze dies mit der URL deiner React-App
-                       .AllowAnyHeader()
-                       .AllowAnyMethod();
-            });
-        });
+
 
         /*builder.Services.AddDbContext<CatalogCosmosDbContext>(options =>
             options.UseCosmos(
@@ -74,8 +65,13 @@ public partial class Program
                 catalogCosmosDbContext.SeedDatabase();
         }
 
+        App.UseHttpsRedirection();
+        App.UseCors(static builder =>
+            builder.AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowAnyOrigin());
+
         App.UseRouting();
-        App.UseCors("MyAllowSpecificOrigins");
         App.MapControllers();
 
         App.Run();
