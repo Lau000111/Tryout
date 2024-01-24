@@ -104,22 +104,21 @@ export interface Store {
   }
 
   export interface Item {
-    Id: string;
-    Description: string;
-    Image: string;
-    Name: string;
-    Price: number;
+    id: string;
+    description: string;
+    image: string;
+    name: string;
+    price: number;
 }
 
 export interface Dish {
-    Name: string;
-    Items: Item[];
+    name: string;
+    items: Item[];
 }
 
 export interface Catalog {
-    Id: string;
-    id: string; // Sie haben zwei verschiedene 'id'-Felder. Stellen Sie sicher, dass dies beabsichtigt ist.
-    Dishes: Dish[];
+    id: string;
+    dishes: Dish[];
     _rid: string;
     _self: string;
     _etag: string;

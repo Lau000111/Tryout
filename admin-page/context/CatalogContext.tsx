@@ -7,6 +7,7 @@ interface CatalogContextType {
   catalog: Catalog;
   addDishes: (newDishes: Dish[]) => void;
   removeItem: (dishId: string) => void;
+  setCatalogData: (newCatalog: Catalog) => void
 }
 const initialCatalog: Catalog = {
     Id: '',
@@ -20,32 +21,12 @@ const initialCatalog: Catalog = {
   };
 
   
-export const CatalogContext = createContext<CatalogContextType | undefined>(undefined);
+const CatalogContext = createContext<CatalogContextType | undefined>(undefined);
 
 export const CatalogProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [catalog, setCatalog] = useState<Catalog>(initialCatalog);
 
-      useEffect(() => {
-    const fetchDishes = async () => {
-      try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_APP_PROJECTALPHA_CATALOG_API}/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d`);
-        const fetchedDishes = response.data.dishes.map((dish: Dish) => ({
-          ...dish,
-          Items: dish.Items.map(item => ({
-            ...item,
-            isFeatured: false, // hier kannst du Logik hinzufügen, um zu bestimmen, ob ein Item "featured" ist oder nicht
-          }))
-        }));
-
-        // Aktualisiere den Katalog im State
-        setCatalog({ ...initialCatalog, Dishes: fetchedDishes });
-      } catch (error) {
-        console.error('Fehler:', error);
-      }
-    };
-
-    fetchDishes(); // Rufe die Funktion beim Mounten des Komponenten auf
-  }, []);
+      
   const addDishes = (newDishes: Dish[]) => {
     setCatalog({ ...catalog, Dishes: [...catalog.Dishes, ...newDishes] });
   };
@@ -65,7 +46,9 @@ export const CatalogProvider: React.FC<{ children: React.ReactNode }> = ({ child
     });
   };
   
-
+  const setCatalogData = (newCatalog: Catalog) => {
+    setCatalog(newCatalog);
+  };
 
   // useEffect(() => {
   //   axios.get('${process.env.NEXT_PUBLIC_APP_PROJECTALPHA_CATALOG_API}/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d')
@@ -86,7 +69,7 @@ export const CatalogProvider: React.FC<{ children: React.ReactNode }> = ({ child
   // }, []);
 
   return (
-    <CatalogContext.Provider value={{ catalog, addDishes, removeItem }}>
+    <CatalogContext.Provider value={{ catalog, addDishes, removeItem, setCatalogData }}>
       {children}
     </CatalogContext.Provider>
   );

@@ -27,6 +27,7 @@ import { AlertModal } from "@/components/modals/alert-modal"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 // import ImageUpload from "@/components/ui/image-upload"
 import { Checkbox } from "@/components/ui/checkbox"
+import { useCatalog } from "@/context/CatalogContext" 
 
 const formSchema = z.object({
   name: z.string().min(1),
@@ -61,6 +62,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
   categories
 }) => {
   const params = useParams();
+  const { catalog } = useCatalog();
   const router = useRouter();
 
   const [open, setOpen] = useState(false);

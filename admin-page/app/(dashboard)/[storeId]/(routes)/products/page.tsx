@@ -7,10 +7,11 @@ import { formatter } from "@/lib/utils";
 
 import { ProductsClient } from "./components/client";
 import { ProductColumn } from "./components/columns";
-import { Dish, Item } from '@/types/schema';
+import { Catalog, Dish, Item } from '@/types/schema';
 import { useCatalog } from '@/context/CatalogContext';
+import { fetchGetCatalog } from '@/app/api/products/route';
 
-const ProductsPage =  ({
+const ProductsPage = ({
   params
 }: {
   params: { storeId: string }
@@ -19,44 +20,39 @@ const ProductsPage =  ({
   const [products, setProducts] = useState<ProductColumn[]>([]);
   const [loading, setLoading] = useState(true);
   const { catalog, addDishes, removeItem } = useCatalog();
-
+  const [data, setData] = useState<Catalog | null>(null);
+  const [transformedProducts, setTransformedProducts] = useState<ProductColumn[]>([]);
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5235/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d`);
-        
-        const fetchedProducts = response.data.dishes.flatMap((dish: { name: string; items: any[]; }) => dish.items.map(item => ({
-          id: item.id,
-          name: item.name,
-          isFeatured: false,
-          description: item.description,
-          price: item.price,
-          category: dish.name,
-        })));
+        const result = await fetchGetCatalog();
+        console.log("REs: ",result);
+       
+        const newTransformedProducts = transformDishesToProductColumns(result!.dishes);
+        console.log("RExs: ",newTransformedProducts);
+        setTransformedProducts(newTransformedProducts);
 
-        setProducts(fetchedProducts);
-
+        setData(result);
       } catch (error) {
-        console.error('Fehler beim Laden der Produkte:', error);
-      } finally {
-        setLoading(false);
+        console.error('Error fetching data:', error);
       }
     };
-    
-    fetchProducts();
-  }, [params.storeId]);
+
+    fetchData();
+
+  }, []);
+
 
   const transformDishesToProductColumns = (dishes: any[]) => {
-    return dishes.flatMap(dish => 
+    return dishes.flatMap(dish =>
       dish.items.map((item: {
-        description: any; id: any; name: any; price: number | bigint; isFeatured: any; 
-}) => ({
+        description: any; id: any; name: any; price: number | bigint; isFeatured: any;
+      }) => ({
         id: item.id,
         name: item.name,
         price: formatter.format(item.price),
         category: dish.name,
-        createdAt: format(new Date(), 'MMMM do, yyyy'),
         isFeatured: item.isFeatured || false,
         isArchived: false,
         description: item.description,
@@ -64,16 +60,7 @@ const ProductsPage =  ({
     );
   };
 
-  const [transformedProducts, setTransformedProducts] = useState<ProductColumn[]>([]);
 
-  useEffect(() => {
-    const newTransformedProducts = transformDishesToProductColumns(catalog.Dishes);
-    setTransformedProducts(newTransformedProducts);
-  }, [catalog]);
-  
-  
- 
-  
   return (
     <div className="flex-col">
       <div className="flex-1 space-y-4 p-8 pt-6">
@@ -82,5 +69,6 @@ const ProductsPage =  ({
     </div>
   );
 };
+
 
 export default ProductsPage;
