@@ -36,22 +36,22 @@ const ShoppingCartPage: React.FC = () => {
   };
 
   const removeFromCart = (itemTitle: string) => {
-    setItems(items.filter(item => item.title !== itemTitle));
+    setItems(items.filter(item => item.name !== itemTitle));
   };
 
   const updateQuantity = (itemTitle: string, newQuantity: number) => {
-    setItems(items.map(item => item.title === itemTitle ? { ...item, quantity: newQuantity } : item));
+    setItems(items.map(item => item.name === itemTitle ? { ...item, quantity: newQuantity } : item));
   };
 
   const increaseQuantity = (itemTitle: string) => {
-    const item = items.find(item => item.title === itemTitle);
+    const item = items.find(item => item.name === itemTitle);
     if (item) {
       updateQuantity(itemTitle, item.quantity + 1);
     }
   };
 
   const decreaseQuantity = (itemTitle: string) => {
-    const item = items.find(item => item.title === itemTitle);
+    const item = items.find(item => item.name === itemTitle);
     if (item && item.quantity > 1) { 
       updateQuantity(itemTitle, item.quantity - 1);
     }
@@ -110,25 +110,25 @@ const ShoppingCartPage: React.FC = () => {
               borderRadius: '8px',
             }}>
               <IonLabel style={{ flex: '1', padding: '1rem' }}>
-                <h2 style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{item.title}</h2>
+                <h2 style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{item.name}</h2>
                 <p style={{ fontSize: '1rem' }}>{`${item.price.toFixed(2)} €`}</p>
               </IonLabel>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <IonButton fill="clear" onClick={() => decreaseQuantity(item.title)}>
+                <IonButton fill="clear" onClick={() => decreaseQuantity(item.name)}>
                   <IonIcon icon={removeCircleOutline} />
                 </IonButton>
                 <IonInput
                   type="number"
                   value={item.quantity.toString()}
-                  onIonChange={e => updateQuantity(item.title, parseInt(e.detail.value!, 10))}
+                  onIonChange={e => updateQuantity(item.name, parseInt(e.detail.value!, 10))}
                   style={{ maxWidth: '50px', margin: '0 8px', textAlign: 'center', fontSize: '1.1rem' }}
                 />
-                <IonButton fill="clear" onClick={() => increaseQuantity(item.title)}>
+                <IonButton fill="clear" onClick={() => increaseQuantity(item.name)}>
                   <IonIcon icon={addCircleOutline} />
                 </IonButton>
               </div>
 
-              <IonButton fill="clear" onClick={() => removeFromCart(item.title)}>
+              <IonButton fill="clear" onClick={() => removeFromCart(item.name)}>
                 <IonIcon icon={trashOutline} />
               </IonButton>
             </IonItem>

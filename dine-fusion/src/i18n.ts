@@ -11,7 +11,7 @@ i18n
   .init({
     returnEmptyString: false,
     debug: true,
-    fallbackLng: 'de',
+    fallbackLng: 'en',
   });
 
 // i18n.services.formatter.add('DATE_LONG', (value, lng, _options) => {
