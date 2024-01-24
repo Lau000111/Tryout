@@ -37,22 +37,6 @@ setupIonicReact();
 
 
 const App: React.FC = () => {
-  // const weatherApi = `${import.meta.env.VITE_APP_PROJECTALPHA_CATALOG_API}/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d`;
-
-  // const fetchData = async (weatherApi: string | undefined) => {
-  //   if (weatherApi) {
-  //     const weather = await fetch(weatherApi);
-  //     console.log(weather);
-
-  //     const weatherJson = await weather.json();
-  //     console.log(weatherJson);
-
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchData(weatherApi);
-  // }, [weatherApi]);
 
   return (
     <IonApp>
@@ -98,6 +82,5 @@ const App: React.FC = () => {
     </IonApp>
   );
 };
-
 
 export default App;

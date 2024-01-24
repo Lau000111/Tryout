@@ -11,16 +11,29 @@ import { useShoppingCart } from '../contexts/ShoppingCartContext';
 import { useHistory } from 'react-router-dom';
 import CategoryScroller from '../components/CategoryScroller';
 import { getDishes } from '../api/route';
+import { Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
+
+const locales = {
+  en: { title: 'English' },
+  de: { title: 'Deutsch' },
+  es: { title: 'Español' },
+};
 
 const Home: FC = () => {
+  const { t, i18n } = useTranslation();
+
   const [language, setLanguage] = useState(
     localStorage.getItem('preferredLanguage') || 'de'
   );
 
   const [dishes, setDishes] = useState<Dish[]>([]);
-
+  console.log(t('dishes.name'));
+  console.log(t('main.header'));
   const [isLoading, setIsLoading] = useState(true); // Neuer State für Loading
 
+
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -100,5 +113,10 @@ const Home: FC = () => {
 };
 
 
-
-export default Home;
+export default function WrappedApp() {
+  return (
+    <Suspense fallback="...loading">
+      <Home />
+    </Suspense>
+  );
+}
