@@ -1,0 +1,40 @@
+{
+  "settings":{
+    "title":"Einstellungen",
+    "profile":{
+        "title": "Profile",
+        "editProfile": "Profil bearbeiten"
+    },
+    "chanceLanguage":{
+        "title": "Sprachauswahl",
+        "editProfile": "Sprache ändern",
+        "german": "Deutsch",
+        "english": "Englisch"
+    },
+    "else":
+    {
+        "signOut": "Abmelden"
+    }
+  },
+  "shoppingCardPage":{
+    "title": "Warenkorb",
+    "deleteAll":"Alle löschen",
+    "applyCoupon": "Coupon anwenden",
+    "addTip": "Trinkgeld hinzufügen",
+    "pay": "Bezahlen"
+  },
+  "paymendPage":{
+    "title": "Zahlung",
+    "inTotal":"Insgesamt",
+    "payOnline": "Online bezahlen",
+    "payCash": "Barzahlung",
+    "payInGroup": "Bezahlen"
+  },
+  "general": {
+    "back": "Zurück",
+    "forward": "Weiter",
+    "close": "Schließen",
+    "save": "Speichern",
+    "cancel": "Abbrechen"
+  }
+}

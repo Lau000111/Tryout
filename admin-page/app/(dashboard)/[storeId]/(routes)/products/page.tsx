@@ -11,6 +11,7 @@ import { Catalog, Dish, Item } from '@/types/schema';
 import { useCatalog } from '@/context/CatalogContext';
 import { fetchGetCatalog } from '@/app/api/products/route';
 
+
 const ProductsPage = ({
   params
 }: {

@@ -1,0 +1,68 @@
+{
+  "overview":{
+    "title":"Overview",
+    "descriptionTitle":"Dashboard",
+    "description":"Overview of your business",
+    "sales":"Sales",
+    "productsInStock":"Products in Stock",
+    "totalRevenue":"Total Revenue",
+    "overview":"Overview"
+  },
+  "menu":{
+    "title": "Menu",
+    "description": "Manage products for your business",
+    "products":"Products",
+    "insertMenu": "Insert Menu",
+    "addNew": "Add New",
+    "search":"Search",
+    "tab": 
+    {
+      "name": "Name",
+      "description":"Description",
+      "featured": "Featured",
+      "price": "Price",
+      "category": "Category"
+    },
+    "options":
+    {
+      "title": "Actions",
+      "update": "Update",
+      "delete": "Delete"
+    }
+  },
+  "categories":{
+    "title": "Categories",
+    "description": "Manage your categories for your business",
+    "categories":"Categories",
+    "addNew": "Add New",
+    "search":"Search",
+    "tab": 
+    {
+      "name": "Name",
+      "description":"Description",
+      "featured": "Featured",
+      "price": "Price",
+      "category": "Category"
+    },
+    "options":
+    {
+      "title": "Actions",
+      "update": "Update",
+      "delete": "Delete"
+    }
+  },
+  "settings":{
+    "title": "Settings",
+    "inTotal":"Total",
+    "payOnline": "Pay Online",
+    "payCash": "Cash Payment",
+    "payInGroup": "Group Payment"
+  },
+  "general": {
+    "back": "Back",
+    "forward": "Forward",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel"
+  }
+}

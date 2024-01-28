@@ -1,0 +1,39 @@
+{
+  "settings": {
+    "title": "Settings",
+    "profile": {
+      "title": "Profile",
+      "editProfile": "Edit Profile"
+    },
+    "chanceLanguage": {
+      "title": "Language Selection",
+      "editProfile": "Change Language",
+      "german": "German",
+      "english": "English"
+    },
+    "else": {
+      "signOut": "Sign Out"
+    }
+  },
+  "shoppingCardPage": {
+    "title": "Shopping Cart",
+    "deleteAll": "Delete All",
+    "applyCoupon": "Apply Coupon",
+    "addTip": "Add Tip",
+    "pay": "Pay"
+  },
+  "paymendPage": {
+    "title": "Payment",
+    "inTotal": "Total",
+    "payOnline": "Pay Online",
+    "payCash": "Cash Payment",
+    "payInGroup": "Group Payment"
+  },
+  "general": {
+    "back": "Back",
+    "forward": "Forward",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel"
+  }
+}

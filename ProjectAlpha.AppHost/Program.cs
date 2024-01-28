@@ -9,7 +9,7 @@ builder.AddProject<Projects.ProjectAlpha_Payment>(nameof(Projects.ProjectAlpha_P
 builder.AddProject<Projects.ProjectAlpha_Mobile_BFF>(nameof(Projects.ProjectAlpha_Mobile_BFF))
     .WithReference(catalogProject);
 
-builder.AddNpmApp("DineFusion", "../DineFusion")
+builder.AddNpmApp("dine-fusion", "../dine-fusion")
     .WithReference(catalogProject)
     .WithServiceBinding(containerPort: 3000, scheme: "http", env: "PORT")
     .AsDockerfileInManifest();

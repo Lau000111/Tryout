@@ -3,6 +3,7 @@
 import Navbar from '@/components/navbar';
 import { redirect } from 'next/navigation';
 import React, { useEffect } from 'react';
+import "@/app/i18n"
 
 
 // import Navbar from '@/components/navbar'

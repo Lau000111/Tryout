@@ -19,7 +19,7 @@ export const getDishes = async (): Promise<Dish[]> => {
     }
 };
 
-const loadTranslations = async (language: string, namespace: string, callback: (error: any, translations: any) => void) => {
+export const loadTranslations = async (language: string, namespace: string, callback: (error: any, translations: any) => void) => {
     try {
         const response = await fetch(`${import.meta.env.VITE_APP_PROJECTALPHA_CATALOG_API}/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d`);
         if (!response.ok) throw new Error('Fehler beim Laden der Übersetzungen');
@@ -43,20 +43,5 @@ const loadTranslations = async (language: string, namespace: string, callback: (
         callback(error, null);
     }
 };
-
-i18n
-    .use(initReactI18next)
-    .init({
-        lng: 'de', // Standard-Sprache
-        fallbackLng: 'en',
-        ns: ['common'], // deine Namespaces
-        defaultNS: 'common',
-        backend: {
-            load: loadTranslations,
-        },
-    });
-
-export default i18n;
-
 
 

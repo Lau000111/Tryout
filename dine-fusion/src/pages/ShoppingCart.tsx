@@ -7,16 +7,16 @@ import {
 import { pencilOutline, trashOutline, closeCircle, removeCircleOutline, addCircleOutline, pricetagOutline, cashOutline, cardOutline, ticketOutline } from 'ionicons/icons';
 import { useShoppingCart } from '../contexts/ShoppingCartContext';
 import { useHistory } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const ShoppingCartPage: React.FC = () => {
   const history = useHistory();
   const { items, setItems, totalAmount, setTotalAmount } = useShoppingCart();
   const [showCouponInput, setShowCouponInput] = useState(false);
+  const { t } = useTranslation();
 
   const checkCouponCode = async (code: string) => {
     try {
-      // Hier rufst du dein Backend mit dem Coupon-Code auf
-      // Zum Beispiel mit fetch oder axios
       const response = await fetch('/api/check-coupon', {
         method: 'POST',
         headers: {
@@ -66,8 +66,6 @@ const ShoppingCartPage: React.FC = () => {
     setTotalAmount(totalAmount + tipAmount);
   };
 
-  const [isOpen, setIsOpen] = useState(false);
-
 
   useEffect(() => {
     const newTotal = items.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -76,23 +74,22 @@ const ShoppingCartPage: React.FC = () => {
 
   const applyCoupons = (code: string) => {
     let newDiscount = 0;
-    if (code === "RABATT10") {
-      newDiscount = 0.1; // 10% Rabatt
+    if (code === "Lau10") {
+      newDiscount = 0.1; 
     } else {
       alert("Ungültiger Coupon-Code");
       return;
     }
-    // Berechne den neuen Gesamtbetrag mit dem Rabatt
     const newTotal = totalAmount - (totalAmount * newDiscount);
     setTotalAmount(newTotal);
-    setShowCouponInput(false); // Eingabefeld ausblenden
+    setShowCouponInput(false); 
   };
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Warenkorb</IonTitle>
+          <IonTitle>{t("shoppingCardPage.applyCoupon")} </IonTitle>
           <IonButtons slot="start">
             <IonBackButton />
             <IonButton onClick={() => history.goBack()}>
@@ -138,12 +135,13 @@ const ShoppingCartPage: React.FC = () => {
       <IonFooter style={{ padding: '1rem' }}>
         <IonButton expand="block" onClick={clearCart} style={{ marginBottom: '1rem' }}>
           <IonIcon slot="start" icon={trashOutline} />
-          Alles Löschen
+          {t("shoppingCardPage.deleteAll")} 
         </IonButton>
 
         <IonButton expand="block" style={{ marginBottom: '1rem' }} id="present-alert">
           <IonIcon slot="start" icon={ticketOutline} />
-          Coupon Anwenden</IonButton>
+          {t("shoppingCardPage.applyCoupon")} 
+          </IonButton>
 
         <IonAlert
           trigger="present-alert"
@@ -165,7 +163,7 @@ const ShoppingCartPage: React.FC = () => {
 
         <IonButton expand="block" style={{ marginBottom: '1rem' }} id="present-tip-alert">
           <IonIcon slot="start" icon={cashOutline} />
-          Trinkgeld hinzufügen
+          {t("shoppingCardPage.applyCoupon")} 
         </IonButton>
 
         <IonAlert
@@ -190,14 +188,14 @@ const ShoppingCartPage: React.FC = () => {
 
         <div style={{ borderTop: '1px solid #e0e0e0', margin: '16px 0' }} />
         <div style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem' }}>
-          <IonLabel style={{ fontSize: '1.1rem' }}>INGESAMT:</IonLabel>
+          <IonLabel style={{ fontSize: '1.1rem' }}>{t("paymendPage.inTotal")}</IonLabel>
           <IonLabel style={{ fontSize: '1.1rem', fontWeight: 'bold' }}>
             {totalAmount.toFixed(2)} €
           </IonLabel>
         </div>
         <IonButton expand="block" onClick={() => history.push('/payment')}>
           <IonIcon slot="start" icon={cardOutline} />
-          Bezahlen
+          {t("shoppingCardPage.pay")} 
         </IonButton>
       </IonFooter>
     </IonPage>

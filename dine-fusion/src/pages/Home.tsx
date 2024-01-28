@@ -6,19 +6,12 @@ import { arrowBack, languageOutline, person } from 'ionicons/icons';
 import MenuItem from '../components/MenuItem';
 import menuDataDe from '../menuData_de.json';
 import menuDataEn from '../menuData_en.json';
-
 import { useShoppingCart } from '../contexts/ShoppingCartContext';
 import { useHistory } from 'react-router-dom';
 import CategoryScroller from '../components/CategoryScroller';
 import { getDishes } from '../api/route';
 import { Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
-
-const locales = {
-  en: { title: 'English' },
-  de: { title: 'Deutsch' },
-  es: { title: 'Español' },
-};
 
 const Home: FC = () => {
   const { t, i18n } = useTranslation();
@@ -28,23 +21,23 @@ const Home: FC = () => {
   );
 
   const [dishes, setDishes] = useState<Dish[]>([]);
-  console.log(t('dishes.name'));
+  console.log(i18n.t('settings.title'));
   console.log(t('main.header'));
-  const [isLoading, setIsLoading] = useState(true); // Neuer State für Loading
+  const [isLoading, setIsLoading] = useState(true);
 
 
   
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setIsLoading(true); // Setze Loading zu Beginn des Ladens
+        setIsLoading(true); 
         const dishesData = await getDishes();
         setDishes(dishesData);
         setSelectedCategory(dishesData[0]);
-        setIsLoading(false); // Beende Loading nach dem Laden
+        setIsLoading(false); 
       } catch (error) {
         console.error('Fehler beim Laden der Gerichte:', error);
-        setIsLoading(false); // Beende Loading auch im Fehlerfall
+        setIsLoading(false); 
       }
     };
     fetchData();
@@ -54,7 +47,6 @@ const Home: FC = () => {
   const { items } = useShoppingCart();
   const history = useHistory();
   const [selectedCategory, setSelectedCategory] = useState<Dish>(dishes[0]);
-  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
 
   useEffect(() => {
     const newMenuData = language === 'de' ? menuDataDe.categories : menuDataEn.categories;
@@ -113,10 +105,4 @@ const Home: FC = () => {
 };
 
 
-export default function WrappedApp() {
-  return (
-    <Suspense fallback="...loading">
-      <Home />
-    </Suspense>
-  );
-}
+export default Home;

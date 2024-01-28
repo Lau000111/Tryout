@@ -1,5 +1,6 @@
+"use client"
 import { CreditCard, DollarSign, Package, EuroIcon } from "lucide-react";
-
+import React, { useEffect, useState } from 'react';
 import { Separator } from "@/components/ui/separator";
 import { Overview } from "@/components/overview";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,6 +10,7 @@ import { getSalesCount } from "@/actions/get-sales-count";
 import { getGraphRevenue } from "@/actions/get-graph-revenue";
 import { getStockCount } from "@/actions/get-stock-count";
 import { formatter } from "@/lib/utils";
+import { useTranslation } from 'react-i18next';
 
 interface DashboardPageProps {
   params: {
@@ -16,13 +18,30 @@ interface DashboardPageProps {
   };
 };
 
-const DashboardPage: React.FC<DashboardPageProps> = async ({ 
-  params
-}) => {
-  const totalRevenue = await getTotalRevenue(params.storeId);
-  const graphRevenue = await getGraphRevenue(params.storeId);
-  const salesCount = await getSalesCount(params.storeId);
-  const stockCount = await getStockCount(params.storeId);
+const DashboardPage: React.FC<DashboardPageProps> = ({ params }) => {
+  const [totalRevenue, setTotalRevenue] = useState<number | null>(null);
+  const [graphRevenue, setGraphRevenue] = useState<any | null>(null); // Ersetze 'any' durch einen geeigneteren Typ
+  const [salesCount, setSalesCount] = useState<number | null>(null);
+  const [stockCount, setStockCount] = useState<number | null>(null);
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    async function fetchData() {
+      const totalRev = await getTotalRevenue(params.storeId);
+      const graphRev = await getGraphRevenue(params.storeId);
+      const sales = await getSalesCount(params.storeId);
+      const stock = await getStockCount(params.storeId);
+
+      setTotalRevenue(totalRev);
+      setGraphRevenue(graphRev);
+      setSalesCount(sales);
+      setStockCount(stock);
+    }
+
+    fetchData();
+  }, [params.storeId]);
+
+
 
   return (
     <div className="flex-col">
@@ -32,13 +51,14 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
         <div className="grid gap-4 grid-cols-3">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
-                Total Revenue
+              <CardTitle className="text-sm font-medium">{t('overview.title')}
               </CardTitle>
               <EuroIcon className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{formatter.format(totalRevenue)}</div>
+              <div className="text-2xl font-bold">
+                {totalRevenue !== null ? formatter.format(totalRevenue) : ''}
+              </div>
             </CardContent>
           </Card>
           <Card>
@@ -72,5 +92,6 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
     </div>
   );
 };
+
 
 export default DashboardPage;

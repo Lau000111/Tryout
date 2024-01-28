@@ -1,7 +1,6 @@
-
 {
-  "short_name": "Ionic App",
-  "name": "My Ionic App",
+  "short_name": "admin-page",
+  "name": "Admin Page",
   "icons": [
     {
       "src": "assets/icon/favicon.png",

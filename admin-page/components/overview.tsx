@@ -11,7 +11,7 @@ interface CustomTooltipProps {
   payload?: any[];
 };
 
-const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
+const CustomTooltip: React.FC<CustomTooltipProps> = ({ active = false, payload = [] }) => {
   if (active && payload && payload.length) {
     return (
       <div style={{ backgroundColor: '#fff', padding: '5px', border: '1px solid #ccc' }}>
@@ -24,7 +24,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
 };
 
 export const Overview: React.FC<OverviewProps> = ({
-  data
+  data = []
 }) => {
   return (
     <ResponsiveContainer width="100%" height={350}>

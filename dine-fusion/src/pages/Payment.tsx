@@ -6,13 +6,14 @@ import {
 import { cardOutline, cashOutline, peopleOutline, arrowBack } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
 import { useShoppingCart } from '../contexts/ShoppingCartContext';
+import { useTranslation } from 'react-i18next';
 
 const PaymentPage: React.FC = () => {
     const { items, setItems, totalAmount } = useShoppingCart();
     const [email, setEmail] = useState('');
     const history = useHistory();
     const [isOpen, setIsOpen] = useState(false);
-
+    const { t } = useTranslation();
 
     const handlePayment = () => {
         history.push('/')
@@ -23,7 +24,7 @@ const PaymentPage: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-                    <IonTitle>Zahlung</IonTitle>
+                    <IonTitle>{t("paymendPage.title")}</IonTitle>
                     <IonButtons slot="start">
                         <IonButton onClick={() => history.goBack()}>
                             <IonIcon slot="icon-only" icon={arrowBack} />
@@ -32,14 +33,14 @@ const PaymentPage: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent>
-                <IonLabel>Insgesamt: {totalAmount.toFixed(2)} €</IonLabel>
+                <IonLabel> {t("paymendPage.inTotal")} {totalAmount.toFixed(2)} €</IonLabel>
                 <IonButton expand="block" onClick={handlePayment} >
                     <IonIcon slot="start" icon={cardOutline} />
-                    Online bezahlen
+                    {t("paymendPage.payOnline")}
                 </IonButton>
                 <IonButton expand="block" id="present-bar">
                     <IonIcon slot="start" icon={cashOutline} />
-                    Barzahlung
+                    {t("paymendPage.payCash")}
                 </IonButton>
                 <IonToast
                     trigger="present-bar"
@@ -51,7 +52,7 @@ const PaymentPage: React.FC = () => {
 
                 <IonButton expand="block" onClick={handlePayment}>
                     <IonIcon slot="start" icon={peopleOutline} />
-                    Gruppenzahlung
+                    {t("paymendPage.payInGroup")}
                 </IonButton>
             </IonContent>
         </IonPage>

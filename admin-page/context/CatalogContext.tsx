@@ -10,9 +10,8 @@ interface CatalogContextType {
   setCatalogData: (newCatalog: Catalog) => void
 }
 const initialCatalog: Catalog = {
-    Id: '',
     id: '',
-    Dishes: [],
+    dishes: [],
     _rid: '',
     _self: '',
     _etag: '',
@@ -24,28 +23,31 @@ const initialCatalog: Catalog = {
 const CatalogContext = createContext<CatalogContextType | undefined>(undefined);
 
 export const CatalogProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [catalog, setCatalog] = useState<Catalog>(initialCatalog);
+  const [catalog, setCatalog] = useState<Catalog>(initialCatalog);
 
-      
+
   const addDishes = (newDishes: Dish[]) => {
-    setCatalog({ ...catalog, Dishes: [...catalog.Dishes, ...newDishes] });
+    setCatalog(prevCatalog => ({
+      ...prevCatalog,
+      Dishes: [...prevCatalog.dishes, ...newDishes]
+    }));
   };
 
   const removeItem = (itemId: string) => {
     setCatalog(currentCatalog => {
-      const updatedDishes = currentCatalog.Dishes.map(dish => {
+      const updatedDishes = currentCatalog.dishes.map(dish => {
         // Filtere nur die Items, die nicht die spezifizierte ID haben
-        const filteredItems = dish.Items.filter(item => item.Id !== itemId);
+        const filteredItems = dish.items.filter(item => item.id !== itemId);
         return {
           ...dish,
           Items: filteredItems
         };
       });
-  
+
       return { ...currentCatalog, Dishes: updatedDishes };
     });
   };
-  
+
   const setCatalogData = (newCatalog: Catalog) => {
     setCatalog(newCatalog);
   };
@@ -61,7 +63,7 @@ export const CatalogProvider: React.FC<{ children: React.ReactNode }> = ({ child
   //           }))
   //         }));
   //         setCatalog({ ...initialCatalog, Dishes: fetchedDishes });
-          
+
   //     })
   //     .catch(error => {
   //       console.error('Fehler beim Abrufen des Katalogs:', error);
@@ -74,6 +76,7 @@ export const CatalogProvider: React.FC<{ children: React.ReactNode }> = ({ child
     </CatalogContext.Provider>
   );
 };
+
 
 export const useCatalog = () => {
   const context = useContext(CatalogContext);
