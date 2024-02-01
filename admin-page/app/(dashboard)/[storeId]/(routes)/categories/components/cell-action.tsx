@@ -18,6 +18,7 @@ import { useCategoryModal } from "@/hooks/use-category-modal";
 import { AlertModal } from "@/components/modals/alert-modal";
 
 import { CategoryColumn } from "./columns";
+import { useTranslation } from "react-i18next";
 
 interface CellActionProps {
   data: CategoryColumn;
@@ -30,6 +31,7 @@ export const CellAction: React.FC<CellActionProps> = ({
   const params = useParams();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const { t } = useTranslation();
 
   const onConfirm = async () => {
     try {
@@ -70,17 +72,16 @@ export const CellAction: React.FC<CellActionProps> = ({
           <DropdownMenuItem
             onClick={() => onCopy(data.id)}
           >
-            <Copy className="mr-2 h-4 w-4" /> Copy Id
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => router.push(`/${params.storeId}/categories/${data.id}`)}
           >
-            <Edit className="mr-2 h-4 w-4" /> Update
+            <Edit className="mr-2 h-4 w-4" /> {t('categories,options.update')}
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => setOpen(true)}
           >
-            <Trash className="mr-2 h-4 w-4" /> Delete
+            <Trash className="mr-2 h-4 w-4" /> {t('categories,options.delete')}
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

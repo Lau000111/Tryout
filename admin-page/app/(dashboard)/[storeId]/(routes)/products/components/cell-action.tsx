@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { ProductColumn } from "./columns";
+import { useTranslation } from "react-i18next";
 
 interface CellActionProps {
   data: ProductColumn;
@@ -31,7 +32,8 @@ export const CellAction: React.FC<CellActionProps> = ({
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const params = useParams();
-  const { removeItem } = useCatalog(); // Kontext verwenden
+  const { removeItem } = useCatalog(); 
+  const { t } = useTranslation();
 
   const onConfirm = async () => {
     try {
@@ -76,17 +78,17 @@ export const CellAction: React.FC<CellActionProps> = ({
           <DropdownMenuItem
             onClick={() => onCopy(data.id)}
           >
-            <Copy className="mr-2 h-4 w-4" /> Copy Id
+            <Copy className="mr-2 h-4 w-4" /> Copy Id {t('')}
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => router.push(`/${params.storeId}/products/${data.id}`)}
           >
-            <Edit className="mr-2 h-4 w-4" /> Update
+            <Edit className="mr-2 h-4 w-4" /> {t('menu.options.update')}
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => setOpen(true)}
           >
-            <Trash className="mr-2 h-4 w-4" /> Delete
+            <Trash className="mr-2 h-4 w-4" /> {t('menu.options.delete')}
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

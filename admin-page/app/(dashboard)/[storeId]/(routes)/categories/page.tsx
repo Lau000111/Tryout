@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { CategoryColumn } from "./components/columns"
 import { CategoriesClient } from "./components/client";
+import { fetchGetCatalog } from '@/app/api/products/route';
 
 const CategoriesPage = ({ params }: { params: { storeId: string } }) => {
   const [categories, setCategories] = useState([]);
@@ -9,11 +10,11 @@ const CategoriesPage = ({ params }: { params: { storeId: string } }) => {
   useEffect(() => {
     const fetchDishes = async () => {
       try {
-        const response = await fetch(`http://localhost:5235/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d/dishes`);
-        if (!response.ok) {
+        const result = await fetchGetCatalog();
+        if (!result.ok) {
           throw new Error('Fehler beim Abrufen der Dishes');
         }
-        const dishesData = await response.json();
+        const dishesData = await result.json();
 
         const updatedCategories = dishesData.map((dish: { name: any; }) => ({
           name: dish.name,

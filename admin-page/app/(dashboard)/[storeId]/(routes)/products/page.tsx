@@ -28,7 +28,6 @@ const ProductsPage = ({
     const fetchData = async () => {
       try {
         const result = await fetchGetCatalog();
-        console.log("REs: ",result);
        
         const newTransformedProducts = transformDishesToProductColumns(result!.dishes);
         console.log("RExs: ",newTransformedProducts);
