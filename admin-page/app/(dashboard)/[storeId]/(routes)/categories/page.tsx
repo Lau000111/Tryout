@@ -1,14 +1,14 @@
-"use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { CategoryColumn } from "./components/columns"
 import { CategoriesClient } from "./components/client";
 import { fetchGetCatalog } from '@/app/api/products/route';
 
 const CategoriesPage = ({ params }: { params: { storeId: string } }) => {
   const [categories, setCategories] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-    const fetchDishes = async () => {
+  const fetchDishes = async () => {
+    if (!isLoaded) {
       try {
         const result = await fetchGetCatalog();
         if (!result.ok) {
@@ -21,13 +21,14 @@ const CategoriesPage = ({ params }: { params: { storeId: string } }) => {
         }));
 
         setCategories(updatedCategories);
+        setIsLoaded(true); // Setzt den Ladestatus nach dem Laden
       } catch (error) {
         console.error('Fehler:', error);
       }
-    };
+    }
+  };
 
-    fetchDishes();
-  }, [params.storeId]);
+  if (!isLoaded) fetchDishes(); // Lädt Daten beim ersten Rendern
 
   return (
     <div className="flex-col">
@@ -37,6 +38,5 @@ const CategoriesPage = ({ params }: { params: { storeId: string } }) => {
     </div>
   );
 };
-
 
 export default CategoriesPage;

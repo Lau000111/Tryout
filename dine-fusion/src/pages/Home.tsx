@@ -1,6 +1,6 @@
 import React, { useState, FC, useRef, useEffect } from 'react';
 import {
-  IonContent, IonPage, IonButton, IonButtons, IonMenuButton,IonIcon, IonFabButton
+  IonContent, IonPage, IonButton, IonButtons, IonMenuButton,IonIcon, IonFab
 } from '@ionic/react';
 import { arrowBack, languageOutline, person } from 'ionicons/icons';
 import MenuItem from '../components/MenuItem';
@@ -21,7 +21,6 @@ const Home: FC = () => {
   );
 
   const [dishes, setDishes] = useState<Dish[]>([]);
-  console.log(i18n.t('settings.title'));
   console.log(t('main.header'));
   const [isLoading, setIsLoading] = useState(true);
 
@@ -90,13 +89,14 @@ const Home: FC = () => {
 
         </IonContent>
         {cartItemCount > 0 && (
-          
+          <IonFab>
           <IonButton
             className="cart-button"
             fill="clear"
             onClick={() => history.push('/cart')}>
             🛒 {cartItemCount}
           </IonButton>
+          </IonFab>
         )}
 
       </IonPage>

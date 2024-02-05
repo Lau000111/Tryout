@@ -31,6 +31,7 @@ import './theme/variables.css';
 import { ShoppingCartProvider } from './contexts/ShoppingCartContext';
 import PaymentPage from './pages/Payment';
 import MenuComponent from './components/MenuComponent';
+import './setupTests'
 
 
 setupIonicReact();
