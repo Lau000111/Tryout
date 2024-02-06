@@ -4,28 +4,20 @@ import {
 } from '@ionic/react';
 import { arrowBack, languageOutline, person } from 'ionicons/icons';
 import MenuItem from '../components/MenuItem';
-import menuDataDe from '../menuData_de.json';
-import menuDataEn from '../menuData_en.json';
 import { useShoppingCart } from '../contexts/ShoppingCartContext';
 import { useHistory } from 'react-router-dom';
 import CategoryScroller from '../components/CategoryScroller';
 import { getDishes } from '../api/route';
-import { Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const Home: FC = () => {
-  const { t, i18n } = useTranslation();
-
-  const [language, setLanguage] = useState(
-    localStorage.getItem('preferredLanguage') || 'de'
-  );
+  const { t } = useTranslation();
 
   const [dishes, setDishes] = useState<Dish[]>([]);
   console.log(t('main.header'));
   const [isLoading, setIsLoading] = useState(true);
 
 
-  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -42,18 +34,9 @@ const Home: FC = () => {
     fetchData();
   }, []);
 
-  const [menuData, setMenuData] = useState<MenuData>(menuDataDe.categories);
   const { items } = useShoppingCart();
   const history = useHistory();
   const [selectedCategory, setSelectedCategory] = useState<Dish>(dishes[0]);
-
-  useEffect(() => {
-    const newMenuData = language === 'de' ? menuDataDe.categories : menuDataEn.categories;
-    setMenuData(newMenuData);
-    localStorage.setItem('preferredLanguage', language);
-  }, [language]);
-
-  const categories = dishes.map(dish => dish.name);
 
   const cartItemCount = items.reduce((count, item) => count + item.quantity, 0);
 

@@ -4,7 +4,7 @@ import {
   IonButton, IonIcon, IonInput, IonHeader, IonToolbar,
   IonTitle, IonFooter, IonButtons, IonBackButton, IonAlert
 } from '@ionic/react';
-import { pencilOutline, trashOutline, closeCircle, removeCircleOutline, addCircleOutline, pricetagOutline, cashOutline, cardOutline, ticketOutline } from 'ionicons/icons';
+import { trashOutline, closeCircle, removeCircleOutline, addCircleOutline, cashOutline, cardOutline, ticketOutline } from 'ionicons/icons';
 import { useShoppingCart } from '../contexts/ShoppingCartContext';
 import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';

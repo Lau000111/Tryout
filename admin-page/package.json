@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next dev",
     "lint": "next lint",
-    "test": "jest --config=jest.config.js"
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
@@ -58,14 +59,11 @@
   "devDependencies": {
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
-    "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
-    "@testing-library/jest-dom": "^6.4.1",
+    "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@types/jest": "^29.5.12",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
     "@types/uuid": "^9.0.7",
     "autoprefixer": "^10.0.1",
     "babel-jest": "^29.7.0",

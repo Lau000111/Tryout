@@ -1,17 +1,5 @@
-interface MenuItem {
-    id: number;
-    title: string;
-    description: string;
-    price: number;
-  }
-  
-  interface MenuData {
-    [category: string]: MenuItem[];
-  }
 
-
-  
-  interface Item {
+interface Item {
     id: string;
     description: string;
     image: string;
@@ -32,4 +20,8 @@ interface Catalog {
     _etag: string;
     _attachments: string;
     _ts: number;
+}
+
+interface ExtendedItem extends Item {
+  quantity: number;
 }

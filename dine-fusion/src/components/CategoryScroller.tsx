@@ -26,7 +26,7 @@ const CategoryScroller: React.FC<CategoryScrollerProps> = ({ categories, selecte
   return (
     <>
       <IonButton fill="clear" onClick={scrollPrevious}>
-        <IonIcon icon={arrowBack} />
+        <IonIcon icon={arrowBack} data-testid="back-button"/>
       </IonButton>
 
       <IonSegment

@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import { CategoryColumn } from "./components/columns"
 import { CategoriesClient } from "./components/client";

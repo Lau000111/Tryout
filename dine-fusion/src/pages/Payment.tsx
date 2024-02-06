@@ -1,7 +1,7 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import {
-    IonPage, IonContent, IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton,
-    IonLabel, IonInput, IonButton, IonIcon, IonToast
+    IonPage, IonContent, IonHeader, IonToolbar, IonTitle, IonButtons,
+    IonLabel, IonButton, IonIcon, IonToast
 } from '@ionic/react';
 import { cardOutline, cashOutline, peopleOutline, arrowBack } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
@@ -10,7 +10,6 @@ import { useTranslation } from 'react-i18next';
 
 const PaymentPage: React.FC = () => {
     const { items, setItems, totalAmount } = useShoppingCart();
-    const [email, setEmail] = useState('');
     const history = useHistory();
     const [isOpen, setIsOpen] = useState(false);
     const { t } = useTranslation();
@@ -26,8 +25,8 @@ const PaymentPage: React.FC = () => {
                 <IonToolbar>
                     <IonTitle>{t("paymendPage.title")}</IonTitle>
                     <IonButtons slot="start">
-                        <IonButton onClick={() => history.goBack()}>
-                            <IonIcon slot="icon-only" icon={arrowBack} />
+                        <IonButton onClick={() => history.goBack()} data-testid="back-button">
+                            <IonIcon slot="icon-only" icon={arrowBack}/>
                         </IonButton>
                     </IonButtons>
                 </IonToolbar>

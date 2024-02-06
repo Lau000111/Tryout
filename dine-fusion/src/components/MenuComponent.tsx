@@ -4,8 +4,6 @@ import {
   IonMenu, IonHeader, IonToolbar, IonTitle, IonIcon, IonItem, IonButtons, IonMenuButton, IonList, IonListHeader, IonMenuToggle,  IonButton, IonPage
 } from '@ionic/react';
 import { arrowBack, languageOutline, person } from 'ionicons/icons';
-import menuDataDe from '../menuData_de.json';
-import menuDataEn from '../menuData_en.json';
 
 import { useShoppingCart } from '../contexts/ShoppingCartContext';
 import { useHistory } from 'react-router-dom';
@@ -16,18 +14,13 @@ const MenuComponent = () => {
   const [language, setLanguage] = useState(
     localStorage.getItem('preferredLanguage') || 'de'
   );
-  const [menuData, setMenuData] = useState<MenuData>(menuDataDe.categories);
   const { items } = useShoppingCart();
   const history = useHistory();
-  const [selectedCategory, setSelectedCategory] = useState<string>(Object.keys(menuDataDe.categories)[0]);
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
-    const newMenuData = language === 'de' ? menuDataDe.categories : menuDataEn.categories;
-    setMenuData(newMenuData);
-    setSelectedCategory(Object.keys(newMenuData)[0]);
-    localStorage.setItem('preferredLanguage', language);
+    localStorage.setItem('preferredLanguage', 'de');
   }, [language]);
 
   const handleLanguageChange = (newLanguage: string) => {

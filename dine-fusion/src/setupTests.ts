@@ -1,8 +1,5 @@
 import '@testing-library/jest-dom/extend-expect';
 import '@testing-library/jest-dom';
-import { setupIonicReact } from '@ionic/react';
-
-setupIonicReact();
 
 // Mock matchmedia
 window.matchMedia = window.matchMedia || function () {
