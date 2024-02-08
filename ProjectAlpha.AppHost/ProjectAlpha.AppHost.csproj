@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ProjectAlpha.Catalog\ProjectAlpha.Catalog.csproj" />
     <ProjectReference Include="..\ProjectAlpha.Mobile.BFF\ProjectAlpha.Mobile.BFF.csproj" />
+    <ProjectReference Include="..\ProjectAlpha.Restaurant\ProjectAlpha.Restaurant.csproj" />
   </ItemGroup>
 
 </Project>
