@@ -15,7 +15,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
         <Redirect to="/" />
       ) : (
         <>
-          <section className="flex flex-1 justify-center items-center flex-col py-10">
+          <section className="flex flex-1 justify-center items-center flex-col">
             {children}
           </section>
 
