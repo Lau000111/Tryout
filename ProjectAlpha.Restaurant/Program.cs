@@ -1,36 +1,56 @@
+using ProjectAlpha.Restaurant.DbContexts;
+using ProjectAlpha.Restaurant.Repositiories;
+using ProjectAlpha.Restaurant.Mappings;
+using ProjectAlpha.Restaurant.Repositories;
 
-namespace ProjectAlpha.Restaurant;
-
-public class Program
+public partial class Program
 {
+    public static WebApplication App { get; private set; }
+
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
         builder.AddServiceDefaults();
 
-        // Add services to the container.
-
-        builder.Services.AddControllers();
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddControllers().AddNewtonsoftJson();
         builder.Services.AddSwaggerGen();
+        builder.Services.AddScoped<IRestaurantRepository, RestaurantRepository>();
 
-        var app = builder.Build();
+        builder.Services.AddDbContext<RestaurantCosmosDbContext>(options =>
+            options.UseCosmos(
+                connectionString: "AccountEndpoint=https://localhost:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==",
+                databaseName: "RestaurantCosmosDb"));
 
-        app.MapDefaultEndpoints();
+        builder.Services.AddAutoMapper(typeof(RestaurantProfile));
 
-        // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
+        App = builder.Build();
+
+        App.MapDefaultEndpoints();
+
+        if (App.Environment.IsDevelopment())
         {
-            app.UseSwagger();
-            app.UseSwaggerUI();
+            App.UseSwagger();
+            App.UseSwaggerUI();
         }
 
-        app.UseAuthorization();
+        var scopeFactory = App.Services.GetRequiredService<IServiceScopeFactory>();
 
+        using (var scope = scopeFactory.CreateScope())
+        {
+            var restaurantCosmosDbContext = scope.ServiceProvider.GetRequiredService<RestaurantCosmosDbContext>();
+            restaurantCosmosDbContext.Database.EnsureCreated();
+        }
 
-        app.MapControllers();
+        App.UseHttpsRedirection();
+        App.UseCors(static builder =>
+            builder.AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowAnyOrigin());
 
-        app.Run();
+        App.UseRouting();
+        App.MapControllers();
+
+        App.Run();
     }
 }

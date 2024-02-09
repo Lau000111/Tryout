@@ -8,7 +8,7 @@ public record RestaurantEntity
 
     public string Description { get; set; }
 
-    public DateOnly InaugurationDate { get; set; }
+    // public DateOnly InaugurationDate { get; set; }
 
     public string Address { get; set; }
 
