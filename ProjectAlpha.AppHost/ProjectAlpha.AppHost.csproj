@@ -10,15 +10,12 @@
 
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting" Version="8.0.0-preview.2.23619.3" />
-    <PackageReference Include="Aspire.Hosting.Dapr" Version="8.0.0-preview.1.23557.2" />
-    <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ProjectAlpha.Catalog\ProjectAlpha.Catalog.csproj" />
     <ProjectReference Include="..\ProjectAlpha.Mobile.BFF\ProjectAlpha.Mobile.BFF.csproj" />
-    <ProjectReference Include="..\ProjectAlpha.Ordering\ProjectAlpha.Ordering.csproj" />
-    <ProjectReference Include="..\ProjectAlpha.Payment\ProjectAlpha.Payment.csproj" />
+    <ProjectReference Include="..\ProjectAlpha.Restaurant\ProjectAlpha.Restaurant.csproj" />
   </ItemGroup>
 
 </Project>
