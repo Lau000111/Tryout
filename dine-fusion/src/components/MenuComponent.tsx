@@ -91,15 +91,7 @@ const MenuComponent = () => {
       </IonMenu>
 
       <IonPage id="main-content">
-        <IonHeader>
-          <IonToolbar>
-            <IonButtons slot="start"> 
-              <IonMenuButton></IonMenuButton>
-            </IonButtons>
-            <IonTitle>Menu</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent className="ion-padding"></IonContent>
+            
       </IonPage>
     </>
   )

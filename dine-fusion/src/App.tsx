@@ -31,6 +31,9 @@ import './theme/variables.css';
 import { ShoppingCartProvider } from './contexts/ShoppingCartContext';
 import PaymentPage from './pages/Payment';
 import MenuComponent from './components/MenuComponent';
+import PaidMessage from './pages/PaidMessage';
+import CardPayment from './pages/CardPayment';
+import DineFusionLoader from './pages/DineFusionLoader';
 
 
 setupIonicReact();
@@ -66,6 +69,18 @@ const App: React.FC = () => {
                   </Route>
                   <Route path="/cart">
                     <ShoppingCartPage />
+                  </Route>
+
+                  <Route path="/paidMessage">
+                    <PaidMessage />
+                  </Route>
+
+                  <Route path="/cardPayment">
+                    <CardPayment />
+                  </Route>
+
+                  <Route path="/dine-fusion">
+                    <DineFusionLoader />
                   </Route>
 
                   <Route path="/payment" component={PaymentPage} exact />

@@ -87,17 +87,6 @@ const ShoppingCartPage: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>{t("shoppingCardPage.applyCoupon")} </IonTitle>
-          <IonButtons slot="start">
-            <IonBackButton />
-            <IonButton onClick={() => history.goBack()}>
-              <IonIcon slot="icon-only" icon={closeCircle} />
-            </IonButton>
-          </IonButtons>
-        </IonToolbar>
-      </IonHeader>
       <IonContent style={{ padding: '1rem' }}>
         <IonList>
           {items.map((item, index) => (
