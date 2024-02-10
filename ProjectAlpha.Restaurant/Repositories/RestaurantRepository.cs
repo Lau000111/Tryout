@@ -1,8 +1,4 @@
-﻿using ProjectAlpha.Restaurant.DbContexts;
-using ProjectAlpha.Restaurant.Entities;
-using ProjectAlpha.Restaurant.Repositiories;
-
-namespace ProjectAlpha.Restaurant.Repositories
+﻿namespace ProjectAlpha.Restaurant.Repositories
 {
     public class RestaurantRepository(RestaurantCosmosDbContext context) : IRestaurantRepository
     {

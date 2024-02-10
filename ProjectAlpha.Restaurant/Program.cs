@@ -1,8 +1,3 @@
-using ProjectAlpha.Restaurant.DbContexts;
-using ProjectAlpha.Restaurant.Repositiories;
-using ProjectAlpha.Restaurant.Mappings;
-using ProjectAlpha.Restaurant.Repositories;
-
 public partial class Program
 {
     public static WebApplication App { get; private set; }
@@ -36,10 +31,15 @@ public partial class Program
 
         var scopeFactory = App.Services.GetRequiredService<IServiceScopeFactory>();
 
+        if (builder.Configuration["CosmosDb:DatabaseName"]!.StartsWith("Test"))
+            ResetTestData();
+
         using (var scope = scopeFactory.CreateScope())
         {
             var restaurantCosmosDbContext = scope.ServiceProvider.GetRequiredService<RestaurantCosmosDbContext>();
             restaurantCosmosDbContext.Database.EnsureCreated();
+            if (builder.Configuration["CosmosDb:DatabaseName"]!.StartsWith("Test"))
+                restaurantCosmosDbContext.SeedDatabase();
         }
 
         App.UseHttpsRedirection();

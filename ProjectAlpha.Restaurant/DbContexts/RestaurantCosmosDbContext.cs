@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.ValueGeneration;
-using ProjectAlpha.Restaurant.Entities;
+﻿using System.Text.Json;
+using Microsoft.EntityFrameworkCore.ValueGeneration;
 
 namespace ProjectAlpha.Restaurant.DbContexts;
 
@@ -19,5 +19,14 @@ public class RestaurantCosmosDbContext(DbContextOptions<RestaurantCosmosDbContex
         modelBuilder.Entity<RestaurantEntity>()
             .HasPartitionKey(restaurant => restaurant.Id)
             .OwnsOne(restaurant => restaurant.OwnerContact);
+    }
+
+    public void SeedDatabase()
+    {
+        var jsonData = File.ReadAllText(@"DbContexts\TestData\TestData.json");
+        var restaurants = JsonSerializer.Deserialize<IEnumerable<RestaurantEntity>>(jsonData, options: new() { PropertyNameCaseInsensitive = true })!;
+
+        Restaurant.AddRange(restaurants);
+        SaveChanges();
     }
 }

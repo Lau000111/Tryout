@@ -1,6 +1,4 @@
-﻿using ProjectAlpha.Restaurant.Entities;
-
-namespace ProjectAlpha.Restaurant.Repositiories
+﻿namespace ProjectAlpha.Restaurant.Repositories
 {
     public interface IRestaurantRepository
     {

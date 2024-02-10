@@ -1,5 +1,3 @@
-using ProjectAlpha.Catalog.Mappings;
-
 public partial class Program
 {
     public static WebApplication App { get; private set; }
@@ -16,18 +14,12 @@ public partial class Program
         builder.Services.AddSingleton(new ItemDbContext(
             connectionString: "AccountEndpoint=https://localhost:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==",
             databaseName: "CatalogCosmosDb",
-            containerName: "FoodCatalogs"));
+            containerName: "Catalogs"));
 
         builder.Services.AddDbContext<CatalogCosmosDbContext>(options =>
             options.UseCosmos(
                 connectionString: "AccountEndpoint=https://localhost:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==",
                 databaseName: "CatalogCosmosDb"));
-
-        /*builder.Services.AddDbContext<CatalogCosmosDbContext>(options =>
-            options.UseCosmos(
-                builder.Configuration["CosmosDb:Endpoint"]!,
-                builder.Configuration["CosmosDb:Key"]!,
-                builder.Configuration["CosmosDb:DatabaseName"]!));*/
 
         builder.Services.AddAutoMapper(typeof(CatalogProfile));
 

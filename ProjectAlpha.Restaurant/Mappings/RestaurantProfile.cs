@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using ProjectAlpha.Restaurant.Entities;
 
 namespace ProjectAlpha.Restaurant.Mappings;
 

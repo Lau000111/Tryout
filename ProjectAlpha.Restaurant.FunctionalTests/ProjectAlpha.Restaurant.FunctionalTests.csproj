@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -24,8 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProjectAlpha.Catalog\ProjectAlpha.Catalog.csproj" />
+    <ProjectReference Include="..\ProjectAlpha.Restaurant\ProjectAlpha.Restaurant.csproj" />
     <ProjectReference Include="..\ProjectAlpha.ServiceDefaults\ProjectAlpha.ServiceDefaults.csproj" />
-  </ItemGroup>    
-
+  </ItemGroup>
 </Project>

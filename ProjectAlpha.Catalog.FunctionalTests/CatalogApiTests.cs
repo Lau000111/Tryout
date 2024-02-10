@@ -53,7 +53,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture) : IClassFixture<C
     public async Task CreateCatalog_Created()
     {
         // Arrange
-        var catalogId = Guid.Parse("f2b86c70-6cde-4f0f-9f96-5206f4d8f1a9");
+        var catalogId = Guid.NewGuid();
         var catalog = new CatalogDto
         {
             Id = catalogId,
@@ -92,8 +92,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture) : IClassFixture<C
         Assert.Equal(HttpStatusCode.Created, response.StatusCode);
         var body = await response.Content.ReadAsStringAsync();
         var result = JsonSerializer.Deserialize<CatalogDto>(body, _jsonSerializerOptions);
-        Assert.NotEqual( catalogId, result.Id);
-        Assert.NotEqual( catalogId, result.Id);
+        Assert.Equal( catalogId, result.Id);
         Assert.Single(result.Dishes);
         Assert.Equal("Italian Pasta", result.Dishes.First().Name);
         Assert.Equal("Penne Arrabiata", result.Dishes.Last().Items.Last().Name);
@@ -149,7 +148,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture) : IClassFixture<C
     public async Task UpdateCatalog_NotFound()
     {
         // Arrange
-        var nonExistingCatalogId = Guid.Parse("5960c289-ceab-4a18-aa18-eb04183083ed"); // Use a non-existing catalogId
+        var nonExistingCatalogId = Guid.NewGuid();
         var catalogDto = new CatalogDto
         {
             Dishes = new List<DishDto>

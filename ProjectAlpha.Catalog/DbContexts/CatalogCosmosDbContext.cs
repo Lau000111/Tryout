@@ -6,12 +6,12 @@ namespace ProjectAlpha.Catalog.DbContexts;
 
 public class CatalogCosmosDbContext(DbContextOptions<CatalogCosmosDbContext> options, IMapper mapper) : DbContext(options)
 {
-    public required DbSet<CatalogEntity> FoodCatalogs { get; set; }
+    public required DbSet<CatalogEntity> Catalogs { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<CatalogEntity>()
-            .ToContainer("FoodCatalogs")
+            .ToContainer("Catalogs")
             .HasNoDiscriminator()
             .Property(fc => fc.Id)
             .HasConversion<string>()
@@ -49,9 +49,9 @@ public class CatalogCosmosDbContext(DbContextOptions<CatalogCosmosDbContext> opt
     public void SeedDatabase()
     {
         var jsonData = File.ReadAllText(@"DbContexts\TestData\TestData.json");
-        var foodCatalogs = JsonSerializer.Deserialize<IEnumerable<CatalogEntity>>(jsonData, options: new() { PropertyNameCaseInsensitive = true })!;
+        var catalogs = JsonSerializer.Deserialize<IEnumerable<CatalogEntity>>(jsonData, options: new() { PropertyNameCaseInsensitive = true })!;
 
-        FoodCatalogs.AddRange(foodCatalogs);
+        Catalogs.AddRange(catalogs);
         SaveChanges();
     }
 }
