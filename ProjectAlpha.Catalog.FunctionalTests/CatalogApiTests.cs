@@ -11,7 +11,8 @@ using ProjectAlpha.Catalog.Models;
 
 namespace ProjectAlpha.Catalog.FunctionalTests;
 
-public sealed class CatalogApiTests(CatalogApiFixture fixture) : IClassFixture<CatalogApiFixture>
+[Collection("EndToEndInitialisationCollection")]
+public sealed class CatalogApiTests(CatalogApiFixture fixture)
 {
     private readonly HttpClient _httpClient = fixture.CreateClient();
     private readonly JsonSerializerOptions _jsonSerializerOptions = new(JsonSerializerDefaults.Web)

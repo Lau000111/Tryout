@@ -47,3 +47,8 @@ public sealed class RestaurantApiFixture : WebApplicationFactory<Program>, IAsyn
         await _app.StartAsync();
     }
 }
+
+[CollectionDefinition("EndToEndInitialisationCollection", DisableParallelization = true)]
+public class EndToEndInitialisationCollection : ICollectionFixture<RestaurantApiFixture>
+{
+}

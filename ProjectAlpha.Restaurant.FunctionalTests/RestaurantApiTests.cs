@@ -5,12 +5,12 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.JsonPatch;
 using ProjectAlpha.Restaurant.Models;
 
 namespace ProjectAlpha.Restaurant.FunctionalTests;
 
-public sealed class RestaurantApiTests(RestaurantApiFixture fixture) : IClassFixture<RestaurantApiFixture>
+[Collection("EndToEndInitialisationCollection")]
+public sealed class RestaurantApiTests(RestaurantApiFixture fixture)
 {
     private readonly HttpClient _httpClient = fixture.CreateClient();
     private readonly JsonSerializerOptions _jsonSerializerOptions = new(JsonSerializerDefaults.Web)
@@ -169,6 +169,65 @@ public sealed class RestaurantApiTests(RestaurantApiFixture fixture) : IClassFix
 
         // Act
         var response = await _httpClient.DeleteAsync($"api/restaurant/{nonExistingRestaurantId}");
+
+        // Assert
+        Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task PatchRestaurant_Patched()
+    {
+        // Arrange
+        var restaurantId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa6");
+        var updateRestaurantOperation = @"
+[
+  {
+    ""op"": ""replace"",
+    ""path"": ""/Name"",
+    ""value"": ""New Restaurant Name""
+  },
+  {
+    ""op"": ""replace"",
+    ""path"": ""/Description"",
+    ""value"": ""New Restaurant Description""
+  }
+]
+";
+
+        // Act
+        var response = await _httpClient.PatchAsync($"api/restaurant/{restaurantId}", new StringContent(updateRestaurantOperation, Encoding.UTF8, "application/json-patch+json"));
+
+        // Assert
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var body = await response.Content.ReadAsStringAsync();
+        var result = JsonSerializer.Deserialize<RestaurantDto>(body, _jsonSerializerOptions);
+        Assert.Equal(restaurantId, result.Id);
+        Assert.Equal("New Restaurant Name", result.Name);
+        Assert.Equal("New Restaurant Description", result.Description);
+    }
+
+    [Fact]
+    public async Task PatchRestaurant_NotFound()
+    {
+        // Arrange
+        var nonExistingRestaurantId = Guid.Parse("5960c289-ceab-4a18-aa18-eb04183083ed");
+        var updateRestaurantOperation = @"
+[
+  {
+    ""op"": ""replace"",
+    ""path"": ""/Name"",
+    ""value"": ""New Restaurant Name""
+  },
+  {
+    ""op"": ""replace"",
+    ""path"": ""/Description"",
+    ""value"": ""New Restaurant Description""
+  }
+]
+";
+
+        // Act
+        var response = await _httpClient.PatchAsync($"api/restaurant/{nonExistingRestaurantId}", new StringContent(updateRestaurantOperation, Encoding.UTF8, "application/json-patch+json"));
 
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);

@@ -47,3 +47,8 @@ public sealed class CatalogApiFixture : WebApplicationFactory<Program>, IAsyncLi
         await _app.StartAsync();
     }
 }
+
+[CollectionDefinition("EndToEndInitialisationCollection", DisableParallelization = true)]
+public class EndToEndInitialisationCollection : ICollectionFixture<CatalogApiFixture>
+{
+}
