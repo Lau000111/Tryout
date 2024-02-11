@@ -26,7 +26,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture) : IClassFixture<C
         var catalogId = Guid.Parse("f2b86c70-6cde-4f0f-9f96-5206f4d8f1a9");
 
         // Act
-        var response = await _httpClient.GetAsync($"/api/catalog/{catalogId}");
+        var response = await _httpClient.GetAsync($"api/catalog/{catalogId}");
 
         // Assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
@@ -43,7 +43,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture) : IClassFixture<C
         var nonExistingCatalogId = Guid.Parse("d12be4e8-8c83-4548-a7a7-9a3f7f67a440");
 
         // Act
-        var response = await _httpClient.GetAsync($"/api/catalog/{nonExistingCatalogId}");
+        var response = await _httpClient.GetAsync($"api/catalog/{nonExistingCatalogId}");
 
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
@@ -86,7 +86,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture) : IClassFixture<C
         };
 
         // Act
-        var response = await _httpClient.PostAsJsonAsync("/api/catalog", catalog);
+        var response = await _httpClient.PostAsJsonAsync("api/catalog", catalog);
 
         // Assert
         Assert.Equal(HttpStatusCode.Created, response.StatusCode);
@@ -106,6 +106,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture) : IClassFixture<C
         var catalogId = Guid.Parse("f7eedbf4-3c35-46a6-8cda-f7beb81baf82");
         var catalogDto = new CatalogDto
         {
+            Id = catalogId,
             Dishes = new List<DishDto>
             {
                 new()
@@ -133,7 +134,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture) : IClassFixture<C
         };
 
         // Act
-        var response = await _httpClient.PutAsJsonAsync($"/api/catalog/{catalogId}", catalogDto);
+        var response = await _httpClient.PutAsJsonAsync($"api/catalog/{catalogId}", catalogDto);
 
         // Assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
@@ -178,7 +179,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture) : IClassFixture<C
         };
 
         // Act
-        var response = await _httpClient.PutAsJsonAsync($"/api/catalog/{nonExistingCatalogId}", catalogDto);
+        var response = await _httpClient.PutAsJsonAsync($"api/catalog/{nonExistingCatalogId}", catalogDto);
 
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
@@ -191,7 +192,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture) : IClassFixture<C
         var catalogId = Guid.Parse("f7eedbf4-3c35-46a6-8cda-f7beb81baf82");
 
         // Act
-        var response = await _httpClient.DeleteAsync($"/api/catalog/{catalogId}");
+        var response = await _httpClient.DeleteAsync($"api/catalog/{catalogId}");
 
         // Assert
         Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
@@ -204,7 +205,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture) : IClassFixture<C
         var nonExistingCatalogId = Guid.Parse("d12be4e8-8c83-4548-a7a7-9a3f7f67a440");
 
         // Act
-        var response = await _httpClient.DeleteAsync($"/api/catalog/{nonExistingCatalogId}");
+        var response = await _httpClient.DeleteAsync($"api/catalog/{nonExistingCatalogId}");
 
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
@@ -231,7 +232,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture) : IClassFixture<C
 ";
 
         // Act
-        var response = await _httpClient.PatchAsync($"/api/catalog/{catalogId}", new StringContent(addNewItemOperation, Encoding.UTF8, "application/json-patch+json"));
+        var response = await _httpClient.PatchAsync($"api/catalog/{catalogId}", new StringContent(addNewItemOperation, Encoding.UTF8, "application/json-patch+json"));
 
         // Assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
@@ -264,7 +265,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture) : IClassFixture<C
 ";
 
         // Act
-        var response = await _httpClient.PatchAsync($"/api/catalog/{nonExistingCatalogId}", new StringContent(addNewItemOperation, Encoding.UTF8, "application/json-patch+json"));
+        var response = await _httpClient.PatchAsync($"api/catalog/{nonExistingCatalogId}", new StringContent(addNewItemOperation, Encoding.UTF8, "application/json-patch+json"));
 
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);

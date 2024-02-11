@@ -1,32 +1,50 @@
 [
-    {
-        "Id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "Name": "Restaurant A",
-        "Description": "This is a description for Restaurant A",
-        "Address": "123 A Street",
-        "CuisineType": "Italian",
-        "PhoneNumber": "123-456-7890",
-        "Email": "restaurantA@example.com",
-        "OwnerContact": {
-            "FirstName": "John",
-            "LastName": "Doe",
-            "Email": "johndoe@example.com",
-            "PhoneNumber": "123-456-7890"
-        }
-    },
-    {
-        "Id": "3fa85f64-5717-4562-b3fc-2c963f66afa7",
-        "Name": "Restaurant B",
-        "Description": "This is a description for Restaurant B",
-        "Address": "456 B Street",
-        "CuisineType": "Chinese",
-        "PhoneNumber": "098-765-4321",
-        "Email": "restaurantB@example.com",
-        "OwnerContact": {
-            "FirstName": "Jane",
-            "LastName": "Doe",
-            "Email": "janedoe@example.com",
-            "PhoneNumber": "098-765-4321"
-        }
+  {
+    "Id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "Name": "Restaurant A",
+    "Description": "This is a description for Restaurant A",
+    "Address": "123 A Street",
+    "CuisineType": "Italian",
+    "PhoneNumber": "123-456-7890",
+    "Email": "restaurantA@example.com",
+    "OwnerContact": {
+      "FirstName": "John",
+      "LastName": "Doe",
+      "Email": "johndoe@example.com",
+      "PhoneNumber": "123-456-7890",
+      "Address": "123 A Street"
     }
+  },
+  {
+    "Id": "3fa85f64-5717-4562-b3fc-2c963f66afa7",
+    "Name": "Restaurant B",
+    "Description": "This is a description for Restaurant B",
+    "Address": "456 B Street",
+    "CuisineType": "Chinese",
+    "PhoneNumber": "098-765-4321",
+    "Email": "restaurantB@example.com",
+    "OwnerContact": {
+      "FirstName": "Jane",
+      "LastName": "Doe",
+      "Email": "janedoe@example.com",
+      "PhoneNumber": "098-765-4321",
+      "Address": "456 F Street"
+    }
+  },
+  {
+    "Id": "f7eedbf4-3c35-46a6-8cda-f7beb81baf82",
+    "Name": "Restaurant C",
+    "Description": "This is a description for Restaurant B",
+    "Address": "456 B Street",
+    "CuisineType": "Chinese",
+    "PhoneNumber": "098-765-4321",
+    "Email": "restaurantB@example.com",
+    "OwnerContact": {
+      "FirstName": "Jas",
+      "LastName": "Min",
+      "Email": "jasMin@example.com",
+      "PhoneNumber": "038-765-4321",
+      "Address": "456 b Street"
+    }
+  }
 ]

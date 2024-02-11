@@ -37,7 +37,6 @@ public class RestaurantController(IRestaurantRepository restaurantRepository, IM
             Some: async r =>
             {
                 mapper.Map(restaurant, r);
-                r.Id = id;
                 var updatedRestaurant = await restaurantRepository.UpdateRestaurant(r);
                 return Ok(mapper.Map<RestaurantDto>(updatedRestaurant));
             },
@@ -71,7 +70,6 @@ public class RestaurantController(IRestaurantRepository restaurantRepository, IM
                 var restaurantDto = mapper.Map<RestaurantDto>(r);
                 patchRestaurant.ApplyTo(restaurantDto);
                 mapper.Map(restaurantDto, r);
-                r.Id = id;
                 var patchedRestaurant = await restaurantRepository.UpdateRestaurant(r);
                 return Ok(mapper.Map<RestaurantDto>(patchedRestaurant));
             },

@@ -37,7 +37,6 @@ public class CatalogController(ICatalogRepository catalogRepository, IMapper map
             Some: async c =>
             {
                 mapper.Map(catalog, c);
-                c.Id = id;
                 var updatedCatalog = await catalogRepository.UpdateCatalog(c);
                 return Ok(mapper.Map<CatalogDto>(updatedCatalog));
             },
@@ -71,7 +70,6 @@ public class CatalogController(ICatalogRepository catalogRepository, IMapper map
                 var catalogDto = mapper.Map<CatalogDto>(c);
                 patchCatalog.ApplyTo(catalogDto);
                 mapper.Map(catalogDto, c);
-                c.Id = id;
                 var patchedCatalog = await catalogRepository.UpdateCatalog(c);
                 return Ok(mapper.Map<CatalogDto>(patchedCatalog));
             },
