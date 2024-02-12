@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore.ValueGeneration;
+﻿using Microsoft.EntityFrameworkCore.ValueGeneration;
 using System.Text.Json;
 
 namespace ProjectAlpha.Catalog.DbContexts;
@@ -11,6 +10,9 @@ public class CatalogCosmosDbContext(DbContextOptions<CatalogCosmosDbContext> opt
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<CatalogEntity>()
+            .HasKey(c => new { c.Id, c.RestaurantId });
+
+        modelBuilder.Entity<CatalogEntity>()
             .ToContainer("Catalogs")
             .HasNoDiscriminator()
             .Property(fc => fc.Id)
@@ -18,7 +20,7 @@ public class CatalogCosmosDbContext(DbContextOptions<CatalogCosmosDbContext> opt
             .HasValueGenerator<SequentialGuidValueGenerator>();
 
         modelBuilder.Entity<CatalogEntity>()
-            .HasPartitionKey(fc => fc.Id)
+            .HasPartitionKey(fc => fc.RestaurantId)
             .OwnsMany(fc => fc.Dishes)
             .OwnsMany(ds => ds.Items, fi =>
             {

@@ -1,19 +1,18 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.JsonPatch;
+﻿using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ProjectAlpha.Catalog.Controllers;
 
 [ApiController]
-[Route("api/catalog")]
+[Route("api/{restaurantId}/catalog")]
 public class CatalogController(ICatalogRepository catalogRepository, IMapper mapper) : ControllerBase
 {
     [HttpGet("{id}")]
     [ProducesResponseType(typeof(CatalogDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetCatalogById(Guid id)
+    public async Task<IActionResult> GetCatalogById(Guid id, Guid restaurantId)
     {
-        Option<CatalogEntity> catalog = await catalogRepository.GetCatalogById(id);
+        Option<CatalogEntity> catalog = await catalogRepository.GetCatalogById(id, restaurantId);
         return catalog.Match<IActionResult>(
             Some: c => Ok(mapper.Map<CatalogDto>(c)),
             None: NotFound);
@@ -24,15 +23,18 @@ public class CatalogController(ICatalogRepository catalogRepository, IMapper map
     public async Task<IActionResult> CreateCatalog([FromBody] CatalogDto catalog)
     {
         var createdCatalog = await catalogRepository.CreateCatalog(mapper.Map<CatalogEntity>(catalog));
-        return CreatedAtAction(nameof(GetCatalogById), new { id = createdCatalog.Id }, mapper.Map<CatalogDto>(createdCatalog));
+        return CreatedAtAction(
+            nameof(GetCatalogById), 
+            new { id = createdCatalog.Id, restaurantId = createdCatalog.RestaurantId }, 
+            mapper.Map<CatalogDto>(createdCatalog));
     }
 
     [HttpPut("{id}")]
     [ProducesResponseType(typeof(CatalogDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> UpdateCatalog(Guid id, [FromBody] CatalogDto catalog)
+    public async Task<IActionResult> UpdateCatalog(Guid id, Guid restaurantId, [FromBody] CatalogDto catalog)
     {
-        Option<CatalogEntity> catalogExists = await catalogRepository.GetCatalogById(id);
+        Option<CatalogEntity> catalogExists = await catalogRepository.GetCatalogById(id, restaurantId);
         return await catalogExists.Match<Task<IActionResult>>(
             Some: async c =>
             {
@@ -46,9 +48,9 @@ public class CatalogController(ICatalogRepository catalogRepository, IMapper map
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> DeleteCatalog(Guid id)
+    public async Task<IActionResult> DeleteCatalog(Guid id, Guid restaurantId)
     {
-        Option<CatalogEntity> catalogExists = await catalogRepository.GetCatalogById(id);
+        Option<CatalogEntity> catalogExists = await catalogRepository.GetCatalogById(id, restaurantId);
         return await catalogExists.Match<Task<IActionResult>>(
             Some: async c =>
             {
@@ -61,9 +63,9 @@ public class CatalogController(ICatalogRepository catalogRepository, IMapper map
     [HttpPatch("{id}")]
     [ProducesResponseType(typeof(CatalogDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> PatchCatalog(Guid id, [FromBody] JsonPatchDocument<CatalogDto> patchCatalog)
+    public async Task<IActionResult> PatchCatalog(Guid id, Guid restaurantId, [FromBody] JsonPatchDocument<CatalogDto> patchCatalog)
     {
-        Option<CatalogEntity> catalogExists = await catalogRepository.GetCatalogById(id);
+        Option<CatalogEntity> catalogExists = await catalogRepository.GetCatalogById(id, restaurantId);
         return await catalogExists.Match<Task<IActionResult>>(
             Some: async c =>
             {

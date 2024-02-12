@@ -2,7 +2,7 @@
 
 public interface ICatalogRepository
 {
-    public Task<CatalogEntity?> GetCatalogById(Guid catalogId);
+    public Task<CatalogEntity?> GetCatalogById(Guid catalogId, Guid restaurantId);
 
     public Task<CatalogEntity> CreateCatalog(CatalogEntity catalogEntity);
 

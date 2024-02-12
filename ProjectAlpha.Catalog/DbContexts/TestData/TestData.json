@@ -1,6 +1,7 @@
 [
   {
     "id": "f2b86c70-6cde-4f0f-9f96-5206f4d8f1a9",
+    "restaurantId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "dishes": [
       {
         "name": "Italian Pasta",
@@ -57,6 +58,7 @@
   },
   {
     "id": "f7eedbf4-3c35-46a6-8cda-f7beb81baf82",
+    "restaurantId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "dishes": [
       {
         "name": "American Grill",
@@ -73,6 +75,7 @@
   },
   {
     "id": "26a7bec2-c710-4151-bf0f-d2a221b8c702",
+    "restaurantId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "dishes": [
       {
         "name": "French Cuisine",
@@ -89,6 +92,7 @@
   },
   {
     "id": "4cff0d5a-0e58-490c-9b48-950e0dd674fe",
+    "restaurantId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
     "dishes": [
       {
         "name": "Pizza",

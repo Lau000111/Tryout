@@ -2,9 +2,12 @@
 
 public class CatalogRepository(CatalogCosmosDbContext context) : ICatalogRepository
 {
-    public Task<CatalogEntity?> GetCatalogById(Guid catalogId)
+    public Task<CatalogEntity?> GetCatalogById(Guid catalogId, Guid restaurantId)
     {
-        return context.Catalogs.Include(fc => fc.Dishes).ThenInclude(dish => dish.Items).FirstOrDefaultAsync(fc => fc.Id == catalogId);
+        return context.Catalogs
+            .Include(fc => fc.Dishes)
+            .ThenInclude(dish => dish.Items)
+            .FirstOrDefaultAsync(fc => fc.Id == catalogId && fc.RestaurantId == restaurantId);
     }
 
     public async Task<CatalogEntity> CreateCatalog(CatalogEntity catalogEntity)

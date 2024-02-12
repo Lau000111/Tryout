@@ -20,6 +20,8 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture)
         IncludeFields = true,
     };
 
+    private readonly Guid _restaurantId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa6");
+
     [Fact]
     public async Task GetCatalogById_Found()
     {
@@ -27,13 +29,14 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture)
         var catalogId = Guid.Parse("f2b86c70-6cde-4f0f-9f96-5206f4d8f1a9");
 
         // Act
-        var response = await _httpClient.GetAsync($"api/catalog/{catalogId}");
+        var response = await _httpClient.GetAsync($"api/{_restaurantId}/catalog/{catalogId}");
 
         // Assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         var body = await response.Content.ReadAsStringAsync();
         var result = JsonSerializer.Deserialize<CatalogDto>(body, _jsonSerializerOptions);
         Assert.Equal(catalogId, result.Id);
+        Assert.Equal(_restaurantId, result.RestaurantId);
         Assert.Equal(3, result.Dishes.Count);
     }
 
@@ -44,7 +47,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture)
         var nonExistingCatalogId = Guid.Parse("d12be4e8-8c83-4548-a7a7-9a3f7f67a440");
 
         // Act
-        var response = await _httpClient.GetAsync($"api/catalog/{nonExistingCatalogId}");
+        var response = await _httpClient.GetAsync($"api/{_restaurantId}/catalog/{nonExistingCatalogId}");
 
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
@@ -58,6 +61,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture)
         var catalog = new CatalogDto
         {
             Id = catalogId,
+            RestaurantId = _restaurantId,
             Dishes = new List<DishDto>
             {
                 new()
@@ -87,13 +91,14 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture)
         };
 
         // Act
-        var response = await _httpClient.PostAsJsonAsync("api/catalog", catalog);
+        var response = await _httpClient.PostAsJsonAsync($"api/{_restaurantId}/catalog", catalog);
 
         // Assert
         Assert.Equal(HttpStatusCode.Created, response.StatusCode);
         var body = await response.Content.ReadAsStringAsync();
         var result = JsonSerializer.Deserialize<CatalogDto>(body, _jsonSerializerOptions);
         Assert.Equal( catalogId, result.Id);
+        Assert.Equal(_restaurantId, result.RestaurantId);
         Assert.Single(result.Dishes);
         Assert.Equal("Italian Pasta", result.Dishes.First().Name);
         Assert.Equal("Penne Arrabiata", result.Dishes.Last().Items.Last().Name);
@@ -108,6 +113,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture)
         var catalogDto = new CatalogDto
         {
             Id = catalogId,
+            RestaurantId = _restaurantId,
             Dishes = new List<DishDto>
             {
                 new()
@@ -135,13 +141,14 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture)
         };
 
         // Act
-        var response = await _httpClient.PutAsJsonAsync($"api/catalog/{catalogId}", catalogDto);
+        var response = await _httpClient.PutAsJsonAsync($"api/{_restaurantId}/catalog/{catalogId}", catalogDto);
 
         // Assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         var body = await response.Content.ReadAsStringAsync();
         var result = JsonSerializer.Deserialize<CatalogDto>(body, _jsonSerializerOptions);
         Assert.Equal(catalogId, result.Id);
+        Assert.Equal(_restaurantId, result.RestaurantId);
         Assert.Equal("Italian Pasta", result.Dishes.First().Name);
         Assert.Equal("Penne Arrabiata", result.Dishes.First().Items.Last().Name);
     }
@@ -153,6 +160,8 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture)
         var nonExistingCatalogId = Guid.NewGuid();
         var catalogDto = new CatalogDto
         {
+            Id = nonExistingCatalogId,
+            RestaurantId = _restaurantId,
             Dishes = new List<DishDto>
             {
                 new()
@@ -180,7 +189,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture)
         };
 
         // Act
-        var response = await _httpClient.PutAsJsonAsync($"api/catalog/{nonExistingCatalogId}", catalogDto);
+        var response = await _httpClient.PutAsJsonAsync($"api/{_restaurantId}/catalog/{nonExistingCatalogId}", catalogDto);
 
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
@@ -193,7 +202,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture)
         var catalogId = Guid.Parse("f7eedbf4-3c35-46a6-8cda-f7beb81baf82");
 
         // Act
-        var response = await _httpClient.DeleteAsync($"api/catalog/{catalogId}");
+        var response = await _httpClient.DeleteAsync($"api/{_restaurantId}/catalog/{catalogId}");
 
         // Assert
         Assert.Equal(HttpStatusCode.NoContent, response.StatusCode);
@@ -206,7 +215,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture)
         var nonExistingCatalogId = Guid.Parse("d12be4e8-8c83-4548-a7a7-9a3f7f67a440");
 
         // Act
-        var response = await _httpClient.DeleteAsync($"api/catalog/{nonExistingCatalogId}");
+        var response = await _httpClient.DeleteAsync($"api/{_restaurantId}/catalog/{nonExistingCatalogId}");
 
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
@@ -233,13 +242,14 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture)
 ";
 
         // Act
-        var response = await _httpClient.PatchAsync($"api/catalog/{catalogId}", new StringContent(addNewItemOperation, Encoding.UTF8, "application/json-patch+json"));
+        var response = await _httpClient.PatchAsync($"api/{_restaurantId}/catalog/{catalogId}", new StringContent(addNewItemOperation, Encoding.UTF8, "application/json-patch+json"));
 
         // Assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         var body = await response.Content.ReadAsStringAsync();
         var result = JsonSerializer.Deserialize<CatalogDto>(body, _jsonSerializerOptions);
         Assert.Equal(catalogId, result.Id);
+        Assert.Equal(_restaurantId, result.RestaurantId);
         Assert.Equal(2, result.Dishes.First().Items.Count);
         Assert.NotEqual(Guid.Empty, result.Dishes.First().Items.Last().Id);
         Assert.Equal("New Pizza ItemEntity", result.Dishes.First().Items.Last().Name);
@@ -266,7 +276,7 @@ public sealed class CatalogApiTests(CatalogApiFixture fixture)
 ";
 
         // Act
-        var response = await _httpClient.PatchAsync($"api/catalog/{nonExistingCatalogId}", new StringContent(addNewItemOperation, Encoding.UTF8, "application/json-patch+json"));
+        var response = await _httpClient.PatchAsync($"api/{_restaurantId}/catalog/{nonExistingCatalogId}", new StringContent(addNewItemOperation, Encoding.UTF8, "application/json-patch+json"));
 
         // Assert
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
