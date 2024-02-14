@@ -33,7 +33,8 @@ import PaymentPage from './pages/Payment';
 import MenuComponent from './components/MenuComponent';
 import PaidMessage from './pages/PaidMessage';
 import CardPayment from './pages/CardPayment';
-import DineFusionLoader from './pages/DineFusionLoader';
+import DineFusionLoader from './pages/app/DineFusionLoader';
+import WelcomeScreen from './pages/app/WelcomeScreen';
 
 
 setupIonicReact();
@@ -81,6 +82,10 @@ const App: React.FC = () => {
 
                   <Route path="/dine-fusion">
                     <DineFusionLoader />
+                  </Route>
+
+                  <Route path="/welcome">
+                    <WelcomeScreen />
                   </Route>
 
                   <Route path="/payment" component={PaymentPage} exact />

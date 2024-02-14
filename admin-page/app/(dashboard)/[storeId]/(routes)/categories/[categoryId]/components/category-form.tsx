@@ -2,12 +2,12 @@
 
 import * as z from "zod"
 import axios from "axios"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { toast } from "react-hot-toast"
 import { Trash } from "lucide-react"
-import { Billboard,Category } from "@/types/schema"
+import { Billboard,Catalog,Category } from "@/types/schema"
 import { useParams, useRouter } from "next/navigation"
 
 import { Input } from "@/components/ui/input"
@@ -24,6 +24,7 @@ import { Separator } from "@/components/ui/separator"
 import { Heading } from "@/components/ui/heading"
 import { AlertModal } from "@/components/modals/alert-modal"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { addDishOrItem, fetchGetCatalog } from "@/app/api/products/route"
 
 const formSchema = z.object({
   name: z.string().min(2),
@@ -55,24 +56,49 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
       name: '',
     }
   });
+  const [categories, setCategories] = useState<Catalog>();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetchGetCatalog();
+
+        setCategories(result);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+
 
   const onSubmit = async (data: CategoryFormValues) => {
     try {
       setLoading(true);
-      const url = `http://localhost:5235/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d/dishes`;
-      const payload = {
-        name: data.name,
-        items: [] // Leere ItemList hinzugefügt
-      };
 
-        // Für das Erstellen eines neuen Gerichts
-        await axios.post(url, payload);
-      
+      if (!categories) {
+        throw new Error('No categories data available');
+      }
   
+      const payload = [
+        {
+          op: "add",
+          path: "/dishes/-", 
+          value: {
+            Name: data.name,
+          }
+        }
+      ];
+  
+      const result = await addDishOrItem(payload);
+      
+      setLoading(false);
       router.refresh();
       router.push(`/${params.storeId}/categories`);
       toast.success(toastMessage);
     } catch (error: any) {
+      console.log(error);
       toast.error('Something went wrong.');
     } finally {
       setLoading(false);

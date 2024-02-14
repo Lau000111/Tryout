@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { ProductForm } from "./components/product-form";
 import axios from "axios"
+import { fetchGetCatalog } from '@/app/api/products/route';
 
 const ProductPage = ({
   params
@@ -130,8 +131,8 @@ const [category, setCategories] = useState([]);
 
 const reloadCategories = async () => {
   try {
-    const response = await axios.get(`http://localhost:5235/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d`);
-    const fetchedCategories = response.data.dishes;
+    const result = await fetchGetCatalog();
+    const fetchedCategories = result.dishes;
     const formattedCategories = fetchedCategories.map((dish: { name: any; }, index: number) => ({
       id: (index + 1).toString(),
       name: dish.name

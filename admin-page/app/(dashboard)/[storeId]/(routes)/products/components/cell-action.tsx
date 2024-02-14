@@ -3,23 +3,25 @@
 import axios from "axios";
 import { Copy, Edit, MoreHorizontal, Trash } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { useCatalog } from '@/context/CatalogContext';
 
 
 import { AlertModal } from "@/components/modals/alert-modal";
 import { Button } from "@/components/ui/button";
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuLabel, 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 
 import { ProductColumn } from "./columns";
 import { useTranslation } from "react-i18next";
+import { deleteDishOrItem, fetchGetCatalog } from "@/app/api/products/route";
+import { Catalog } from "@/types/schema";
 
 interface CellActionProps {
   data: ProductColumn;
@@ -32,21 +34,93 @@ export const CellAction: React.FC<CellActionProps> = ({
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const params = useParams();
-  const { removeItem } = useCatalog(); 
+  const { removeItem } = useCatalog();
   const { t } = useTranslation();
 
+  const [category, setcategory] = useState<Catalog | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetchGetCatalog();
+
+        setcategory(result);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+
+  }, []);
+  
   const onConfirm = async () => {
     try {
       setLoading(true);
-      const url = `http://localhost:5235/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d/items/${data.id}`;
-      await axios.delete(url);
-      removeItem(data.id);
+
+      console.log("Data: ", data);
+
+      let dishIndex = -1;
+      let itemIndex = -1;
+  
+      if (!category) {
+        throw new Error('No categories data available');
+      }
+      category.dishes.forEach((dish, index) => {
+        dish.items.forEach((item, idx) => {
+          if (item.id === data.id) {
+            dishIndex = index;
+            itemIndex = idx;
+          }
+        });
+      });
+  
+      if (dishIndex === -1 || itemIndex === -1) {
+        throw new Error("Item nicht gefunden.");
+      }
+  
+      const payload = [
+        {
+          op: "remove",
+          path: `/Dishes/${dishIndex}/Items/${itemIndex}`,
+        }
+      ];
       
+      const result = await deleteDishOrItem(payload);
+
+      removeItem(data.id);
+
       toast.success('Product deleted.');
       router.refresh();
+      window.location.reload();
       router.push(`/${params.storeId}/products`);
     } catch (error) {
       toast.error('Something went wrong');
+    } finally {
+      setLoading(false);
+      setOpen(false);
+    }
+  };
+
+  const onDelete = async () => {
+    try {
+      setLoading(true);
+
+
+      const payload = [
+        {
+          op: "remove",
+          path: `/dishes/${data.id}/Items/-`,
+        }
+      ];
+
+      const result = await deleteDishOrItem(payload);
+
+      router.refresh();
+      router.push(`/${params.storeId}/products`);
+      toast.success('Product deleted.');
+    } catch (error: any) {
+      toast.error('Something went wrong.');
     } finally {
       setLoading(false);
       setOpen(false);

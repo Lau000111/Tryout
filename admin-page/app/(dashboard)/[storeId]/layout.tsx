@@ -30,7 +30,6 @@ export default function DashboardLayout({
 
 
   useEffect(() => {
-    // Stelle sicher, dass Code nur auf der Client-Seite ausgeführt wird
     if (!localStorage.getItem('store')) {
       redirect('/');
     };

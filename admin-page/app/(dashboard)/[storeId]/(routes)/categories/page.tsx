@@ -1,35 +1,33 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CategoryColumn } from "./components/columns"
 import { CategoriesClient } from "./components/client";
 import { fetchGetCatalog } from '@/app/api/products/route';
 
 const CategoriesPage = ({ params }: { params: { storeId: string } }) => {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState<CategoryColumn[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const fetchDishes = async () => {
-    if (!isLoaded) {
+  useEffect(() => {
+    const fetchData = async () => {
       try {
         const result = await fetchGetCatalog();
-        if (!result.ok) {
-          throw new Error('Fehler beim Abrufen der Dishes');
-        }
-        const dishesData = await result.json();
-
-        const updatedCategories = dishesData.map((dish: { name: any; }) => ({
+          
+        const categoryColumns: CategoryColumn[] = result.dishes.map((dish: { name: string }) => ({
           name: dish.name,
         }));
-
-        setCategories(updatedCategories);
-        setIsLoaded(true); // Setzt den Ladestatus nach dem Laden
+        setCategories(categoryColumns);
       } catch (error) {
-        console.error('Fehler:', error);
+        console.error('Error fetching data:', error);
       }
-    }
-  };
+    };
+  
+    fetchData();
+    setIsLoaded(true);
+  }, []);
+  
 
-  if (!isLoaded) fetchDishes(); // Lädt Daten beim ersten Rendern
+  if (!isLoaded) return <div>Loading...</div>;
 
   return (
     <div className="flex-col">

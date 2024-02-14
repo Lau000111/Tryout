@@ -2,12 +2,12 @@
 
 import * as z from "zod"
 import axios from "axios"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { toast } from "react-hot-toast"
 import { Trash } from "lucide-react"
-import { Category, Color, Image, Product, Size } from "@/types/schema"
+import { Catalog, Category, Color, Image, Product, Size } from "@/types/schema"
 import { useParams, useRouter } from "next/navigation"
 
 import { Input } from "@/components/ui/input"
@@ -28,6 +28,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 // import ImageUpload from "@/components/ui/image-upload"
 import { Checkbox } from "@/components/ui/checkbox"
 import { useCatalog } from "@/context/CatalogContext" 
+import { addDishOrItem, deleteDishOrItem, fetchGetCatalog } from "@/app/api/products/route"
 
 const formSchema = z.object({
   name: z.string().min(1),
@@ -92,26 +93,58 @@ export const ProductForm: React.FC<ProductFormProps> = ({
     resolver: zodResolver(formSchema),
     defaultValues
   });
+  const [category, setCategories] = useState<Catalog>();
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetchGetCatalog();
+
+        setCategories(result);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+  
   const onSubmit = async (data: ProductFormValues) => {
     try {
       setLoading(true);
 
-      const categoryName = categories.find(category => category.id === data.categoryId)?.name;
-      if (!categoryName) {
+      const categoryIndex = categories.findIndex(category => category.id === data.categoryId);
+      if (categoryIndex === -1) {
         throw new Error("Kategorie nicht gefunden");
       }
 
       const apiRequestBody = {
                 name: data.name,
                 description: data.description, 
-                image: "asd", 
+                image: "asd.jpg", 
                 price: data.price
       };
+
+      if (!categories) {
+        throw new Error('No categories data available');
+      }
+  
+      const payload = [
+        {
+          op: "add",
+          path: `/dishes/${categoryIndex}/Items/-`, 
+          value: {
+            Name: data.name,
+            Description: data.description, 
+            Image: "asd.jpg", 
+            Price: data.price
+          }
+        }
+      ];
+  
+      const result = await addDishOrItem(payload);
     
 
-      const url = `http://localhost:5235/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d/dishes/${encodeURIComponent(categoryName)}/items`;
-      await axios.post(url, apiRequestBody);
       router.refresh();
       router.push(`/${params.storeId}/products`);
       toast.success(toastMessage);
@@ -125,8 +158,16 @@ export const ProductForm: React.FC<ProductFormProps> = ({
   const onDelete = async () => {
     try {
       setLoading(true);
-      const url = `http://localhost:5235/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d/items/${itemId}`;
-      await axios.delete(url);
+
+      console.log(itemId);
+      const payload = [
+        {
+          op: "remove",
+          path: `/dishes/${itemId}/Items/-`, 
+        }
+      ];
+
+      const result = await deleteDishOrItem(payload);
 
       router.refresh();
       router.push(`/${params.storeId}/products`);

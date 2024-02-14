@@ -15,7 +15,7 @@ const PaymentPage: React.FC = () => {
     const { t } = useTranslation();
 
     const handlePayment = () => {
-        history.push('/')
+        history.push('/paidMessage')
         setItems([]);
     };
 

@@ -1,33 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IonButton } from '@ionic/react';
 import Confetti from 'react-confetti';
 import { useHistory } from 'react-router-dom';
 
 const PaidMessage = () => {
   const history = useHistory();
-  const [confetti, setConfetti] = useState(false);
+  const [confetti, setConfetti] = useState(true);
 
   const toggleConfetti = () => {
     setConfetti(!confetti);
   };
+   const navigateToHome = () => {
+    history.push("/");
+  };
 
-  
-  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setConfetti(false); // Deaktiviert den Confetti-Effekt nach 3 Sekunden
+    }, 3000); // 3000 Millisekunden = 3 Sekunden
+
+    return () => clearTimeout(timer); // Bereinigung, um den Timer zu löschen
+  }, []);
+
     return (
       <div className="flex flex-col px-6 pt-6 pb-2 mx-auto w-full whitespace-nowrap bg-neutral-900 max-w-[450px] rounded-[32px]">
-        {confetti && <Confetti />}
-        <div className="flex gap-5 justify-between mt-1">
-        <IonButton style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} fill="clear" onClick={() => history.goBack()} >
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e13ddec0f6cc8b57c91c0209ece99057b05d61a38c7407d8fb1d805e19316142?apiKey=9253664459f648d7bd41c8f0841ddcc2&" style={{ width: '24px', height: '24px' }} alt="Button Icon"/>
-      </IonButton>
-    <IonButton style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} fill="clear" onClick={toggleConfetti} >
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/7599b0880cc26e5530e0439d4b8a94bbc0354032915cb835c06d698ab1a239b6?apiKey=9253664459f648d7bd41c8f0841ddcc2&"
-          className="w-6 aspect-square"
-        />
-         </IonButton>
-      </div>
+        {confetti && <Confetti/>}
       <img
         loading="lazy"
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/6b63a0e9d0e8309639df19af7c31b7e0c0ac3c13dddacca6ce42b49329e48868?apiKey=9253664459f648d7bd41c8f0841ddcc2&"
@@ -94,9 +91,15 @@ const PaidMessage = () => {
         />
         <div className="grow">Get PDF Receipt</div>
       </div>
-      <div className="justify-center items-center px-16 py-3 mt-3 text-sm font-semibold leading-6 text-center text-white bg-violet-800 rounded-xl">
-        Done
-      </div>
+      <div className="mt-2">
+      <IonButton 
+          expand="block" 
+          className="justify-center items-center px-16 py-1 text-sm font-semibold leading-6 text-center text-white bg-violet-800 rounded-xl" 
+          fill='clear'
+          onClick={navigateToHome}>
+          Done
+        </IonButton>
+        </div>
     </div>
   );
 }

@@ -1,11 +1,12 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
 
-const weatherApi = `${import.meta.env.VITE_APP_PROJECTALPHA_CATALOG_API}/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d`;
+
+const Restaurant_ID = `3fa85f64-5717-4562-b3fc-2c963f66afa6`;
+const ID = `f2b86c70-6cde-4f0f-9f96-5206f4d8f1a9`;
+const menuAPI = `${import.meta.env.VITE_APP_PROJECTALPHA_CATALOG_API}/api/${Restaurant_ID}/catalog/${ID}`;
 
 export const getDishes = async (): Promise<Dish[]> => {
     try {
-        const response = await fetch(weatherApi);
+        const response = await fetch(menuAPI);
         if (!response.ok) {
             throw new Error('Netzwerkantwort war nicht ok.');
         }
@@ -19,29 +20,5 @@ export const getDishes = async (): Promise<Dish[]> => {
     }
 };
 
-export const loadTranslations = async (language: string, namespace: string, callback: (error: any, translations: any) => void) => {
-    try {
-        const response = await fetch(`${import.meta.env.VITE_APP_PROJECTALPHA_CATALOG_API}/api/catalog/beace156-eceb-4b4a-9aa3-79f872eaa27d`);
-        if (!response.ok) throw new Error('Fehler beim Laden der Übersetzungen');
-        const translationsJson = await response.json();
-        let translations: Record<string, string> = {};;
-
-        translationsJson.Dishes.forEach((dish: { Name: any; Items: any[]; }, dishIndex: any) => {
-            const dishKey = `dish_${dishIndex}`;
-            translations[`${dishKey}_name`] = dish.Name;
-
-            dish.Items.forEach((item, itemIndex) => {
-                const itemKey = `${dishKey}_item_${itemIndex}`;
-                translations[`${itemKey}_name`] = item.Name;
-                translations[`${itemKey}_description`] = item.Description;
-            });
-        });
-
-        console.log("trans: ",translations);
-        callback(null, translations);
-    } catch (error) {
-        callback(error, null);
-    }
-};
 
 

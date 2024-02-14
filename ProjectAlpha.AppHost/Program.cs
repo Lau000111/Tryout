@@ -17,6 +17,7 @@ builder.AddNpmApp("dine-fusion", "../dine-fusion")
 
 builder.AddNpmApp("admin-page", "../admin-page")
     .WithReference(catalogProject)
+    .WithReference(restaurantProject)
     .WithServiceBinding(containerPort: 3001, scheme: "http", env: "PORT")
     .AsDockerfileInManifest();
 
