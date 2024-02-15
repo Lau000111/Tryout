@@ -1,3 +1,5 @@
+namespace ProjectAlpha.Catalog;
+
 public partial class Program
 {
     public static WebApplication App { get; private set; }
