@@ -10,15 +10,15 @@ builder.AddProject<Projects.ProjectAlpha_Mobile_BFF>(nameof(Projects.ProjectAlph
 
 // Frontend
 builder.AddNpmApp("dine-fusion", "../dine-fusion")
-    .WithReference(catalogProject)
-    .WithServiceBinding(containerPort: 3000, scheme: "http", env: "PORT")
-    .AsDockerfileInManifest();
+       .WithReference(catalogProject)
+       .WithEndpoint(containerPort: 3000, scheme: "http", env: "PORT")
+       .AsDockerfileInManifest();
 
 
 builder.AddNpmApp("admin-page", "../admin-page")
     .WithReference(catalogProject)
     .WithReference(restaurantProject)
-    .WithServiceBinding(containerPort: 3001, scheme: "http", env: "PORT")
+    .WithEndpoint(containerPort: 3001, scheme: "http", env: "PORT")
     .AsDockerfileInManifest();
 
 builder.Build().Run();
