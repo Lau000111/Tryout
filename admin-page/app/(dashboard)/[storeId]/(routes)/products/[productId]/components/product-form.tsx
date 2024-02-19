@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { toast } from "react-hot-toast"
 import { Trash } from "lucide-react"
-import { Catalog, Category, Color, Image, Product, Size } from "@/types/schema"
+import { Catalog, Category, Color, Dish, Image, Product, Size } from "@/types/schema"
 import { useParams, useRouter } from "next/navigation"
 
 import { Input } from "@/components/ui/input"
@@ -33,24 +33,16 @@ import { addDishOrItem, deleteDishOrItem, fetchGetCatalog } from "@/app/api/prod
 const formSchema = z.object({
   name: z.string().min(1),
   description: z.string().min(1),
-  images: z.object({ url: z.string() }).array(),
   price: z.coerce.number().min(1),
   categoryId: z.string().min(1),
-  colorId: z.string().min(1),
-  sizeId: z.string().min(1),
-  isFeatured: z.boolean().default(false).optional(),
+  // isFeatured: z.boolean().default(false).optional(),
   isArchived: z.boolean().default(false).optional()
 });
 
 type ProductFormValues = z.infer<typeof formSchema>
 
 interface ProductFormProps {
-  initialData: Product & {
-    images: Image[]
-  } | null;
-  categories: Category[];
-  colors: Color[];
-  sizes: Size[];
+  initialData: Dish[];
   itemId: string;
 };
 
@@ -58,12 +50,9 @@ interface ProductFormProps {
 
 export const ProductForm: React.FC<ProductFormProps> = ({
   initialData,
-  sizes,
   itemId,
-  categories
 }) => {
   const params = useParams();
-  const { catalog } = useCatalog();
   const router = useRouter();
 
   const [open, setOpen] = useState(false);
@@ -75,17 +64,12 @@ export const ProductForm: React.FC<ProductFormProps> = ({
   const action = initialData ? 'Save changes' : 'Create';
 
   const defaultValues = initialData ? {
-    ...initialData,
-    price: parseFloat(String(initialData?.price)),
+    ...initialData
   } : {
     name: '',
-    images: [],
     price: 0,
     description: '',
     categoryId: '',
-    colorId: '',
-    sizeId: '',
-    isFeatured: false,
     isArchived: false,
   }
 
@@ -113,19 +97,15 @@ export const ProductForm: React.FC<ProductFormProps> = ({
     try {
       setLoading(true);
 
-      const categoryIndex = categories.findIndex(category => category.id === data.categoryId);
+      const categories = category?.dishes || [];
+
+    // Finde den Index der ausgewählten Kategorie
+     const categoryIndex = categories.findIndex(c => c.name === data.categoryId);
       if (categoryIndex === -1) {
         throw new Error("Kategorie nicht gefunden");
       }
 
-      const apiRequestBody = {
-                name: data.name,
-                description: data.description, 
-                image: "asd.jpg", 
-                price: data.price
-      };
-
-      if (!categories) {
+      if (!initialData) {
         throw new Error('No categories data available');
       }
   
@@ -150,6 +130,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
       toast.success(toastMessage);
     } catch (error: any) {
       toast.error('Something went wrong.');
+      console.log(error);
     } finally {
       setLoading(false);
     }
@@ -204,24 +185,24 @@ export const ProductForm: React.FC<ProductFormProps> = ({
       <Separator />
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
-          <FormField
+          {/* <FormField
             control={form.control}
             name="images"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Images</FormLabel>
                 <FormControl>
-                  {/* <ImageUpload 
+                  <ImageUpload 
                     value={field.value.map((image) => image.url)} 
                     disabled={loading} 
                     onChange={(url) => field.onChange([...field.value, { url }])}
                     onRemove={(url) => field.onChange([...field.value.filter((current) => current.url !== url)])}
-                  /> */}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
-          />
+          /> */}
           <div className="md:grid md:grid-cols-3 gap-8">
             <FormField
               control={form.control}
@@ -275,9 +256,9 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                    {categories.map((category) => (
-            <SelectItem key={category.id} value={category.id}>
-              {category.name}
+                    {initialData.map((initialData) => (
+            <SelectItem key={initialData.name} value={initialData.name}>
+              {initialData.name}
             </SelectItem>
           ))}
                     </SelectContent>

@@ -46,7 +46,6 @@ export interface Store {
     size: Size;
     colorId: string;
     color: Color;
-    images: Image[];
     orderItems: OrderItem[];
     createdAt: Date;
     updatedAt: Date;
@@ -97,10 +96,10 @@ export interface Store {
   export interface Image {
     id: string;
     productId: string;
-    product: Product;
     url: string;
-    createdAt: Date;
-    updatedAt: Date;
+    alt?: string; 
+    title?: string;
+
   }
 
   export interface Item {

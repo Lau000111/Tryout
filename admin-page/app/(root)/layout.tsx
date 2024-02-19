@@ -5,6 +5,7 @@ import React, { useEffect, useState  } from 'react';
 import { useCatalog,  } from '@/context/CatalogContext';
 import axios from 'axios';
 import { Dish, Item } from '@/types/schema';
+import { getRestaurantById } from '../api/restaurant/route';
 
 export default function SetupLayout({
   children,
@@ -58,12 +59,27 @@ export default function SetupLayout({
 
   useEffect(() => {
     const store = localStorage.getItem('store');
+   
     if (store) {
       redirect(`/${store}`);
     } else {
       
     }
   });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const restaurant = await getRestaurantById();
+
+        
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+  
+    fetchData();
+  }, []);
 
   if (isChecking) {
     return <div>Lade...</div>; // oder irgendein Lade-Indikator

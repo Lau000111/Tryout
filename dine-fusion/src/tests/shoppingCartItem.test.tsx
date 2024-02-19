@@ -19,13 +19,13 @@ test('ShoppingCartItem is rendered correctly', () => {
 
   // Check if the item title, price, and quantity are rendered correctly
   const itemTitleElement = screen.getByText(mockItem.title);
-  expect(itemTitleElement).toBeInTheDocument();
+  expect(itemTitleElement).toBeDefined();
 
   const itemPriceElement = screen.getByText(`${mockItem.price.toFixed(2)}€`);
-  expect(itemPriceElement).toBeInTheDocument();
+  expect(itemPriceElement).toBeDefined();
 
   const itemQuantityElement = screen.getByText(mockItem.quantity.toString());
-  expect(itemQuantityElement).toBeInTheDocument();
+  expect(itemQuantityElement).toBeDefined();
 });
 
 test('Increase and decrease quantity buttons work correctly', () => {

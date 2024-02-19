@@ -106,7 +106,7 @@ describe('PaymentPage', () => {
     const { goBack } = useHistory();
     render(<PaymentPage />);
     
-    fireEvent.click(screen.getByTestId('back-button'));
+    fireEvent.click(screen.getByTestId('back-buttonPayment'));
     expect(goBack).toHaveBeenCalled();
   });
 

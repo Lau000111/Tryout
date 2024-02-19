@@ -50,6 +50,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
       </div>
 
       <IonButton
+        data-testid="add-to-cart-button"
         fill="clear"
         style={{ color: '#C5E1A5' }}
         onClick={addToCart}

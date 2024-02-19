@@ -47,7 +47,7 @@ const MenuComponent = () => {
       <IonMenu contentId="main-content">
         <IonHeader>
           <IonToolbar>
-            <IonTitle>{showLanguageMenu ? t('settings.changeLanguage.title') : t('settings.title')}</IonTitle>
+            {/* <IonTitle>{showLanguageMenu ? t('settings.changeLanguage.title') : t('settings.title')}</IonTitle> */}
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
@@ -64,7 +64,7 @@ const MenuComponent = () => {
           )}
           {showLanguageMenu ? (
             <>
-              <div className="back-button" onClick={handleBackToMenu}>
+              <div className="back-buttonMenu" onClick={handleBackToMenu}>
                 <IonIcon icon={arrowBack} style={{ marginRight: '5px' }} />
                 <IonLabel>{t("general.back")}</IonLabel>
               </div>
@@ -74,7 +74,7 @@ const MenuComponent = () => {
             </>
           ) : (
             <>
-              <IonItem button onClick={languageChangePage}>
+              <IonItem button onClick={languageChangePage} data-testid="change-language-button">
               {t("settings.chanceLanguage.editProfile")}
                 <IonIcon icon={languageOutline} slot='end' />
               </IonItem>

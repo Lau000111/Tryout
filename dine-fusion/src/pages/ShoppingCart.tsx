@@ -152,7 +152,7 @@ const ShoppingCartPage: React.FC = () => {
 
         <IonButton expand="block" style={{ marginBottom: '1rem' }} id="present-tip-alert">
           <IonIcon slot="start" icon={cashOutline} />
-          {t("shoppingCardPage.applyCoupon")} 
+          {t("shoppingCardPage.addTip")} 
         </IonButton>
 
         <IonAlert

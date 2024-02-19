@@ -25,7 +25,7 @@ const PaymentPage: React.FC = () => {
                 <IonToolbar>
                     <IonTitle>{t("paymendPage.title")}</IonTitle>
                     <IonButtons slot="start">
-                        <IonButton onClick={() => history.goBack()} data-testid="back-button">
+                        <IonButton onClick={() => history.goBack()} data-testid="back-buttonPayment">
                             <IonIcon slot="icon-only" icon={arrowBack}/>
                         </IonButton>
                     </IonButtons>

@@ -1,0 +1,68 @@
+{
+  "overview":{
+    "title":"Overview",
+    "descriptionTitle":"Dashboard",
+    "description":"Übersicht über Ihr Geschäft ",
+    "sales":"Verkäufe",
+    "productsInStock":"Vorrätige Produkte",
+    "totalRevenue":"Gesamteinnahmen",
+    "overwiev":"Übersicht"
+  },
+  "menu":{
+    "title": "Menü",
+    "description": "Verwalten Sie Produkte für Ihr Geschäft",
+    "products":"Produkte",
+    "insertMenu": "Speisekarte einfügen",
+    "addNew": "Neu hinzufügen",
+    "search":"Suche",
+    "tab": 
+    {
+      "name": "Name",
+      "description":"Beschreibung",
+      "featured": "Featured",
+      "price": "Preis",
+      "category": "Kategorie"
+    },
+    "options":
+    {
+      "title": "Akktionen",
+      "update": "Ändern",
+      "delete": "Löschen"
+    }
+  },
+  "categories":{
+    "title": "Kategorien",
+    "description": "Verwalten Sie ihre Categorien für Ihr Geschäft",
+    "categories":"Kategorien",
+    "addNew": "Neu hinzufügen",
+    "search":"Suche",
+    "tab": 
+    {
+      "name": "Name",
+      "description":"Beschreibung",
+      "featured": "Featured",
+      "price": "Preis",
+      "category": "Kategorie"
+    },
+    "options":
+    {
+      "title": "Akktionen",
+      "update": "Ändern",
+      "delete": "Löschen"
+    }
+  },
+  "settings":{
+    "title": "Einstellungen",
+    "inTotal":"Insgesamt",
+    "payOnline": "Online bezahlen",
+    "payCash": "Barzahlung",
+    "payInGroup": "Bezahlen"
+  },
+  "general": {
+    "back": "Zurück",
+    "forward": "Weiter",
+    "close": "Schließen",
+    "save": "Speichern",
+    "cancel": "Abbrechen"
+  }
+}

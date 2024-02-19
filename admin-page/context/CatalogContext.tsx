@@ -20,7 +20,7 @@ const initialCatalog: Catalog = {
   };
 
   
-const CatalogContext = createContext<CatalogContextType | undefined>(undefined);
+export const CatalogContext = createContext<CatalogContextType | undefined>(undefined);
 
 export const CatalogProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [catalog, setCatalog] = useState<Catalog>(initialCatalog);
