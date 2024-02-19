@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace ProjectAlpha.Catalog.DbContexts;
 
-public class CatalogCosmosDbContext(DbContextOptions<CatalogCosmosDbContext> options, IMapper mapper) : DbContext(options)
+public class CatalogCosmosDbContext(DbContextOptions<CatalogCosmosDbContext> options) : DbContext(options)
 {
     public required DbSet<CatalogEntity> Catalogs { get; set; }
 

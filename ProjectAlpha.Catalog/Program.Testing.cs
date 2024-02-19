@@ -3,6 +3,8 @@
 // integration tests. Using IVT is not sufficient
 // in this case, because the accessibility of the
 // `Program` type is checked. 
+namespace ProjectAlpha.Catalog;
+
 public partial class Program
 {
     public static void ResetTestData()

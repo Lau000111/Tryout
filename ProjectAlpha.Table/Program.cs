@@ -1,4 +1,8 @@
-namespace ProjectAlpha.Restaurant;
+using ProjectAlpha.Table.DbContexts;
+using ProjectAlpha.Table.Mappings;
+using ProjectAlpha.Table.Repositories;
+
+namespace ProjectAlpha.Table;
 
 public partial class Program
 {
@@ -12,14 +16,13 @@ public partial class Program
 
         builder.Services.AddControllers().AddNewtonsoftJson();
         builder.Services.AddSwaggerGen();
-        builder.Services.AddScoped<IRestaurantRepository, RestaurantRepository>();
-
-        builder.Services.AddDbContext<RestaurantCosmosDbContext>(options =>
+        builder.Services.AddScoped<ITableRepository, TableRepository>();
+        builder.Services.AddDbContext<TableCosmosDbContext>(options =>
             options.UseCosmos(
                 connectionString: "AccountEndpoint=https://localhost:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==",
                 databaseName: builder.Configuration["CosmosDb:DatabaseName"]!));
 
-        builder.Services.AddAutoMapper(typeof(RestaurantProfile));
+        builder.Services.AddAutoMapper(typeof(TableProfile));
 
         App = builder.Build();
 
@@ -38,10 +41,10 @@ public partial class Program
 
         using (var scope = scopeFactory.CreateScope())
         {
-            var restaurantCosmosDbContext = scope.ServiceProvider.GetRequiredService<RestaurantCosmosDbContext>();
-            restaurantCosmosDbContext.Database.EnsureCreated();
+            var tableCosmosDbContext = scope.ServiceProvider.GetRequiredService<TableCosmosDbContext>();
+            tableCosmosDbContext.Database.EnsureCreated();
             if (builder.Configuration["CosmosDb:DatabaseName"]!.StartsWith("Test"))
-                restaurantCosmosDbContext.SeedDatabase();
+                tableCosmosDbContext.SeedDatabase();
         }
 
         App.UseHttpsRedirection();

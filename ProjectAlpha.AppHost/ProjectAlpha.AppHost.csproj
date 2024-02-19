@@ -9,13 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspire.Hosting" Version="8.0.0-preview.2.23619.3" />
+    <PackageReference Include="Aspire.Hosting" Version="8.0.0-preview.3.24105.21" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ProjectAlpha.Catalog\ProjectAlpha.Catalog.csproj" />
     <ProjectReference Include="..\ProjectAlpha.Mobile.BFF\ProjectAlpha.Mobile.BFF.csproj" />
     <ProjectReference Include="..\ProjectAlpha.Restaurant\ProjectAlpha.Restaurant.csproj" />
+    <ProjectReference Include="..\ProjectAlpha.Table\ProjectAlpha.Table.csproj" />
   </ItemGroup>
 
 </Project>
