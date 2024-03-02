@@ -10,7 +10,13 @@ public class CatalogRepository(CatalogCosmosDbContext context) : ICatalogReposit
             .FirstOrDefaultAsync(fc => fc.Id == catalogId && fc.RestaurantId == restaurantId);
     }
 
-    public async Task<CatalogEntity> CreateCatalog(CatalogEntity catalogEntity)
+	public async Task<IEnumerable<CatalogEntity>> GetCatalogsByRestaurantId(Guid restaurantId)
+	{
+		return await context.Catalogs.Where(c => c.RestaurantId == restaurantId).ToListAsync();
+	}
+
+
+	public async Task<CatalogEntity> CreateCatalog(CatalogEntity catalogEntity)
     {
         context.Catalogs.Add(catalogEntity);
         await context.SaveChangesAsync();

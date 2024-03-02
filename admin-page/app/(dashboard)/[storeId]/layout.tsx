@@ -1,6 +1,7 @@
 "use client"
 
 import Navbar from '@/components/navbar';
+import Navbar2 from '@/components/navbar2';
 import { redirect } from 'next/navigation';
 import React, { useEffect } from 'react';
 import "@/app/i18n"
@@ -40,6 +41,7 @@ export default function DashboardLayout({
   return (
     <>
       <Navbar />
+      <Navbar2 />
       {children}
     </>
   );

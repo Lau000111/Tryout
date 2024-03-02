@@ -6,5 +6,7 @@ public class CatalogDto
 
     public Guid RestaurantId { get; set; }
 
+    public string Name { get; set; }
+
     public IList<DishDto> Dishes { get; set; }
 }

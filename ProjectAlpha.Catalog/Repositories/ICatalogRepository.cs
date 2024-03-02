@@ -3,6 +3,7 @@
 public interface ICatalogRepository
 {
     public Task<CatalogEntity?> GetCatalogById(Guid catalogId, Guid restaurantId);
+    public Task<IEnumerable<CatalogEntity>> GetCatalogsByRestaurantId(Guid restaurantId);
 
     public Task<CatalogEntity> CreateCatalog(CatalogEntity catalogEntity);
 

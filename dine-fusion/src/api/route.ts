@@ -7,6 +7,7 @@ const menuAPI = `${import.meta.env.VITE_APP_PROJECTALPHA_CATALOG_API}/api/${Rest
 export const getDishes = async (): Promise<Dish[]> => {
     try {
         const response = await fetch(menuAPI);
+        console.log('response', response)
         if (!response.ok) {
             throw new Error('Netzwerkantwort war nicht ok.');
         }

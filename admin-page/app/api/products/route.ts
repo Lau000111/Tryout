@@ -37,3 +37,8 @@ export const deleteDishOrItem = async (payload: any) => {
   });
   return response.data;
 };
+
+export const fetchCatalogsByRestaurant = async () => {
+  const response = await apiService.get(`/api/${Restaurant_ID}/catalog`);
+  return response.data;
+};

@@ -18,7 +18,23 @@ public class CatalogController(ICatalogRepository catalogRepository, IMapper map
             None: NotFound);
     }
 
-    [HttpPost]
+	[HttpGet]
+	[ProducesResponseType(typeof(IEnumerable<CatalogDto>), StatusCodes.Status200OK)]
+	[ProducesResponseType(StatusCodes.Status404NotFound)]
+	public async Task<IActionResult> GetCatalogsByRestaurantId(Guid restaurantId)
+	{
+		IEnumerable<CatalogEntity> catalogs = await catalogRepository.GetCatalogsByRestaurantId(restaurantId);
+		if (catalogs.Any())
+		{
+			return Ok(mapper.Map<IEnumerable<CatalogDto>>(catalogs));
+		}
+		else
+		{
+			return NotFound();
+		}
+	}
+
+	[HttpPost]
     [ProducesResponseType(typeof(CatalogDto), StatusCodes.Status201Created)]
     public async Task<IActionResult> CreateCatalog([FromBody] CatalogDto catalog)
     {
