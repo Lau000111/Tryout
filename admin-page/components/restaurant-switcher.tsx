@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/popover"
 import { useStoreModal } from "@/hooks/use-store-modal"
 import { useParams, useRouter } from "next/navigation"
+import { useRestaurantModal } from "@/hooks/use-restaurant-modal"
 
 type PopoverTriggerProps = React.ComponentPropsWithoutRef<typeof PopoverTrigger>
 
@@ -29,9 +30,10 @@ interface RestaurantSwitcherProps extends PopoverTriggerProps {
 }
 
 export default function StoreSwitcher({ className, items = [] }: RestaurantSwitcherProps) {
-    const storeModal = useStoreModal();
+    const storeModal = useRestaurantModal();
     const params = useParams();
     const router = useRouter();
+    
     
     const formattedItems = items.map((item) => ({
         label: item.key,

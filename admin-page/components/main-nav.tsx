@@ -18,27 +18,28 @@ export function MainNav({
       label: 'Overview',
       active: pathname === `/${params.storeId}`,
     },
-    {
-      href: `/${params.storeId}/billboards`,
-      label: 'Billboards',
-      active: pathname === `/${params.storeId}/billboards`,
-    },
+    // {
+    //   href: `/${params.storeId}/billboards`,
+    //   label: 'Billboards',
+    //   active: pathname === `/${params.storeId}/billboards`,
+    // },
 
     {
       href: `/${params.storeId}/products`,
-      label: 'Menü',
+      label: 'Menu',
       active: pathname === `/${params.storeId}/products`,
     },
     {
-      href: `/${params.storeId}/categories`,
-      label: 'Kategorien',
-      active: pathname === `/${params.storeId}/categories`,
+      href: `/${params.storeId}/orders`,
+      label: 'Orders',
+      active: pathname === `/${params.storeId}/orders`,
     },
     {
-      href: `/${params.storeId}/Qr-Code`,
-      label: 'QR Code',
-      active: pathname === `/${params.storeId}/qrcode`,
+      href: `/${params.storeId}/table`,
+      label: 'Table/Qr-Code Managment',
+      active: pathname === `/${params.storeId}/table`,
     },
+    
     {
       href: `/${params.storeId}/Tutorial`,
       label: 'Tutorials',
