@@ -2,6 +2,8 @@
   {
     "id": "f2b86c70-6cde-4f0f-9f96-5206f4d8f1a9",
     "restaurantId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "name": "vanila",
+    "isActive":  "true",
     "dishes": [
       {
         "name": "Italian Pasta",
@@ -59,6 +61,8 @@
   {
     "id": "f7eedbf4-3c35-46a6-8cda-f7beb81baf82",
     "restaurantId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "name": "Chinese",
+    "isActive": "false",
     "dishes": [
       {
         "name": "American Grill",
@@ -93,6 +97,8 @@
   {
     "id": "4cff0d5a-0e58-490c-9b48-950e0dd674fe",
     "restaurantId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "name": "Marios",
+    "isActive": "false",
     "dishes": [
       {
         "name": "Pizza",

@@ -14,21 +14,22 @@ export function CatalogNav({
 
   const routes = [
     {
+      href: `/${params.storeId}/${params.catalog}/products`,
+      label: 'Products',
+      active: pathname === `/${params.storeId}/${params.catalog}/products`,
+    },
+    {
       href: `/${params.storeId}/${params.catalog}/offers`,
       label: 'Offers',
       active: pathname === `/${params.storeId}/${params.catalog}/offers`,
     },
     {
-      href: `/${params.storeId}/${params.catalog}/categories`,
-      label: 'Category',
-      active: pathname === `/${params.storeId}/${params.catalog}/categories`,
+      href: `/${params.storeId}/${params.catalog}/catalog-data`,
+      label: 'Katalogdaten',
+      active: pathname === `/${params.storeId}/${params.catalog}/catalog-data`,
     },
 
-    {
-      href: `/${params.storeId}/${params.catalog}/products`,
-      label: 'Products',
-      active: pathname === `/${params.storeId}/${params.catalog}/products`,
-    }
+   
   ]
 
   return (

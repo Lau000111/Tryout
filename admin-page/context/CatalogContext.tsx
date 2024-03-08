@@ -11,6 +11,8 @@ interface CatalogContextType {
 }
 const initialCatalog: Catalog = {
     id: '',
+    name: '',
+    isActive: false,
     dishes: [],
     _rid: '',
     _self: '',

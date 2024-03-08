@@ -31,6 +31,8 @@ const mockItem: Item = {
   // Mock Catalog
   const mockCatalog: Catalog = {
     id: "catalog1",
+    name:"test",
+    isActive: true,
     dishes: [
       mockDish,
       {
@@ -60,38 +62,7 @@ const mockItem: Item = {
     _ts: 1615159002,
   };
 
-const mockInitialData: Product = {
-    id: "product1",
-    name: "Beispielprodukt",
-    price: 100,
-    colorId: "color1",
-    sizeId: "size1",
-    isFeatured: false,
-    isArchived: false,
-    storeId: "store1",
-    orderItems: [],
-    // Annahme, dass `Size` und `Color` einfache Objekte oder Referenzen auf bestehende Entitäten sind
-    size: {
-      id: "size1",
-      storeId: "store1",
-      name: "Medium",
-      value: "M",
-      products: [], // Normalerweise würdest du hier nicht leere Arrays einfügen, aber für das Mock-Objekt ist es in Ordnung.
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-    color: {
-      id: "color1",
-      storeId: "store1",
-      name: "Rot",
-      value: "#ff0000",
-      products: [],
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    },
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  };
+
   
 // Mock für axios oder fetchGetCatalog, falls verwendet
 jest.mock('axios', () => ({

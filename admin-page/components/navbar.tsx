@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import StoreSwitcher from "@/components/store-switcher";
 import { MainNav } from "@/components/main-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const Navbar = () => {
     const [storeItems, setStoreItems] = useState<Record<string, any>[]>([]);
@@ -34,7 +35,13 @@ const Navbar = () => {
                 <MainNav className="mx-6" />
                 <div className="ml-auto flex items-center space-x-4">
                     <ThemeToggle />
+
+                    <Avatar>
+                        <AvatarImage src="https://github.com/shadcn.png" />
+                        <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
                 </div>
+
             </div>
         </div>
     );

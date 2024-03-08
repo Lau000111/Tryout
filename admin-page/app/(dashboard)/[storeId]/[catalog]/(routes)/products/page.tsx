@@ -45,19 +45,26 @@ const ProductsPage = ({
 
 
   const transformDishesToProductColumns = (dishes: any[]) => {
-    return dishes.flatMap(dish =>
-      dish.items.map((item: {
-        description: any; id: any; name: any; price: number | bigint; isFeatured: any;
-      }) => ({
-        id: item.id,
-        name: item.name,
-        price: formatter.format(item.price),
-        category: dish.name,
-        isFeatured: item.isFeatured || false,
-        isArchived: false,
-        description: item.description,
-      }))
-    );
+    return dishes.flatMap(dish => {
+      // Überprüfe, ob das Dish Items enthält
+      if (dish.items.length > 0) {
+        // Transformiere jedes Item, wenn vorhanden
+        return dish.items.map((item: { description: any; id: any; name: any; price: number | bigint; isFeatured: any; }) => ({
+          id: item.id,
+          name: item.name,
+          price: formatter.format(item.price),
+          category: dish.name,
+          isFeatured: item.isFeatured || false,
+          isArchived: false,
+          description: item.description,
+        }));
+      } else {
+        // Erstelle einen Platzhalter-Eintrag für Dishes ohne Items, mit null Werten, wo sinnvoll
+        return [{
+          category: dish.name,
+        }];
+      }
+    });
   };
 
 

@@ -118,6 +118,7 @@ export interface Dish {
 export interface Catalog {
     id: string;
     name: string;
+    isActive: boolean;
     dishes: Dish[];
     _rid: string;
     _self: string;

@@ -31,29 +31,6 @@ const Navbar = () => {
             value: catalog.id // Angenommen, jedes Katalogobjekt hat eine 'id' Eigenschaft
         }));
     };
-      
-      
-
-
-    // useEffect(() => {
-
-    //     if(localStorage.getItem('store2')) {
-    //     const storeData = localStorage.getItem('store2');
-    //     if (storeData) {
-    //         // Trenne den String an einem bestimmten Trennzeichen und konvertiere jedes Teil in ein Objekt
-    //         const itemsArray: Record<string, any>[] = storeData ?
-    //             [{ key: storeData, value: storeData }] : [];
-
-    //         setStoreItems(itemsArray);
-    //     }
-    //     else {
-    //         redirect('/');
-    //     }
-    // }
-
-    // }, []);
-
-
 
 
     return (
