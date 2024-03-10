@@ -118,13 +118,9 @@ export interface Dish {
 export interface Catalog {
     id: string;
     name: string;
+    restaurantId: string;
     isActive: boolean;
     dishes: Dish[];
-    _rid: string;
-    _self: string;
-    _etag: string;
-    _attachments: string;
-    _ts: number;
 }
 
   

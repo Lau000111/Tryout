@@ -95,7 +95,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
       
       setLoading(false);
       router.refresh();
-      router.push(`/${params.storeId}/categories`);
+      router.push(`/${params.storeId}/${params.catalog}/categories`);
       toast.success(toastMessage);
     } catch (error: any) {
       console.log(error);

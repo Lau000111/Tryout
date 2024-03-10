@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Builder;
+
 var builder = DistributedApplication.CreateBuilder(args);
 
 // Backend
@@ -21,5 +23,9 @@ builder.AddNpmApp("admin-page", "../admin-page")
     .WithReference(restaurantProject)
     .WithEndpoint(containerPort: 3001, scheme: "http", env: "PORT")
     .AsDockerfileInManifest();
+
+//Auth
+var builder2 = WebApplication.CreateBuilder(args);
+
 
 builder.Build().Run();

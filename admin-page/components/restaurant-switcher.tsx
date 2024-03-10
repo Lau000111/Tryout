@@ -40,13 +40,13 @@ export default function StoreSwitcher({ className, items = [] }: RestaurantSwitc
         value: item.value
     }));
     
-    const currentStore = formattedItems.find((item) => item.label == "vanila");
+    const currentStore = formattedItems.find((item) => item.label === params.catalog);
 
     const [open, setOpen] = React.useState(false);
 
     const onStoreSelect = (store: { value: string, label: string }) => {
         setOpen(false);
-        // router.push(`/${store.value}`);
+        router.push(`/${store.value}`);
     };
 
     return (

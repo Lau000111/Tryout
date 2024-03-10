@@ -1,3 +1,4 @@
+import { Catalog } from '@/types/schema';
 import axios from 'axios';
 
 const API_BASE_URL = `${process.env.NEXT_PUBLIC_APP_PROJECTALPHA_CATALOG_API}`;
@@ -14,6 +15,17 @@ export const fetchGetCatalog = async () => {
     console.log(API_BASE_URL_RESTAURANT);
     return response.data;
 };
+
+export const createCatalog = async (payload: Omit<Catalog, 'id'>) => {
+  const response = await apiService.post(`/api/${Restaurant_ID}/catalog`, payload, {
+    headers: {
+      'Content-Type': 'application/json-patch+json'
+    }
+  });
+  console.log(API_BASE_URL_RESTAURANT);
+  return response.data;
+};
+
 
 export const fetchChangeCatalog = async () => {
   const response = await apiService.get(`/api/${Restaurant_ID}/catalog/${ID}`);

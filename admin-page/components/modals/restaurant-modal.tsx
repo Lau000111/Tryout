@@ -17,6 +17,7 @@ import { Select } from "@/components/ui/select";
 import { Command, CommandList, CommandItem, CommandGroup } from "@/components/ui/command";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { Check, Store } from "lucide-react";
+import { createCatalog } from "@/app/api/products/route";
 
 const formSchema = z.object({
   name: z.string().min(1),
@@ -62,11 +63,18 @@ export const RestaurantModal = () => {
     return () => subscription.unsubscribe();
   }, [form.watch]);
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       setLoading(true);
       // const response = await axios.post('/api/stores', values);
       // window.location.assign(`/${response.data.id}`);
+      const payload = {
+        "restaurantId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "name": `${values.name}`,
+        "isActive": false,
+        "dishes": []
+      };
+      const response = await createCatalog(payload);
       toast.success('Store created');
       localStorage.setItem('store2', values.name);
       window.location.assign(`/${values.name}`);

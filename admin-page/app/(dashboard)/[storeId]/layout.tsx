@@ -14,7 +14,7 @@ export default function DashboardLayout({
   params
 }: {
   children: React.ReactNode
-  params: { storeId: string }
+  params: { storeId: string, catalog: string }
 }) {
   // const { userId } = auth();
 
