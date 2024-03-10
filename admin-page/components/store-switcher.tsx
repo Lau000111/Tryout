@@ -32,13 +32,17 @@ export default function StoreSwitcher({ className, items = [] }: StoreSwitcherPr
     const storeModal = useStoreModal();
     const params = useParams();
     const router = useRouter();
-    
+
     const formattedItems = items.map((item) => ({
         label: item.key,
         value: item.value
     }));
 
-    const currentStore = formattedItems.find((item) => item.value === params.storeId);
+    let storeId = Array.isArray(params.storeId) ? params.storeId[0] : params.storeId;
+    storeId = decodeURIComponent(storeId);
+
+
+    const currentStore = formattedItems.find((item) => item.label === storeId);
 
     const [open, setOpen] = React.useState(false)
 
@@ -71,10 +75,10 @@ export default function StoreSwitcher({ className, items = [] }: StoreSwitcherPr
                         <CommandGroup heading="Stores">
                             {formattedItems.map((store) => (
                                 <CommandItem
-                                     key={store.value}
-                                     onSelect={() => onStoreSelect(store)}
-                                     className="text-sm"
-                               >
+                                    key={store.value}
+                                    onSelect={() => onStoreSelect(store)}
+                                    className="text-sm"
+                                >
                                     <Store className="mr-2 h-4 w-4" />
                                     {store.label}
                                     <Check

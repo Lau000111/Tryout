@@ -46,7 +46,7 @@ export default function StoreSwitcher({ className, items = [] }: RestaurantSwitc
 
     const onStoreSelect = (store: { value: string, label: string }) => {
         setOpen(false);
-        router.push(`/${store.value}`);
+        router.push(`/${params.storeId}/${store.label}`);
     };
 
     return (

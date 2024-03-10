@@ -71,7 +71,11 @@ export default function SetupLayout({
     const fetchData = async () => {
       try {
         const restaurant = await getRestaurantById();
-
+        if (restaurant) {
+          redirect(`/${restaurant.id}`);
+        } else {
+          
+        }
         
       } catch (error) {
         console.error('Error fetching data:', error);
