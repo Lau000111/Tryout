@@ -1,7 +1,7 @@
 "use client"
 
-import * as React from "react"
-import { Check, ChevronsUpDown, PlusCircle, Store } from "lucide-react"
+import React, { useState, useEffect } from "react";
+import { Check, ChevronsUpDown, MinusCircle, PlusCircle, Store } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -22,6 +22,7 @@ import {
 import { useStoreModal } from "@/hooks/use-store-modal"
 import { useParams, useRouter } from "next/navigation"
 import { useRestaurantModal } from "@/hooks/use-restaurant-modal"
+import { deleteCatalog } from "@/app/api/products/route"
 
 type PopoverTriggerProps = React.ComponentPropsWithoutRef<typeof PopoverTrigger>
 
@@ -33,16 +34,28 @@ export default function StoreSwitcher({ className, items = [] }: RestaurantSwitc
     const storeModal = useRestaurantModal();
     const params = useParams();
     const router = useRouter();
+    const [storeItems, setStoreItems] = useState(items);
     
+    useEffect(() => {
+        setStoreItems(items); 
+    }, [items]);
+
+    const onStoreDelete = async (storeId: string) => {
+        await deleteCatalog(storeId); // Löschen des Katalogs
+        const updatedItems = storeItems.filter(item => item.value !== storeId);
+        setStoreItems(updatedItems);
+    };
+
+   
     
-    const formattedItems = items.map((item) => ({
+    const formattedItems = storeItems.map((item) => ({
         label: item.key,
         value: item.value
     }));
     
     const currentStore = formattedItems.find((item) => item.label === params.catalog);
 
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const onStoreSelect = (store: { value: string, label: string }) => {
         setOpen(false);
@@ -75,17 +88,26 @@ export default function StoreSwitcher({ className, items = [] }: RestaurantSwitc
                                 <CommandItem
                                      key={store.value}
                                      onSelect={() => onStoreSelect(store)}
-                                     className="text-sm"
+                                     className="text-sm flex justify-between items-center"
                                >
-                                    <Store className="mr-2 h-4 w-4" />
-                                    {store.label}
-                                    <Check
-                                        className={cn(
-                                            "ml-auto h-4 w-4",
-                                            currentStore?.value === store.value
-                                                ? "opacity-100"
-                                                : "opacity-0"
-                                        )}
+                                    <div className="flex items-center">
+                                        <Store className="mr-2 h-4 w-4" />
+                                        {store.label}
+                                        <Check
+                                            className={cn(
+                                                "ml-auto h-4 w-4",
+                                                currentStore?.value === store.value
+                                                    ? "opacity-100"
+                                                    : "opacity-0"
+                                            )}
+                                        />
+                                    </div>
+                                    <MinusCircle
+                                        className="ml-4 h-5 w-5 text-red-500 hover:text-red-600 cursor-pointer"
+                                        onClick={(e) => {
+                                            e.stopPropagation(); 
+                                            onStoreDelete(store.value);
+                                        }}
                                     />
                                 </CommandItem>
                             ))}

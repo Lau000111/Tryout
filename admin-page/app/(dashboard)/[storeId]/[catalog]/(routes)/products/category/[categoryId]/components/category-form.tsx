@@ -61,7 +61,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await fetchGetCatalog();
+        const result = await fetchGetCatalog("");
 
         setCategories(result);
       } catch (error) {
@@ -90,8 +90,8 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
           }
         }
       ];
-  
-      const result = await addDishOrItem(payload);
+     
+      const result = await addDishOrItem(payload, params.catalog);
       
       setLoading(false);
       router.refresh();

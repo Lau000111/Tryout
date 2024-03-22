@@ -69,7 +69,7 @@ export const RestaurantModal = () => {
       // const response = await axios.post('/api/stores', values);
       // window.location.assign(`/${response.data.id}`);
       const payload = {
-        "restaurantId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "restaurantId": "86581ee2-ffa9-4b56-b904-2980f5a9668c",
         "name": `${values.name}`,
         "isActive": false,
         "dishes": []
