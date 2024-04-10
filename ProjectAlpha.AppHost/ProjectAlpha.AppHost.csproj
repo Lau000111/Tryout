@@ -21,7 +21,6 @@
   <ItemGroup>
     <ProjectReference Include="..\IdentityServerAspNetIdentity\IdentityServerAspNetIdentity.csproj" />
     <ProjectReference Include="..\ProjectAlpha.Catalog\ProjectAlpha.Catalog.csproj" />
-    <ProjectReference Include="..\ProjectAlpha.Mobile.BFF\ProjectAlpha.Mobile.BFF.csproj" />
     <ProjectReference Include="..\ProjectAlpha.Restaurant\ProjectAlpha.Restaurant.csproj" />
     <ProjectReference Include="..\ProjectAlpha.Table\ProjectAlpha.Table.csproj" />
     <ProjectReference Include="..\React.Bff\React.Bff.csproj" />

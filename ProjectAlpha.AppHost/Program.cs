@@ -12,9 +12,7 @@ var tableProject = builder.AddProject<Projects.ProjectAlpha_Table>("table");
 
 var reactbff = builder.AddProject<Projects.React_Bff>("react");
 
-// Reverse-proxies
-builder.AddProject<Projects.ProjectAlpha_Mobile_BFF>("reverse")
-    .WithReference(catalogProject);
+// Reverse-proxy
 
 // Frontend
 builder.AddNpmApp("dine-fusion", "../dine-fusion")
