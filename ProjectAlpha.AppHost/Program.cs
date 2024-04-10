@@ -1,15 +1,17 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Duende.Bff.Yarp;
 using Microsoft.AspNetCore.Http;
 
 var builder = DistributedApplication.CreateBuilder(args);
+
 
 // Backend
 var catalogProject = builder.AddProject<Projects.ProjectAlpha_Catalog>(nameof(Projects.ProjectAlpha_Catalog));
 var restaurantProject = builder.AddProject<Projects.ProjectAlpha_Restaurant>(nameof(Projects.ProjectAlpha_Restaurant));
 
 var tableProject = builder.AddProject<Projects.ProjectAlpha_Table>(nameof(Projects.ProjectAlpha_Table));
+
+var reactbff = builder.AddProject<Projects.React_Bff>(nameof(Projects.React_Bff));
 
 // Reverse-proxies
 builder.AddProject<Projects.ProjectAlpha_Mobile_BFF>(nameof(Projects.ProjectAlpha_Mobile_BFF))

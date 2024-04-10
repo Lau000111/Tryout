@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{02
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServerAspNetIdentity", "IdentityServerAspNetIdentity\IdentityServerAspNetIdentity.csproj", "{58EA1D3A-2EDB-4B81-AA6F-E0FED381C078}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "React.Bff", "React.Bff\React.Bff.csproj", "{A5177827-2CDD-467F-BA62-F099D4CDEF01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +72,10 @@ Global
 		{58EA1D3A-2EDB-4B81-AA6F-E0FED381C078}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58EA1D3A-2EDB-4B81-AA6F-E0FED381C078}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58EA1D3A-2EDB-4B81-AA6F-E0FED381C078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5177827-2CDD-467F-BA62-F099D4CDEF01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5177827-2CDD-467F-BA62-F099D4CDEF01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5177827-2CDD-467F-BA62-F099D4CDEF01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5177827-2CDD-467F-BA62-F099D4CDEF01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

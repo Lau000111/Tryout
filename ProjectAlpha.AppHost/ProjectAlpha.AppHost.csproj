@@ -24,6 +24,7 @@
     <ProjectReference Include="..\ProjectAlpha.Mobile.BFF\ProjectAlpha.Mobile.BFF.csproj" />
     <ProjectReference Include="..\ProjectAlpha.Restaurant\ProjectAlpha.Restaurant.csproj" />
     <ProjectReference Include="..\ProjectAlpha.Table\ProjectAlpha.Table.csproj" />
+    <ProjectReference Include="..\React.Bff\React.Bff.csproj" />
   </ItemGroup>
 
 </Project>
