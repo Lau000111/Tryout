@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProjectAlpha.Catalog\ProjectAlpha.Catalog.csproj" />
+    <ProjectReference Include="..\ProjectAlpha.Catalog\ProjectAlpha.Catalog.csproj" IsAspireProjectResource="false" />
     <ProjectReference Include="..\ProjectAlpha.ServiceDefaults\ProjectAlpha.ServiceDefaults.csproj" />
   </ItemGroup>    
 

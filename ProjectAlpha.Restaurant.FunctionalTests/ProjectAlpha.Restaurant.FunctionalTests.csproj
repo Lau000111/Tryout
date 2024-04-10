@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProjectAlpha.Restaurant\ProjectAlpha.Restaurant.csproj" />
+    <ProjectReference Include="..\ProjectAlpha.Restaurant\ProjectAlpha.Restaurant.csproj" IsAspireProjectResource="false" />
     <ProjectReference Include="..\ProjectAlpha.ServiceDefaults\ProjectAlpha.ServiceDefaults.csproj" />
   </ItemGroup>
 </Project>
