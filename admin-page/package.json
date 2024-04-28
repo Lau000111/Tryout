@@ -9,7 +9,6 @@
     "lint": "next lint",
     "test": "jest",
     "coverage": "jest --coverage"
-    "export": "next build && next export",
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
